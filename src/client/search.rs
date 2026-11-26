@@ -154,6 +154,7 @@ mod tests {
     #[case::playlists("playlists")]
     #[case::empty("empty")]
     #[case::shorts("shorts")]
+    #[case::playlists_course("playlists_course")]
     #[case::ab3_channel_handles("20221121_AB3_channel_handles")]
     fn t_map_search(#[case] name: &str) {
         let json_path = path!(*TESTFILES / "search" / format!("{name}.json"));

@@ -217,6 +217,7 @@ pub(crate) struct LockupViewModel {
 #[allow(clippy::enum_variant_names)]
 pub(crate) enum LockupContentType {
     LockupContentTypePlaylist,
+    LockupContentTypeCourse,
     LockupContentTypeVideo,
     #[default]
     Unknown,
@@ -770,6 +771,7 @@ impl<T> YouTubeListMapper<T> {
                     .video_count_short_text
                     .and_then(|txt| util::parse_numeric(&txt).ok())
             }),
+            is_course: false,
         }
     }
 
@@ -842,7 +844,8 @@ impl<T> YouTubeListMapper<T> {
         let md = lockup.metadata.lockup_metadata_view_model;
         let tn = lockup.content_image.into_image();
         match lockup.content_type {
-            LockupContentType::LockupContentTypePlaylist => {
+            LockupContentType::LockupContentTypePlaylist
+            | LockupContentType::LockupContentTypeCourse => {
                 let video_count = tn
                     .badges()
                     .next()
@@ -853,6 +856,10 @@ impl<T> YouTubeListMapper<T> {
                     thumbnail: tn.image.into(),
                     channel: self.channel.clone(),
                     video_count,
+                    is_course: matches!(
+                        lockup.content_type,
+                        LockupContentType::LockupContentTypeCourse
+                    ),
                 }))
             }
             LockupContentType::LockupContentTypeVideo => {

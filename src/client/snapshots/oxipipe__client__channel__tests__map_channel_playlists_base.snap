@@ -113,6 +113,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(2),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHuvHE5GQrQJxWXHdmW2l5IF",
@@ -132,6 +133,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(1),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHs6wRwVSaErU0BEnLiHfnKJ",
@@ -151,6 +153,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(9),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHu4k0ZkKFLsysSB5iava6Qu",
@@ -170,6 +173,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(2),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHtdQF-m5UFZ5GEjABadI3kI",
@@ -189,6 +193,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(4),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHtlndPUSOPgsujUdq1c5Mr9",
@@ -208,6 +213,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(18),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHvD6M_7WeN071OVsZFE0_q-",
@@ -227,6 +233,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(3),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHtVLq2MDPIz82BWMIZcuwhK",
@@ -246,6 +253,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(8),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHvIDfW3x2p4BY6l4RYgfBJE",
@@ -265,6 +273,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(13),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHu6Jjb8U82eKQfvKhJVl0Bu",
@@ -284,6 +293,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(9),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHs-X2Awg33PCBNrP2BGFVhC",
@@ -303,6 +313,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(7),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHuLODLTeq3PM-OJRP2nzNUa",
@@ -322,6 +333,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(3),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHtvTKP4RTNW1-08Kmzy1pvA",
@@ -341,6 +353,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(8),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHuUTpCrTVX7BdU68l2aVqMv",
@@ -360,6 +373,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(2),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHvm120Tq40nKrM5SUBlolN3",
@@ -379,6 +393,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(3),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHsiF93KOLoF1KAHArmIW9lC",
@@ -398,6 +413,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(10),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHvxTzBLwUFw4My4rtrNFzED",
@@ -417,6 +433,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(1),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHt2pJ7X5tumuM4Wa3r1OC7Q",
@@ -436,6 +453,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(9),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHtX7OearWdmqGzqiu4DHKWi",
@@ -455,6 +473,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(16),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHu-TaNRp27_PiXjBG5wY9Gv",
@@ -474,6 +493,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(7),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHvmK-VGcZ33ZuATmcNB8tvH",
@@ -493,6 +513,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(6),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHvbV8x_bWQBKEg4IshWjG3U",
@@ -512,6 +533,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(12),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHs5tuhiqdxQeegsLDP7TM8V",
@@ -531,6 +553,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(1),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHu328BlpUOUDsv9Kf1Ri8Tg",
@@ -550,6 +573,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(5),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHvj_E5KUBluJJupXmideiZk",
@@ -569,6 +593,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(2),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHsWHPg1KlSd8agKbrcn3Dwn",
@@ -588,6 +613,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(4),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHuQb5djEVLzwBSTT27p2dXB",
@@ -607,6 +633,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(1),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHstMIbtLqlEiidVjj8ob0xp",
@@ -626,6 +653,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(2),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHugqRHdt46SN9Bmoh-D5Gp2",
@@ -645,6 +673,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(9),
+        is_course: false,
       ),
       PlaylistItem(
         id: "PLvOlSehNtuHtqqYM7ON99sbyiokMKrwwI",
@@ -664,6 +693,7 @@ Channel(
           subscriber_count: Some(881000),
         )),
         video_count: Some(1),
+        is_course: false,
       ),
     ],
     ctoken: Some("4qmFsgLCARIYVUMyRGpGRTdYZjExVVJacVdCaWdjVk9RGnRFZ2x3YkdGNWJHbHpkSE1ZQXlBQk1BRTRBZW9EUEVOblRrUlJhbEZUU2tKSmFWVkZlREpVTW5oVVdsZG9UMlJJVmtsa1NFWjRWMVV3TTFRd05EVlBXRTVwWlZkc2RtRXdNVXhqYm1RelUxTm5PQSUzRCUzRJoCL2Jyb3dzZS1mZWVkVUMyRGpGRTdYZjExVVJacVdCaWdjVk9RcGxheWxpc3RzMTA0"),

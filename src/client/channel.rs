@@ -817,16 +817,17 @@ mod tests {
     #[case::base("base")]
     #[case::lockup("20241109_lockup")]
     #[case::grid_lockup("20261126")]
+    #[case::course("20261126_course")]
     fn map_channel_playlists(#[case] name: &str) {
         let json_path = path!(*TESTFILES / "channel" / format!("channel_playlists_{name}.json"));
         let json_file = File::open(json_path).unwrap();
 
         let channel: response::Channel =
             serde_json::from_reader(BufReader::new(json_file)).unwrap();
-        let id = if name == "20261126" {
-            "UCXuqSBlHAE6Xw-yeJA0Tunw"
-        } else {
-            "UC2DjFE7Xf11URZqWBigcVOQ"
+        let id = match name {
+            "20261126" => "UCXuqSBlHAE6Xw-yeJA0Tunw",
+            "20261126_course" => "UCD8pB6QrFEAF1xAZ1dwl7qw",
+            _ => "UC2DjFE7Xf11URZqWBigcVOQ",
         };
         let map_res: MapResult<Channel<Paginator<PlaylistItem>>> =
             channel.map_response(&MapRespCtx::test(id)).unwrap();

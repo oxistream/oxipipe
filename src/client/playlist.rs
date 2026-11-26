@@ -223,6 +223,10 @@ impl MapResponse<Playlist> for response::Playlist {
                 channel,
                 last_update,
                 last_update_txt,
+                is_course: self.panels.iter().any(|p| {
+                    p.engagement_panel_section_list_renderer.target_id
+                        == "engagement-panel-course-metadata"
+                }),
                 visitor_data: self
                     .response_context
                     .visitor_data
@@ -252,6 +256,7 @@ mod tests {
     #[case::pageheader("20241011_pageheader", "PLT2w2oBf1TZKyvY_M6JsASs73m-wjLzH5")]
     #[case::cmdexecutor("20250316_cmdexecutor", "PLbZIPy20-1pN7mqjckepWF78ndb6ci_qi")]
     #[case::lockup("20261126_lockup", "PL5dDx681T4bR7ZF1IuWzOv1omlRbE7PiJ")]
+    #[case::course("20261126_course", "PLAscMa3kKhHjBYOTrT20kpYMNQX95KU6i")]
     fn map_playlist_data(#[case] name: &str, #[case] id: &str) {
         let json_path = path!(*TESTFILES / "playlist" / format!("playlist_{name}.json"));
         let json_file = File::open(json_path).unwrap();

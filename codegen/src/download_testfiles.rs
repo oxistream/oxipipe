@@ -34,10 +34,12 @@ pub async fn download_testfiles() {
     channel_info().await;
     channel_videos_cont().await;
     channel_playlists_cont().await;
+    channel_playlists_course().await;
     search().await;
     search_cont().await;
     search_playlists().await;
     search_shorts().await;
+    search_course().await;
     search_empty().await;
     trending().await;
 
@@ -194,6 +196,7 @@ async fn playlist() {
         ("long", "PL5dDx681T4bR7ZF1IuWzOv1omlRbE7PiJ"),
         ("nomusic", "PL1J-6JOckZtE_P9Xx8D3b2O6w0idhuKBe"),
         ("live", "UULVvqRdlKsE5Q8mf8YXbdIJLw"),
+        ("20261126_course", "PLAscMa3kKhHjBYOTrT20kpYMNQX95KU6i"),
     ] {
         let json_path = path!(*TESTFILES_DIR / "playlist" / format!("playlist_{name}.json"));
         if json_path.exists() {
@@ -349,6 +352,19 @@ async fn channel_playlists() {
         .unwrap();
 }
 
+async fn channel_playlists_course() {
+    let json_path = path!(*TESTFILES_DIR / "channel" / "channel_playlists_20261126_course.json");
+    if json_path.exists() {
+        return;
+    }
+
+    let rp = rp_testfile(&json_path);
+    rp.query()
+        .channel_playlists("UCD8pB6QrFEAF1xAZ1dwl7qw")
+        .await
+        .unwrap();
+}
+
 async fn channel_info() {
     let json_path = path!(*TESTFILES_DIR / "channel" / "channel_info.json");
     if json_path.exists() {
@@ -448,6 +464,22 @@ async fn search_shorts() {
     let rp = rp_testfile(&json_path);
     rp.query()
         .search_filter::<YouTubeItem, _>("cats", &SearchFilter::new().item_type(ItemType::Short))
+        .await
+        .unwrap();
+}
+
+async fn search_course() {
+    let json_path = path!(*TESTFILES_DIR / "search" / "playlists_course.json");
+    if json_path.exists() {
+        return;
+    }
+
+    let rp = rp_testfile(&json_path);
+    rp.query()
+        .search_filter::<YouTubeItem, _>(
+            "rust for beginners course",
+            &SearchFilter::new().item_type(ItemType::Playlist),
+        )
         .await
         .unwrap();
 }
