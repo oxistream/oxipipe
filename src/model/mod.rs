@@ -1022,6 +1022,30 @@ pub struct VideoId {
     pub name: String,
 }
 
+/// YouTube short from the shorts player sequence
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[non_exhaustive]
+pub struct ShortItem {
+    /// Unique YouTube video ID
+    pub id: String,
+    /// Channel ID of the short's uploader
+    pub channel_id: Option<String>,
+    /// Short thumbnail (portrait)
+    pub thumbnail: Vec<Thumbnail>,
+}
+
+/// Short details from the shorts player overlay
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[non_exhaustive]
+pub struct ShortDetails {
+    /// Unique YouTube video ID
+    pub id: String,
+    /// Short title
+    pub name: Option<String>,
+    /// Full-length video the uploader linked to the short
+    pub linked_video: Option<VideoId>,
+}
+
 /*
 #MUSIC
 */

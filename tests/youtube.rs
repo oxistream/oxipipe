@@ -1340,6 +1340,38 @@ async fn search_filter_shorts(rp: RustyPipe) {
 
 #[rstest]
 #[tokio::test]
+async fn reel_sequence(rp: RustyPipe) {
+    let mut sequence = rp.query().reel_sequence("sHpEqeSByPI").await.unwrap();
+    assert_gte(sequence.items.len(), 3, "items");
+    assert!(sequence.items.iter().all(|s| s.id != "sHpEqeSByPI"));
+
+    sequence.extend(rp.query()).await.unwrap();
+    assert_gte(sequence.items.len(), 8, "items");
+    assert!(sequence
+        .items
+        .iter()
+        .all(|s| validate::video_id(&s.id).is_ok()
+            && s.channel_id
+                .as_deref()
+                .is_some_and(|c| validate::channel_id(c).is_ok())
+            && !s.thumbnail.is_empty()));
+}
+
+#[rstest]
+#[tokio::test]
+async fn short_details(rp: RustyPipe) {
+    let short = rp.query().short_details("sHpEqeSByPI").await.unwrap();
+    assert!(short.name.is_some_and(|n| !n.is_empty()));
+    let linked = short.linked_video.expect("linked video");
+    assert_eq!(linked.id, "q6fgVVmdpgY");
+    assert!(!linked.name.is_empty());
+
+    let plain = rp.query().short_details("kQO5P-qsyiA").await.unwrap();
+    assert_eq!(plain.linked_video, None);
+}
+
+#[rstest]
+#[tokio::test]
 async fn search_empty(rp: RustyPipe) {
     let result = rp
         .query()

@@ -4,7 +4,7 @@ use crate::error::{Error, ExtractionError};
 use crate::model::{
     paginator::{ContinuationEndpoint, Paginator},
     traits::FromYtItem,
-    Comment, MusicItem, YouTubeItem,
+    Comment, MusicItem, ShortItem, YouTubeItem,
 };
 use crate::serializer::MapResult;
 
@@ -423,6 +423,21 @@ impl Paginator<Comment> {
     }
 }
 
+impl Paginator<ShortItem> {
+    /// Get the next page from the paginator (or `None` if the paginator is exhausted)
+    pub async fn next<Q: AsRef<RustyPipeQuery>>(&self, query: Q) -> Result<Option<Self>, Error> {
+        Ok(match &self.ctoken {
+            Some(ctoken) => Some(
+                query
+                    .as_ref()
+                    .reel_sequence_continuation(ctoken, self.visitor_data.as_deref())
+                    .await?,
+            ),
+            _ => None,
+        })
+    }
+}
+
 #[cfg(feature = "userdata")]
 #[cfg_attr(docsrs, doc(cfg(feature = "userdata")))]
 impl Paginator<HistoryItem<VideoItem>> {
@@ -538,6 +553,7 @@ macro_rules! paginator {
 }
 
 paginator!(Comment);
+paginator!(ShortItem);
 #[cfg(feature = "userdata")]
 #[cfg_attr(docsrs, doc(cfg(feature = "userdata")))]
 paginator!(HistoryItem<VideoItem>);

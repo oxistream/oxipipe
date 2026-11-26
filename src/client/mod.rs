@@ -13,6 +13,7 @@ mod music_search;
 mod pagination;
 mod player;
 mod playlist;
+mod reel;
 mod search;
 mod trends;
 mod url_resolver;

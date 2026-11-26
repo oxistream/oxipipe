@@ -1,0 +1,12 @@
+---
+source: src/client/reel.rs
+expression: map_res.c
+---
+ShortDetails(
+  id: "sHpEqeSByPI",
+  name: Some("Unboxing The World’s Largest Toy"),
+  linked_video: Some(VideoId(
+    id: "q6fgVVmdpgY",
+    name: "$250,000 Hunger Games In Real Life",
+  )),
+)

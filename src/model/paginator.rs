@@ -65,6 +65,8 @@ pub enum ContinuationEndpoint {
     MusicBrowse,
     MusicSearch,
     MusicNext,
+    /// Shorts player sequence, continued with `Paginator<ShortItem>::next`
+    ReelSequence,
 }
 
 impl ContinuationEndpoint {
@@ -73,6 +75,7 @@ impl ContinuationEndpoint {
             ContinuationEndpoint::Browse | ContinuationEndpoint::MusicBrowse => "browse",
             ContinuationEndpoint::Search | ContinuationEndpoint::MusicSearch => "search",
             ContinuationEndpoint::Next | ContinuationEndpoint::MusicNext => "next",
+            ContinuationEndpoint::ReelSequence => "reel/reel_watch_sequence",
         }
     }
 

@@ -1,0 +1,9 @@
+---
+source: src/client/reel.rs
+expression: map_res.c
+---
+ShortDetails(
+  id: "kQO5P-qsyiA",
+  name: Some("MrBeast, Logan Paul & KSI Are Carrying WHAT?!"),
+  linked_video: None,
+)
