@@ -24,14 +24,8 @@ pub(crate) struct Playlist {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub(crate) struct ItemSection {
-    pub item_section_renderer: ContentsRenderer<PlaylistVideoListRenderer>,
-}
-
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub(crate) struct PlaylistVideoListRenderer {
-    #[serde(alias = "richGridRenderer")]
-    pub playlist_video_list_renderer: YouTubeListRenderer,
+    /// Either a `playlistVideoListRenderer` or, since 11.2026, the video lockups themselves
+    pub item_section_renderer: YouTubeListRenderer,
 }
 
 #[derive(Debug, Deserialize)]

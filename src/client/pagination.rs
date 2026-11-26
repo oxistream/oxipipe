@@ -586,6 +586,7 @@ mod tests {
     #[rstest]
     #[case::channel_videos("channel_videos", path!("channel" / "channel_videos_cont.json"))]
     #[case::playlist("playlist", path!("playlist" / "playlist_cont.json"))]
+    #[case::playlist_lockup("playlist_lockup", path!("playlist" / "playlist_cont_20261126_lockup.json"))]
     fn map_continuation_videos(#[case] name: &str, #[case] path: PathBuf) {
         let json_path = path!(*TESTFILES / path);
         let json_file = File::open(json_path).unwrap();
