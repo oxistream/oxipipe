@@ -1,4 +1,8 @@
-use std::collections::HashMap;
+use std::{
+    collections::{hash_map::DefaultHasher, HashMap},
+    hash::{Hash, Hasher},
+    sync::{Arc, Mutex, PoisonError},
+};
 
 use once_cell::sync::Lazy;
 use regex::Regex;
@@ -19,7 +23,14 @@ pub struct Deobfuscator {
     ctx: Context,
 }
 
-#[derive(Debug, Default, Clone, Serialize, Deserialize, PartialEq, Eq)]
+type DeobfuscatorCache = Mutex<Option<(u64, Arc<Deobfuscator>)>>;
+
+/// Most recently used deobfuscator, keyed by a hash of its [`DeobfData`].
+///
+/// Initializing the player-based solver is expensive, so it is shared across player requests.
+static DEOBFUSCATOR: Lazy<DeobfuscatorCache> = Lazy::new(Mutex::default);
+
+#[derive(Debug, Default, Clone, Serialize, Deserialize, PartialEq, Eq, Hash)]
 pub struct DeobfData {
     pub js_url: String,
     pub sig_fn: String,
@@ -109,6 +120,25 @@ impl Deobfuscator {
             ctx.eval_with_options::<(), _>(data.nsig_fn.as_bytes(), opts)
         })?;
         Ok(Self { ctx })
+    }
+
+    /// Get a shared deobfuscator for the given data, creating it if necessary
+    pub fn cached(data: &DeobfData) -> Result<Arc<Self>, DeobfError> {
+        let mut hasher = DefaultHasher::new();
+        data.hash(&mut hasher);
+        let key = hasher.finish();
+
+        let mut cached = DEOBFUSCATOR.lock().unwrap_or_else(PoisonError::into_inner);
+        if let Some((k, deobf)) = cached.as_ref() {
+            if *k == key {
+                return Ok(deobf.clone());
+            }
+        }
+        let start = std::time::Instant::now();
+        let deobf = Arc::new(Self::new(data)?);
+        tracing::debug!("initialized deobfuscator in {:?}", start.elapsed());
+        *cached = Some((key, deobf.clone()));
+        Ok(deobf)
     }
 
     /// Deobfuscate the `s` parameter from the `signature_cipher` field

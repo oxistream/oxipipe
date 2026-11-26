@@ -2,6 +2,7 @@ use std::{
     borrow::Cow,
     collections::{BTreeMap, HashMap, HashSet},
     fmt::Debug,
+    sync::Arc,
 };
 
 use once_cell::sync::Lazy;
@@ -544,7 +545,7 @@ impl MapResponse<VideoPlayer> for response::Player {
 }
 
 struct StreamsMapper<'a> {
-    deobf: Option<Deobfuscator>,
+    deobf: Option<Arc<Deobfuscator>>,
     session_po_token: Option<&'a str>,
     streams: Streams,
     warnings: Vec<String>,
@@ -569,7 +570,7 @@ impl<'a> StreamsMapper<'a> {
         session_po_token: Option<&'a str>,
     ) -> Result<Self, DeobfError> {
         let deobf = match deobf_data {
-            Some(deobf_data) => Some(Deobfuscator::new(deobf_data)?),
+            Some(deobf_data) => Some(Deobfuscator::cached(deobf_data)?),
             None => None,
         };
 
@@ -643,7 +644,7 @@ impl<'a> StreamsMapper<'a> {
 
     fn deobf(&self) -> Result<&Deobfuscator, DeobfError> {
         self.deobf
-            .as_ref()
+            .as_deref()
             .ok_or(DeobfError::Other("no deobfuscator".into()))
     }
 
