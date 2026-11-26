@@ -153,6 +153,7 @@ mod tests {
     #[case::default("default")]
     #[case::playlists("playlists")]
     #[case::empty("empty")]
+    #[case::shorts("shorts")]
     #[case::ab3_channel_handles("20221121_AB3_channel_handles")]
     fn t_map_search(#[case] name: &str) {
         let json_path = path!(*TESTFILES / "search" / format!("{name}.json"));
@@ -171,5 +172,41 @@ mod tests {
         insta::assert_ron_snapshot!(format!("map_search_{name}"), map_res.c, {
             ".items.items.*.publish_date" => "[date]",
         });
+    }
+
+    /// Shorts shelves between regular results stay skipped
+    #[test]
+    fn t_map_search_skips_mixed_shelves() {
+        let search: response::Search = serde_json::from_value(serde_json::json!({
+            "responseContext": {},
+            "contents": {"twoColumnSearchResultsRenderer": {"primaryContents": {
+                "sectionListRenderer": {"contents": [{"itemSectionRenderer": {"contents": [
+                    {"videoRenderer": {
+                        "videoId": "aaaaaaaaaaa",
+                        "thumbnail": {"thumbnails": []},
+                        "title": {"simpleText": "Video"}
+                    }},
+                    {"gridShelfViewModel": {"contents": [{"shortsLockupViewModel": {
+                        "entityId": "shorts-shelf-item-bbbbbbbbbbb",
+                        "overlayMetadata": {"primaryText": {"content": "Short"}}
+                    }}]}}
+                ]}}]}
+            }}}
+        }))
+        .unwrap();
+        let map_res: MapResult<SearchResult<YouTubeItem>> =
+            search.map_response(&MapRespCtx::test("")).unwrap();
+
+        let ids = map_res
+            .c
+            .items
+            .items
+            .iter()
+            .map(|item| match item {
+                YouTubeItem::Video(v) => v.id.as_str(),
+                _ => "",
+            })
+            .collect::<Vec<_>>();
+        assert_eq!(ids, ["aaaaaaaaaaa"]);
     }
 }

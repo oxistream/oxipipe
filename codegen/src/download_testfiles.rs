@@ -37,6 +37,7 @@ pub async fn download_testfiles() {
     search().await;
     search_cont().await;
     search_playlists().await;
+    search_shorts().await;
     search_empty().await;
     trending().await;
 
@@ -434,6 +435,19 @@ async fn search_playlists() {
     let rp = rp_testfile(&json_path);
     rp.query()
         .search_filter::<YouTubeItem, _>("pop", &SearchFilter::new().item_type(ItemType::Playlist))
+        .await
+        .unwrap();
+}
+
+async fn search_shorts() {
+    let json_path = path!(*TESTFILES_DIR / "search" / "shorts.json");
+    if json_path.exists() {
+        return;
+    }
+
+    let rp = rp_testfile(&json_path);
+    rp.query()
+        .search_filter::<YouTubeItem, _>("cats", &SearchFilter::new().item_type(ItemType::Short))
         .await
         .unwrap();
 }

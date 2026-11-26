@@ -1319,6 +1319,27 @@ async fn search_filter_item_type(#[case] item_type: search_filter::ItemType, rp:
 
 #[rstest]
 #[tokio::test]
+async fn search_filter_shorts(rp: RustyPipe) {
+    let mut result = rp
+        .query()
+        .search_filter::<YouTubeItem, _>(
+            "cats",
+            &SearchFilter::new().item_type(search_filter::ItemType::Short),
+        )
+        .await
+        .unwrap();
+
+    result.items.extend(rp.query()).await.unwrap();
+    assert_gte(result.items.items.len(), 20, "items");
+
+    result.items.items.iter().for_each(|item| match item {
+        YouTubeItem::Video(video) => assert!(video.is_short, "not a short: {}", video.id),
+        _ => panic!("not a video: {item:?}"),
+    });
+}
+
+#[rstest]
+#[tokio::test]
 async fn search_empty(rp: RustyPipe) {
     let result = rp
         .query()
