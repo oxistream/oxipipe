@@ -742,6 +742,7 @@ c[36](c[8],c[32]),c[20](c[25],c[10]),c[2](c[22],c[8]),c[32](c[20],c[16]),c[32](c
             ("643afba4", "AAOAOq0QJ8wRAIgXmPlOPSBkkUs1bYFYlJCfe29xx8j7vgpDL0QwbdV06sCIEzpWqMGkFR20CFOS21Tp-7vj_EMu-m37KtXJoOy1"),
             ("363db69b", "0aqSyOoJXtK73m-uME_jv7-pT15gOFC02RFkGMqWpz2ICs6EVdbwQ0LDp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA"),
             ("6450230e", "qax0aqSyOoJXtK73m-uME_jv7-pT152OFC02RFkGMqWpzEICs69VdbwQ0LDp1v7j8gx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA"),
+            ("b485e332", "aq0aqSyO5JXtK73m-uME_jv7-pT1DgOFC02RFkG2qWpzEICs69VdbwQ0LMp1v7j8xx92efCJlYFYb1sUkkBSPOlPmXgIARw8JQ0qOAOAA"),
         ];
 
         for (js_hash, exp_sig) in cases {
@@ -800,6 +801,7 @@ c[36](c[8],c[32]),c[20](c[25],c[10]),c[2](c[22],c[8]),c[32](c[20],c[16]),c[32](c
             ("69f581a5", "-qIP447rVlTTwaZjY", "KNcGOksBAvwqQg"),
             ("363db69b", "eWYu5d5YeY_4LyEDc", "XJQqf-N7Xra3gg"),
             ("6450230e", "eWYu5d5YeY_4LyEDc", "VfULHmlBUoDPVMN"),
+            ("b485e332", "rYKKd90cGmViBQaX", "3zbfWwYE4asG8"),
         ];
 
         for (js_hash, nsig_in, exp_nsig) in cases {
