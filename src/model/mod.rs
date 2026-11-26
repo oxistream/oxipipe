@@ -153,6 +153,11 @@ pub struct VideoPlayer {
     ///
     /// [`None`] if the video is not DRM-protected
     pub drm: Option<VideoPlayerDrm>,
+    /// Date from which the stream URLs can be used
+    ///
+    /// Some clients get pre-roll ads. Their stream URLs return HTTP 403 until the ad is over.
+    #[serde(default, with = "time::serde::rfc3339::option")]
+    pub available_at: Option<OffsetDateTime>,
     /// Client type with which the player was fetched
     pub client_type: ClientType,
     /// YouTube visitor data ID

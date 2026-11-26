@@ -621,6 +621,7 @@ VideoPlayer(
     ),
   ],
   drm: None,
+  available_at: "[date]",
   client_type: desktop,
   visitor_data: Some("CgtoS1pCMVJTNUJISSirsaWXBg%3D%3D"),
 )

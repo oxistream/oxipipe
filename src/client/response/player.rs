@@ -2,7 +2,7 @@ use std::ops::Range;
 
 use serde::Deserialize;
 use serde_with::serde_as;
-use serde_with::{DefaultOnError, DisplayFromStr, VecSkipError};
+use serde_with::{DefaultOnError, DisplayFromStr, PickFirst, VecSkipError};
 
 use super::{Empty, ResponseContext, Thumbnails};
 use crate::serializer::{text::Text, MapResult};
@@ -23,6 +23,9 @@ pub(crate) struct Player {
     pub player_config: PlayerConfig,
     #[serde(default)]
     pub heartbeat_params: HeartbeatParams,
+    #[serde(default)]
+    #[serde_as(deserialize_as = "VecSkipError<_>")]
+    pub ad_placements: Vec<AdPlacement>,
 }
 
 #[serde_as]
@@ -312,6 +315,72 @@ pub(crate) struct HeartbeatParams {
     pub drm_session_id: Option<String>,
 }
 
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct AdPlacement {
+    pub ad_placement_renderer: AdPlacementRenderer,
+}
+
+#[derive(Debug, Deserialize)]
+pub(crate) struct AdPlacementRenderer {
+    pub config: AdPlacementConfigWrap,
+    pub renderer: AdRenderer,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct AdPlacementConfigWrap {
+    pub ad_placement_config: AdPlacementConfig,
+}
+
+#[derive(Debug, Deserialize)]
+pub(crate) struct AdPlacementConfig {
+    pub kind: String,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct AdRenderer {
+    pub instream_video_ad_renderer: Option<InstreamVideoAdRenderer>,
+}
+
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct InstreamVideoAdRenderer {
+    #[serde_as(as = "Option<PickFirst<(_, DisplayFromStr)>>")]
+    #[serde(default)]
+    pub skip_offset_milliseconds: Option<u64>,
+    pub player_vars: Option<String>,
+}
+
+impl Player {
+    /// Get the time in seconds the player has to wait for pre-roll ads
+    /// before the streams become available
+    pub fn preroll_ad_seconds(&self) -> u64 {
+        self.ad_placements
+            .iter()
+            .filter(|p| {
+                p.ad_placement_renderer.config.ad_placement_config.kind == "AD_PLACEMENT_KIND_START"
+            })
+            .filter_map(|p| {
+                p.ad_placement_renderer
+                    .renderer
+                    .instream_video_ad_renderer
+                    .as_ref()
+            })
+            .filter_map(|ad| match ad.skip_offset_milliseconds {
+                Some(ms) => Some((ms + 999) / 1000),
+                None => ad.player_vars.as_deref().and_then(|vars| {
+                    url::form_urlencoded::parse(vars.as_bytes())
+                        .find(|(k, _)| k == "length_seconds")
+                        .and_then(|(_, v)| v.parse().ok())
+                }),
+            })
+            .sum()
+    }
+}
+
 impl From<DrmTrackType> for crate::model::DrmTrackType {
     fn from(value: DrmTrackType) -> Self {
         match value {
@@ -346,4 +415,25 @@ pub(crate) struct DrmLicense {
 pub(crate) struct AuthorizedFormat {
     pub track_type: DrmTrackType,
     pub key_id: String,
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn preroll_ad_seconds() {
+        let json = r#"{"playabilityStatus":{"status":"OK"},"responseContext":{},"adPlacements":[
+            {"adPlacementRenderer":{"config":{"adPlacementConfig":{"kind":"AD_PLACEMENT_KIND_START"}},
+             "renderer":{"instreamVideoAdRenderer":{"skipOffsetMilliseconds":5000,"playerVars":"length_seconds=15"}}}},
+            {"adPlacementRenderer":{"config":{"adPlacementConfig":{"kind":"AD_PLACEMENT_KIND_START"}},
+             "renderer":{"instreamVideoAdRenderer":{"playerVars":"a=1&length_seconds=6"}}}},
+            {"adPlacementRenderer":{"config":{"adPlacementConfig":{"kind":"AD_PLACEMENT_KIND_MILLISECONDS"}},
+             "renderer":{"instreamVideoAdRenderer":{"playerVars":"length_seconds=30"}}}},
+            {"adPlacementRenderer":{"config":{"adPlacementConfig":{"kind":"AD_PLACEMENT_KIND_START"}},
+             "renderer":{"adBreakServiceRenderer":{}}}}
+        ]}"#;
+        let player: Player = serde_json::from_str(json).unwrap();
+        assert_eq!(player.preroll_ad_seconds(), 11);
+    }
 }

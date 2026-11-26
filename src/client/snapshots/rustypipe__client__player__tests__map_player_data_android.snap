@@ -498,6 +498,7 @@ VideoPlayer(
     ),
   ],
   drm: None,
+  available_at: "[date]",
   client_type: android,
   visitor_data: Some("Cgt2aHFtQU5YZFBvYyirsaWXBg%3D%3D"),
 )

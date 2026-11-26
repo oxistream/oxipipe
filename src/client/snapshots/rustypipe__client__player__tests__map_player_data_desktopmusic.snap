@@ -433,6 +433,7 @@ VideoPlayer(
     ),
   ],
   drm: None,
+  available_at: "[date]",
   client_type: desktop_music,
   visitor_data: Some("CgszSHZWNWs0SDhpTSiS4aWXBg%3D%3D"),
 )

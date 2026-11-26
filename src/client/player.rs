@@ -300,6 +300,7 @@ impl MapResponse<VideoPlayer> for response::Player {
         ctx: &MapRespCtx<'_>,
     ) -> Result<super::MapResult<VideoPlayer>, ExtractionError> {
         let mut warnings = vec![];
+        let preroll_ad_seconds = self.preroll_ad_seconds();
 
         // Check playability status
         let is_live = match self.playability_status {
@@ -517,8 +518,9 @@ impl MapResponse<VideoPlayer> for response::Player {
                 drm_session_id,
             });
 
-        let mut valid_until = OffsetDateTime::now_utc()
-            + time::Duration::seconds(streaming_data.expires_in_seconds.into());
+        let now = OffsetDateTime::now_utc();
+        let mut valid_until =
+            now + time::Duration::seconds(streaming_data.expires_in_seconds.into());
         if let Some(pot) = &ctx.session_po_token {
             valid_until = valid_until.min(pot.valid_until);
         }
@@ -536,6 +538,8 @@ impl MapResponse<VideoPlayer> for response::Player {
                 dash_manifest_url: streaming_data.dash_manifest_url,
                 preview_frames,
                 drm,
+                available_at: (preroll_ad_seconds > 0)
+                    .then(|| now + time::Duration::seconds(preroll_ad_seconds as i64)),
                 client_type: ctx.client_type,
                 visitor_data: self
                     .response_context
@@ -1006,7 +1010,8 @@ mod tests {
             map_res.warnings
         );
         insta::assert_ron_snapshot!(format!("map_player_data_{name}"), map_res.c, {
-            ".valid_until" => "[date]"
+            ".valid_until" => "[date]",
+            ".available_at" => "[date]",
         });
     }
 

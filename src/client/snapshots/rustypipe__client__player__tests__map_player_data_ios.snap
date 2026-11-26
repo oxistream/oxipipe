@@ -204,6 +204,7 @@ VideoPlayer(
     ),
   ],
   drm: None,
+  available_at: "[date]",
   client_type: ios,
   visitor_data: Some("Cgs4TXV4dk13WVEyWSirsaWXBg%3D%3D"),
 )

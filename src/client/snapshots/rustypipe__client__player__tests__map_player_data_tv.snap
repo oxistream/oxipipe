@@ -553,6 +553,7 @@ VideoPlayer(
     ),
   ],
   drm: None,
+  available_at: "[date]",
   client_type: tv,
   visitor_data: Some("CgtrbXRsWU4wUEtXbyi-0aC1BjIKCgJERRIEEgAgZg%3D%3D"),
 )
