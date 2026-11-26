@@ -1,0 +1,852 @@
+---
+source: src/client/video_details.rs
+expression: map_res.c
+---
+VideoDetails(
+  id: "jfKfPfyJRdk",
+  name: "lofi hip hop radio 📚 beats to relax/study to",
+  description: RichText([
+    Text(
+      text: "🎼 | Listen on Spotify, Apple music and more\n→  ",
+    ),
+    Web(
+      text: "https://link.lofigirl.com/m/music",
+      url: "https://link.lofigirl.com/m/music",
+    ),
+    Text(
+      text: "\n\n🌎 | Lofi Girl on all social media\n→  ",
+    ),
+    Web(
+      text: "https://link.lofigirl.com/m/Community",
+      url: "https://link.lofigirl.com/m/Community",
+    ),
+    Text(
+      text: "\n\n🌐| Our Websites\n→  ",
+    ),
+    Web(
+      text: "https://link.lofigirl.com/m/website",
+      url: "https://link.lofigirl.com/m/website",
+    ),
+    Text(
+      text: "\n\n👕 | Lofi Girl merch\n→  ",
+    ),
+    Web(
+      text: "https://link.lofigirlshop.com/shop",
+      url: "https://link.lofigirlshop.com/shop",
+    ),
+    Text(
+      text: "\n\n🎮 | Our video games\n→ ",
+    ),
+    Web(
+      text: "https://link.lofigirl.com/m/games",
+      url: "https://link.lofigirl.com/m/games",
+    ),
+    Text(
+      text: "\n\n🎭 | Create your lofi avatar now\n→  ",
+    ),
+    Web(
+      text: "https://lofigirl.com/generator/",
+      url: "https://lofigirl.com/generator/",
+    ),
+    Text(
+      text: "\n\n🎨 | Art by Lofi Studio (full list of artists here)\n→  ",
+    ),
+    Web(
+      text: "Instagram: cuchqfxs08m",
+      url: "https://www.instagram.com/p/CuChqFXs08M/",
+    ),
+    Text(
+      text: "\n\n🤗 Thank you for listening, I hope you will have a good time here\n\n🧡All visuals and music in this video are 100% crafted by talented human artists, without the use of AI. We’re committed to delivering genuine, hand-made creations for our audience to enjoy.",
+    ),
+  ]),
+  channel: ChannelTag(
+    id: "UCSJ4gkVC6NrvII8umztf0Ow",
+    name: "Lofi Girl",
+    avatar: [
+      Thumbnail(
+        url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s48-c-k-c0x00ffffff-no-rj",
+        width: 48,
+        height: 48,
+      ),
+      Thumbnail(
+        url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+        width: 88,
+        height: 88,
+      ),
+      Thumbnail(
+        url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s176-c-k-c0x00ffffff-no-rj",
+        width: 176,
+        height: 176,
+      ),
+    ],
+    verification: artist,
+    subscriber_count: Some(15800000),
+  ),
+  view_count: 651847122,
+  like_count: Some(3479265),
+  publish_date: "[date]",
+  publish_date_txt: Some("Streamed live on Jul 12, 2022"),
+  is_live: false,
+  is_ccommons: false,
+  chapters: [],
+  recommended: Paginator(
+    count: None,
+    items: [
+      VideoItem(
+        id: "53gNFOqDFcE",
+        name: "study with me [pomodoro] 📚 3 hours of lofi focus music",
+        duration: Some(10804),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/53gNFOqDFcE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAAoHbASGLoyd7CnHxJy9AufpKaHQ",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/53gNFOqDFcE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRqVMrjXTBetvU5EDGw4a6Cx2HIQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSJ4gkVC6NrvII8umztf0Ow",
+          name: "Lofi Girl",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: artist,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("10 months ago"),
+        view_count: Some(2300000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "Vlhi0nLI6GA",
+        name: "Soothing Lofi Study Mix – Cozy Beats for Focus & Relaxation",
+        duration: Some(923),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/Vlhi0nLI6GA/hqdefault.jpg?sqp=-oaymwE1CKgBEF5IVfKriqkDKAgBFQAAiEIYAXABwAEG8AEB-AH-CYAC0AWKAgwIABABGHIgTihBMA8=&rs=AOn4CLAIr2hrxxz5ntidJH-OMuFDSrX5Gg",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/Vlhi0nLI6GA/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIE4oQTAP&rs=AOn4CLDqsxrndwK2LQJMo7lODAIvaCJPdA",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSYYagdIBOr736ICZtXOZ5A",
+          name: "That Sweet Lofi",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/2G6cMlGqEN3VurpNnXhlVOsSr1RyYl0xJyaigNaDeGeiyN8avqlhoMq-waxgSdePN-IuSq_Y2w=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("4 months ago"),
+        view_count: Some(373),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "rFZHOHl-L8A",
+        name: "lofi hip hop radio 📚 beats to relax/study to",
+        duration: None,
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/rFZHOHl-L8A/hqdefault.jpg?v=6ad62bed&sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBJLQN-UGghJhfez1ugqWgQYDnZPw",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/rFZHOHl-L8A/hqdefault.jpg?v=6ad62bed&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCAFjRAXe8XFF0KE7YKi9WxVujqiQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSJ4gkVC6NrvII8umztf0Ow",
+          name: "Lofi Girl",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: artist,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: Some(14000),
+        is_live: true,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "SS6h2X3-qO4",
+        name: "Magical Cozy Autumn Cabin 🍂🔥 Soft Jazz, Warm Fire & Autumn Sunset Ambience for Relaxation & Focus",
+        duration: None,
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/SS6h2X3-qO4/hqdefault.jpg?v=6ae660a6&sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCLXF-4CcrzhGMNMmcNDfYQHYnuFQ",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/SS6h2X3-qO4/hqdefault.jpg?v=6ae660a6&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPkjROmTcCxRyL8fXXYc2KgOUvNg",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCJXqUAczWK3K45bbDj4Ivvw",
+          name: "Tiang Safaris",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/ojSF6o1UsDbWYFdrDL4CqbFh_yrik6qbHR6cftO4rIRAEVG-fQRUFtMjMLGL8809SCIufIviYJ8=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: Some(412),
+        is_live: true,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "D2BoXZls1p8",
+        name: "Deep Focus Music – Quiet Hours | Zero Distraction for Work & Coding",
+        duration: None,
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/D2BoXZls1p8/hqdefault.jpg?v=6aba8d62&sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB0aElxdeS0UNd6VwvsPYlQOcsz_w",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/D2BoXZls1p8/hqdefault.jpg?v=6aba8d62&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDuQyN41eFDboNdhZzLXNlDe6IMbQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCwpCQMEWHTIY_er9FniNDPg",
+          name: "Calm Focus Music",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/LrvV2pjgOQBVJZK0eJBI2XOpy0NhPffrJxkbKJeRo5JN-becEsNzSWh6YlaX5ZA6x2Z03u58=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: Some(1100),
+        is_live: true,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "jeZbRuPPlqc",
+        name: "【🔴24/7 LIVE】Vintage Noir Jazz Café – 1940s Jazz for Coffee, Work, Gaming & Cozy Days",
+        duration: None,
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jeZbRuPPlqc/hqdefault.jpg?v=6a5aa668&sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBDDqSqr24S4h5EL2j-KQ7UQE4x-w",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jeZbRuPPlqc/hqdefault.jpg?v=6a5aa668&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzdVtMtkOafubNCpeiTjnybfsdMQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCw-beZQ5Q0eByuueJFjlziA",
+          name: "The Velvet Cat Lounge",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/ZMSU6Rz2v1LIsjJPw-SYpTL9PJ-vhf_NYYM4Pli_ZSI3AExiqReTj2FDvuIfd7B6S7oEwg_q=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: Some(1000),
+        is_live: true,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "GrhU-ARxJco",
+        name: "Lofi to Start Your Day ~  Morning Coffee ☕ | 1 Hour | Lofi Nook",
+        duration: Some(3664),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/GrhU-ARxJco/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBLqV_Jfx_DFI6KqwAvq8C5TXO57g",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/GrhU-ARxJco/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlAfOO9d2aXdHs9akKYz5qB8c32Q",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCHLhZuXrPRh3SBs7aGv2mcA",
+          name: "The lofi nook",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/qqjs3uwwHl-Kk3olYN_qnRZy7ewd0IFPhfClH7pbLPIeKrCno1V7mdci4i2VvZO9gzFEwXQkOg=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("2 months ago"),
+        view_count: Some(428),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "BVLuF1oxNzc",
+        name: "Coziest Christmas Porch Ambience 🎄 Gentle Winter Snowfall with Christmas Piano Music 🔥 Warm Fire",
+        duration: Some(12392),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/BVLuF1oxNzc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAFaQhfafP9dfSqbbZOskVhAO_Djg",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/BVLuF1oxNzc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJj0T9r7M3QExBsvzNOZLUXJj-nw",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UClQBjUrOMHJAQVXD575_BsA",
+          name: "Whispering Woods",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/ZhimckGYjI-so8Tv1i3xaqERv1Uf5epqp7bKAjycq9Jho1pfYvTu4MviGfgEKFRJOgsGmne-lQ=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("3 hours ago"),
+        view_count: Some(76),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "9IVdHLb4E1Y",
+        name: "(NO MID-ROLL ADS) November Thanksgiving Jazz 🦃 Cozy Ambience for Peaceful Days",
+        duration: Some(14531),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/9IVdHLb4E1Y/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB_mmnQMqH4wBtsYtPTFC5_VxFcLA",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/9IVdHLb4E1Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCJ-fsFsSLICx84kf7knjqjxk_i_A",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCaoZsSVnsHjouIPLCuWYu0g",
+          name: "Midnight Window Jazz",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/LamD4_-g2zQBOuQZWy9VuxFwwLayuTv9ddQSwve7dUHmMjUq6yddvMS_KbRc_Z4Fs119LB6KWc0=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("10 days ago"),
+        view_count: Some(287000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "lq_bftO4_Bs",
+        name: "𝗣𝗹𝗮𝘆𝗹𝗶𝘀𝘁 | Studio Ghibli & Jazz | Studio Ghibli Jazz Arrangements",
+        duration: None,
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/lq_bftO4_Bs/hqdefault.jpg?v=69e958c8&sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBJHaQPMS09SglZ-N47rIOWTKZBnA",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/lq_bftO4_Bs/hqdefault.jpg?v=69e958c8&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB8nyOwl2QJeIssQs39Ptc3CVH3JQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UC5OStgYPn8_UbILMFNFF_-w",
+          name: "Jazzoppa Playlist",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/6p_m2X6jRZjp5Ymw3gwgS1qNxPgwzTq5FLrNlUukrcKPvjqd3N-A3JJKE-xaXP5YYuAn63WX=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: Some(286),
+        is_live: true,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "CFGLoQIhmow",
+        name: "lofi hip hop mix 📚 beats to relax/study to (Part 1)",
+        duration: Some(10241),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/CFGLoQIhmow/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAPKpA_TEYqofeSsmxl4njj7ItZlg",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/CFGLoQIhmow/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMK7LOq4-ONdQhrn3PZhjbGBBqAg",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSJ4gkVC6NrvII8umztf0Ow",
+          name: "Lofi Girl",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: artist,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("2 years ago"),
+        view_count: Some(10000000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "S-4hwfyK-XQ",
+        name: "winter lofi mix [3 hours] ❄\u{fe0f} relaxing music to chill/study to",
+        duration: Some(11065),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/S-4hwfyK-XQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBVBWQKfuVkxdUlQvKtyPFd7onXwg",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/S-4hwfyK-XQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlM0Hic6_TEx9gdapWhDcdwIr7-Q",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSJ4gkVC6NrvII8umztf0Ow",
+          name: "Lofi Girl",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: artist,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("10 months ago"),
+        view_count: Some(1500000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "8b3fqIBrNW0",
+        name: "lofi hip hop mix 📚 beats to relax/study to (Part 2)",
+        duration: Some(14702),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/8b3fqIBrNW0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAtjnZ8XeGl7XGG1gALaqno_8yDsQ",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/8b3fqIBrNW0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAF75XDsXL5vUt4sLc3ZeF9dzNnXQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSJ4gkVC6NrvII8umztf0Ow",
+          name: "Lofi Girl",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: artist,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("1 year ago"),
+        view_count: Some(2000000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "CBSlu_VMS9U",
+        name: "jazz lofi mix [3 hours] 🎷 relaxing music to chill/study to",
+        duration: Some(10865),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/CBSlu_VMS9U/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAe1A5D3iyudpOMGzVfc3bwVmRVDQ",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/CBSlu_VMS9U/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB0OYcZvYL1TNVliDMAUqTllT9JJA",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSJ4gkVC6NrvII8umztf0Ow",
+          name: "Lofi Girl",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: artist,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("10 months ago"),
+        view_count: Some(3200000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "8pknVMlqNak",
+        name: "Winter in New York ❄\u{fe0f} Snowy Brownstone Streets & Vintage Male Vocal Jazz",
+        duration: Some(7212),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/8pknVMlqNak/hqdefault.jpg?sqp=-oaymwE1CKgBEF5IVfKriqkDKAgBFQAAiEIYAXABwAEG8AEB-AH-CYAC0AWKAgwIABABGGUgUihOMA8=&rs=AOn4CLAYJYcwg95fhM15g6J0DkJNwrT8gQ",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/8pknVMlqNak/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFIoTjAP&rs=AOn4CLDdwUsHGjxTNfeZxxKm0AQVrPMabg",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCWzD4DOlC7QzBYxjYS3jfLQ",
+          name: "New York Moments",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/tpf1gahnd6416KWU3_G1Fl6J8BExeI7UTAp2DHX5qer6LLrqAwVST0LJgrnQeM7WOsVp1ge1lA=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("11 days ago"),
+        view_count: Some(958000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "0nN7leKljwA",
+        name: "Relaxing Christmas Jazz at A Luxury Apartment Ambience 🎄 Smooth Jazz on Snowy Night for Work, Study",
+        duration: Some(11152),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/0nN7leKljwA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCkbagKazFFp4MoB9_MVQithFCK5A",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/0nN7leKljwA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDPkqlXFSKfrg4-JqJdARQVYJHfrA",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCnBtKIKcVXUBnQAnZOCvVHg",
+          name: "Maison Noel Jazz",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/bAAcBd1p5ynBRYpEiVYR4M9qomi5njz62niNh0jQTBaoE3UT7cQtJgC2lhquNV4Q6bxBCafC5d0=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("3 hours ago"),
+        view_count: Some(9),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "_jH2oTNRe7g",
+        name: "cozy autumn music 🍂 lofi beats to study / relax to",
+        duration: Some(3882),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/_jH2oTNRe7g/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBsgT1rxIN03heDPi1kRrdoI6AkdA",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/_jH2oTNRe7g/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8BJ_10iAF3nnx6kQwAIswZ_YUYg",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSJ4gkVC6NrvII8umztf0Ow",
+          name: "Lofi Girl",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: artist,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("1 month ago"),
+        view_count: Some(2300000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "-FlxM_0S2lA",
+        name: "Best of lofi 2018 🎶 beats to chill/study to",
+        duration: Some(6817),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/-FlxM_0S2lA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD3LYBuGK16w_z9pqiHCvxAKOQ_zw",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/-FlxM_0S2lA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrjczhgwGsRsvtZJFHGFjP4NUYOQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCSJ4gkVC6NrvII8umztf0Ow",
+          name: "Lofi Girl",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/REcZL_LGu0DaDaC-G7VIbN0uE_5l-i_dw6ZvOETRnY3pRhUmfkOq6C1MLephPZkV4VSzQAhEi_4=s88-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: artist,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("8 years ago"),
+        view_count: Some(57000000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "sF80I-TQiW0",
+        name: "90\'s Chill Lofi ☕\u{fe0f} Study Music Lofi Rain Chillhop Beats ☔\u{fe0f} Lofi Rain Playlist",
+        duration: Some(42825),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/sF80I-TQiW0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDT5vbnfHIwDE-GpyKjp6VAjp4FUw",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/sF80I-TQiW0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDQJ3X7IoPg4KQ569CSak42FYrJwQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCuS_-bvOCh4W5Sy11Uf4H5A",
+          name: "The Japanese Town",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/qSCIEHMCVV3joyY5lrPVv1xoHwPk-ou_M-7r5yrORp9bNJT6H_wsUlZ46Nn6cxajPOheR0hxzg4=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("Streamed 2 years ago"),
+        view_count: Some(32000000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "sjkrrmBnpGE",
+        name: "Ambient Study Music To Concentrate - 4 Hours of Music for Studying, Concentration and Memory",
+        duration: Some(14272),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/sjkrrmBnpGE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDVSsGJ_rkBQXlXxJtZU0QORJz75w",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/sjkrrmBnpGE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALCZonJis_PkNyE2NlCWLBy70SPQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UC1dVfl5-I98WX3yCy8IJQMg",
+          name: "Quiet Quest - Study Music",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/ytc/AIdro_nZ7-QJ8lhVOwVMY5SHwzMH785IJxXSZq8kob8Z6TmOhA=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: Some("7 years ago"),
+        view_count: Some(67000000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+    ],
+    ctoken: Some("CBQSExILamZLZlBmeUpSZGvAAQHIAQEYACrWDzJzNkw2d3paQ3dyV0N3b0Q4ajRBQ2c3Q1Bnc0l3YXVNMU02aWc3em5BUW9EOGo0QUNnM0NQZ29JNE5DamxxZmFtS3hXQ2dQeVBnQUtEc0ktQ3dqQTNfakxoLWVScTZ3QkNnUHlQZ0FLRGNJLUNnanUwZnJ2bDd1b2wwa0tBX0ktQUFvTndqNEtDSi10czh2Wmk1cXdEd29EOGo0QUNnN0NQZ3NJcDYyLW51N29sdk9OQVFvRDhqNEFDZzNDUGdvSXlzdkVvNENmbGR3YUNnUHlQZ0FLRGNJLUNnaTM3c1RSOWNLN3FRVUtBX0ktQUFvT3dqNExDTmFtNExmTG85ZkM5QUVLQV9JLUFBb093ajRMQ0p2NDQ1M3Q3X2JYbGdFS0FfSS1BQW9Od2o0S0NJeTFocEdROU9Lb0NBb0Q4ajRBQ2czQ1Bnb0k5UEtyNUotNGlQZExDZ1B5UGdBS0RzSS1Dd2p0NnF5RGlQWDMzdkVCQ2dQeVBnQUtEY0ktQ2dqVmw3R3F2N2VwaWdnS0FfSS1BQW9Pd2o0TENLbnJxTXZNNnNuTThnRUtBX0ktQUFvT3dqNExDSUNlbHBYZTh0NjUwZ0VLQV9JLUFBb093ajRMQ0xqM3hacVQxUDJZX2dFS0FfSS1BQW9Pd2o0TENOQzB5LWlfcHR5cy1BRUtBX0ktQUFvT3dqNExDTzJTd3FhLWhNMnZzQUVLQV9JLUFBb093ajRMQ09ISW5vUG05Y3Fjc2dFS0FfSS1BQW9ibWo4WUNoWlBmREV4TVRNd09EWTRPREUxTURVNE1UUXpPVFV6Q2hxYVB4Y0tGVTk4TkRVNU5Ua3dOek0yTkRVd09ETTVOVFF4T1FvYW1qOFhDaFZQZkRRNE1UZ3lOek14TkRjeU9ETTVPREl6TkRBS0dwb19Gd29WVDN3eE56YzBPRGMzTlRrME9EUTBPRFl4TURjeENodWFQeGdLRms5OE1UTTJNelV3TXpZM01qRTJPVEl6TmpZMU5URUtHNW9fR0FvV1Qzd3hOVGMxTVRjd01UZ3lOVFkxT1RZNE56UTNNQW9ibWo4WUNoWlBmREUwTWpRMU1ERXlOekF6TnpVNE56SXpPVGt6Q2hxYVB4Y0tGVTk4TmpNM09UUTBNRE14TURReE1qazVPRGM1TkFvYW1qOFhDaFZQZkRnMk5EWTNOVFExTnpVNU5UVTVOREF3TURBS0dwb19Gd29WVDN3eU9EazBOemswTnpVd056TTFNakF5TXpZMENocWFQeGNLRlU5OE1qa3dNRGczTnpBeE1EVTBPRFUwTmpVNE5nb2FtajhYQ2hWUGZETTNPVGt4TkRreU16UXpNemM0T1RnMk1qVUtHcG9fRndvVlQzdzBPVGc0T1RRM016QTRNalUyTmpBMU5qTTBDaHFhUHhjS0ZVOThNak0xTWpNMk1EZzBNamszT0RRNE1UYzRNd29ibWo4WUNoWlBmREUwTmpZek56azRPVEEyTlRJNU1qTXhORGc1Q2h1YVB4Z0tGazk4TVRJNE5UQTNNekl4TmpBME1EWTFNRGMyTmpnS0dwb19Gd29WVDN3eE1UWXlOelF3T1RJeU5EZ3pOall6TURnNUNnUHlQZ0FLQV9JLUFBb0Q4ajRBRWhnQUFnUUdDQW9NRGhBU0ZCWVlHaHdlSUNJa0ppZzZPendhQkFnQUVBRWFCQWdDRUFNYUJBZ0VFQVVhQkFnR0VBY2FCQWdJRUFrYUJBZ0tFQXNhQkFnTUVBMGFCQWdPRUE4YUJBZ1FFQkVhQkFnU0VCTWFCQWdVRUJVYUJBZ1dFQmNhQkFnWUVCa2FCQWdhRUJzYUJBZ2NFQjBhQkFnZUVCOGFCQWdnRUNFYUJBZ2lFQ01hQkFna0VDVWFCQWdtRUNjYUJBZ29FQ2thQkFnb0VDb2FCQWdvRUNzYUJBZ29FQ3dhQkFnb0VDMGFCQWdvRUM0YUJBZ29FQzhhQkFnb0VEQWFCQWdvRURFYUJBZ29FRElhQkFnb0VETWFCQWdvRURRYUJBZ29FRFVhQkFnb0VEWWFCQWdvRURjYUJBZ29FRGdhQkFnb0VEa2FCQWc2RUNrYUJBZzZFQ29hQkFnNkVDc2FCQWc2RUN3YUJBZzZFQzBhQkFnNkVDNGFCQWc2RUM4YUJBZzZFREFhQkFnNkVERWFCQWc2RURJYUJBZzZFRE1hQkFnNkVEUWFCQWc2RURVYUJBZzZFRFlhQkFnNkVEY2FCQWc2RURnYUJBZzZFRGthQkFnN0VDa2FCQWc3RUNvYUJBZzdFQ3NhQkFnN0VDd2FCQWc3RUMwYUJBZzdFQzRhQkFnN0VDOGFCQWc3RURBYUJBZzdFREVhQkFnN0VESWFCQWc3RURNYUJBZzdFRFFhQkFnN0VEVWFCQWc3RURZYUJBZzdFRGNhQkFnN0VEZ2FCQWc3RURrYUJBZzhFQ2thQkFnOEVDb2FCQWc4RUNzYUJBZzhFQ3dhQkFnOEVDMGFCQWc4RUM0YUJBZzhFQzhhQkFnOEVEQWFCQWc4RURFYUJBZzhFRElhQkFnOEVETWFCQWc4RURRYUJBZzhFRFVhQkFnOEVEWWFCQWc4RURjYUJBZzhFRGdhQkFnOEVEa3FHQUFDQkFZSUNnd09FQklVRmhnYUhCNGdJaVFtS0RvN1BBag93YXRjaC1uZXh0LWZlZWQ%3D"),
+    endpoint: next,
+  ),
+  top_comments: Paginator(
+    count: None,
+    items: [],
+    ctoken: Some("Eg0SC2pmS2ZQZnlKUmRrGAYyJSIRIgtqZktmUGZ5SlJkazAAeAJCEGNvbW1lbnRzLXNlY3Rpb24%3D"),
+    endpoint: next,
+  ),
+  latest_comments: Paginator(
+    count: None,
+    items: [],
+    ctoken: Some("Eg0SC2pmS2ZQZnlKUmRrGAYyOCIRIgtqZktmUGZ5SlJkazABeAIwAUIhZW5nYWdlbWVudC1wYW5lbC1jb21tZW50cy1zZWN0aW9u"),
+    endpoint: next,
+  ),
+  visitor_data: None,
+)

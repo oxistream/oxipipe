@@ -64,10 +64,10 @@ use serde::{
     de::{IgnoredAny, Visitor},
     Deserialize,
 };
-use serde_with::{serde_as, DisplayFromStr, VecSkipError};
+use serde_with::{serde_as, DefaultOnError, DisplayFromStr, VecSkipError};
 
 use crate::error::ExtractionError;
-use crate::serializer::text::{AttributedText, Text, TextComponent};
+use crate::serializer::text::{AttributedText, Text, TextComponent, VerifiedText};
 use crate::serializer::{MapResult, VecSkipErrorWrap};
 
 use self::video_item::YouTubeListRenderer;
@@ -316,7 +316,7 @@ pub(crate) struct ClientResource {
     pub image_name: IconName,
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Clone, Copy, Deserialize)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum IconName {
     CheckCircleFilled,
@@ -496,16 +496,15 @@ impl From<Icon> for crate::model::Verification {
     }
 }
 
-impl From<AttachmentRun> for crate::model::Verification {
-    fn from(value: AttachmentRun) -> Self {
+impl From<&AttachmentRun> for crate::model::Verification {
+    fn from(value: &AttachmentRun) -> Self {
         match value
             .element
             .typ
             .image_type
             .image
             .sources
-            .into_iter()
-            .next()
+            .first()
             .map(|s| s.client_resource.image_name)
         {
             Some(IconName::CheckCircleFilled) => Self::Verified,
@@ -649,9 +648,11 @@ pub(crate) struct PhMetadataRow {
 #[derive(Debug, Deserialize)]
 #[serde(untagged)]
 pub(crate) enum MetadataPart {
+    #[serde(rename_all = "camelCase")]
     Text {
-        #[serde_as(as = "AttributedText")]
-        text: TextComponent,
+        text: VerifiedText,
+        /// Present on the subscriber count of channel headers and on the publish date of videos
+        accessibility_label: Option<String>,
     },
     #[serde(rename_all = "camelCase")]
     AvatarStack { avatar_stack: AvatarStackInner },
@@ -666,14 +667,24 @@ pub(crate) struct AvatarStackInner {
 impl MetadataPart {
     pub fn into_text_component(self) -> TextComponent {
         match self {
-            MetadataPart::Text { text } => text,
+            MetadataPart::Text { text, .. } => text.component,
             MetadataPart::AvatarStack { avatar_stack } => avatar_stack.avatar_stack_view_model.text,
+        }
+    }
+
+    pub fn accessibility_label(&self) -> Option<&str> {
+        match self {
+            MetadataPart::Text {
+                accessibility_label,
+                ..
+            } => accessibility_label.as_deref(),
+            MetadataPart::AvatarStack { .. } => None,
         }
     }
 
     pub fn as_str(&self) -> &str {
         match self {
-            MetadataPart::Text { text } => text.as_str(),
+            MetadataPart::Text { text, .. } => text.component.as_str(),
             MetadataPart::AvatarStack { avatar_stack } => {
                 avatar_stack.avatar_stack_view_model.text.as_str()
             }
@@ -708,8 +719,9 @@ pub(crate) struct ImageViewOl {
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub(crate) struct ImageViewOverlay {
-    pub thumbnail_overlay_badge_view_model: ThumbnailOverlayBadgeViewModel,
+pub(crate) enum ImageViewOverlay {
+    ThumbnailOverlayBadgeViewModel(ThumbnailOverlayBadgeViewModel),
+    ThumbnailBottomOverlayViewModel(ThumbnailBottomOverlayViewModel),
 }
 
 #[serde_as]
@@ -720,10 +732,51 @@ pub(crate) struct ThumbnailOverlayBadgeViewModel {
     pub thumbnail_badges: Vec<ThumbnailBadges>,
 }
 
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct ThumbnailBottomOverlayViewModel {
+    #[serde_as(as = "VecSkipError<_>")]
+    pub badges: Vec<ThumbnailBadges>,
+}
+
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub(crate) struct ThumbnailBadges {
-    pub thumbnail_badge_view_model: TextBox,
+    pub thumbnail_badge_view_model: ThumbnailBadgeViewModel,
+}
+
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct ThumbnailBadgeViewModel {
+    #[serde_as(as = "Text")]
+    pub text: String,
+    #[serde(default)]
+    #[serde_as(as = "DefaultOnError")]
+    pub badge_style: ThumbnailBadgeStyle,
+}
+
+#[derive(Default, Debug, Clone, Copy, PartialEq, Eq, Deserialize)]
+#[serde(rename_all = "SCREAMING_SNAKE_CASE")]
+pub(crate) enum ThumbnailBadgeStyle {
+    ThumbnailOverlayBadgeStyleLive,
+    #[default]
+    #[serde(other)]
+    Other,
+}
+
+impl ImageViewOl {
+    /// Badges of all overlays, e.g. the video duration or the playlist video count
+    pub(crate) fn badges(&self) -> impl Iterator<Item = &ThumbnailBadgeViewModel> {
+        self.overlays
+            .iter()
+            .flat_map(|ol| match ol {
+                ImageViewOverlay::ThumbnailOverlayBadgeViewModel(ol) => &ol.thumbnail_badges,
+                ImageViewOverlay::ThumbnailBottomOverlayViewModel(ol) => &ol.badges,
+            })
+            .map(|badge| &badge.thumbnail_badge_view_model)
+    }
 }
 
 #[derive(Debug, Deserialize)]
