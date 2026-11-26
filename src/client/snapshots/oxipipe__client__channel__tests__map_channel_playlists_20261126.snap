@@ -1,0 +1,596 @@
+---
+source: src/client/channel.rs
+expression: map_res.c
+---
+Channel(
+  id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+  name: "Linus Tech Tips",
+  handle: Some("@LinusTechTips"),
+  subscriber_count: Some(16900000),
+  video_count: Some(8000),
+  avatar: [
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/gnvYLhXy8FAlPXZ2RTrkrgj-5kyt0vdE2FUGVOiKGdEZIa-wN5A-7nwZBlWJLzUMmoh1NWAU=s72-c-k-c0x00ffffff-no-rj",
+      width: 72,
+      height: 72,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/gnvYLhXy8FAlPXZ2RTrkrgj-5kyt0vdE2FUGVOiKGdEZIa-wN5A-7nwZBlWJLzUMmoh1NWAU=s120-c-k-c0x00ffffff-no-rj",
+      width: 120,
+      height: 120,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/gnvYLhXy8FAlPXZ2RTrkrgj-5kyt0vdE2FUGVOiKGdEZIa-wN5A-7nwZBlWJLzUMmoh1NWAU=s160-c-k-c0x00ffffff-no-rj",
+      width: 160,
+      height: 160,
+    ),
+  ],
+  verification: verified,
+  description: "Linus Tech Tips is a passionate team of \"professionally curious\" experts in consumer technology and video production who aim to educate and entertain.\n\nSponsorship Inquiries: partnerships@linusmediagroup.com\n",
+  tags: [
+    "Unboxing",
+    "Review",
+    "Computer",
+    "Hardware",
+    "Motherboard",
+    "Intel",
+    "AMD",
+    "NVIDIA",
+    "gaming",
+  ],
+  banner: [
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/U_7GWetO6k4sq3pAkbFEIIWzZLKcIJlGJqNz6NQAhgqF6DVD5pllwWF6trSUWEIRn4MkhNlhy9Y=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 1060,
+      height: 175,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/U_7GWetO6k4sq3pAkbFEIIWzZLKcIJlGJqNz6NQAhgqF6DVD5pllwWF6trSUWEIRn4MkhNlhy9Y=w1138-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 1138,
+      height: 188,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/U_7GWetO6k4sq3pAkbFEIIWzZLKcIJlGJqNz6NQAhgqF6DVD5pllwWF6trSUWEIRn4MkhNlhy9Y=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 1707,
+      height: 283,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/U_7GWetO6k4sq3pAkbFEIIWzZLKcIJlGJqNz6NQAhgqF6DVD5pllwWF6trSUWEIRn4MkhNlhy9Y=w2120-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 2120,
+      height: 351,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/U_7GWetO6k4sq3pAkbFEIIWzZLKcIJlGJqNz6NQAhgqF6DVD5pllwWF6trSUWEIRn4MkhNlhy9Y=w2276-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 2276,
+      height: 377,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/U_7GWetO6k4sq3pAkbFEIIWzZLKcIJlGJqNz6NQAhgqF6DVD5pllwWF6trSUWEIRn4MkhNlhy9Y=w2560-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 2560,
+      height: 424,
+    ),
+  ],
+  has_shorts: true,
+  has_live: true,
+  visitor_data: Some("redacted"),
+  content: Paginator(
+    count: None,
+    items: [
+      PlaylistItem(
+        id: "PLXm3b2ZSqTsc",
+        name: "Home Security",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/skdOVaiRq1c/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD7odfCefib_H5TOgZvBrxCaHJ-Sw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(1),
+      ),
+      PlaylistItem(
+        id: "PLPXG0FHDlqWU",
+        name: "Vibe Coding",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/DZSYaQmxBLM/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBLKZ0RlZVrZ03Pi8oQE8fAq6jQOQ",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(2),
+      ),
+      PlaylistItem(
+        id: "PLT4ClbJt7VFM",
+        name: "Datacenter Tours",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/u5UTIofKDGc/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC9fgKgrwoeQcNuI6_MQGiwvaTNMg",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(4),
+      ),
+      PlaylistItem(
+        id: "PLR4GwfYJyaA0",
+        name: "Smart Home",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/skdOVaiRq1c/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD7odfCefib_H5TOgZvBrxCaHJ-Sw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(3),
+      ),
+      PlaylistItem(
+        id: "PLd7NdtP7XbSo",
+        name: "Costco",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/6BnWaewokes/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBpBAYSNaseP9LCECRS72jVu1NFVg",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(4),
+      ),
+      PlaylistItem(
+        id: "PLPVUJKRppmm0",
+        name: "Alex\'s Best and Worst Hits",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/IZeOmEy-tE8/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBQSZzX13ufd3ayXYkGDtDjCDLgWw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(10),
+      ),
+      PlaylistItem(
+        id: "PLU90_7drIu_Y",
+        name: "Home Theater videos",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/LYMvJW5rYME/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCMf_XfkRRb_q_I0tSv5VOp_9qUtg",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(1),
+      ),
+      PlaylistItem(
+        id: "PLZ48EDYXQ63s",
+        name: "Tier Lists",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/XiSMWonFuQQ/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBSbcnqmSCY1AiYclKp8qiWG6F-IA",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(6),
+      ),
+      PlaylistItem(
+        id: "PLTIog-Fd-BJ4",
+        name: "Open Sauce",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/Hfovjw7Ts_U/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBSS5oq6wGR2jFGHZArqZQD4z-NWA",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(1),
+      ),
+      PlaylistItem(
+        id: "PLUUh-XnShFVQ",
+        name: "CES 2026",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/VJqMPFNP4to/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCxMBqJq65zEAdKLuaVI4C4-iu0dw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(8),
+      ),
+      PlaylistItem(
+        id: "PLWVaYLJ4Ncsw",
+        name: "Random Asian Malls",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/bda1GHblwis/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCFVb6hDxmiOcA_nei5BXhXs58vCw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(6),
+      ),
+      PlaylistItem(
+        id: "PLDNKpUJnIic0",
+        name: "Computex 2026",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/bda1GHblwis/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCFVb6hDxmiOcA_nei5BXhXs58vCw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(7),
+      ),
+      PlaylistItem(
+        id: "PLBqTX_XevEK0",
+        name: "Weird Workstations",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/Z1zDUDvOezo/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDJcN_ErvZBNVGhf_QMoxmmzje8xQ",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(4),
+      ),
+      PlaylistItem(
+        id: "PLfJNdzPc3RrA",
+        name: "The Coding Chronicles",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/_KMPjeioX08/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCf02xYrlWMkC7AX7UL6b55cum8XQ",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(7),
+      ),
+      PlaylistItem(
+        id: "PLTIINXU8l5DE",
+        name: "LTT Writers React",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/Ro6RIKgs2mw/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDehlkvhO5nmb7oMLcdeAkgy3aItg",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(3),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTwc-YIa92TRLkof6VmU2ae0",
+        name: "Buy or DIY?",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/ILRZuaN8G6Q/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBU_UFJSJqDCD21jfSpoi5trQgZRQ",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(3),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTzNLalYyHr6GLcZce7lf-j7",
+        name: "Scam Videos",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/gIEGN5rV2JY/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBV770WETdrqrP1rOT2a2Bi8dW3Uw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(19),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTzwoF72GqeqAJMI-N7scqtI",
+        name: "Consumer Advocacy",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/cZ-saJoTl3M/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAowgvy-2gpFOiisgtIBeyjuu9xWA",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(2),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTzSOOp0mCyezwN0pvmh7eQD",
+        name: "CPU Reviews",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/4Ps-JDyimJw/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAHlpv9DuB6BXRSBBV2iS-9GXDi3A",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(10),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTwS__RZluhRgEPIEnURzFte",
+        name: "Linux Videos",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/1oIyk13JwQM/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB57GPvDXeHGW9bL3YJH3gzJTN6Bw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(6),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTyJUP1O8B1k6DbfsLltnWbw",
+        name: "Great Features",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/4GASGO0go5I/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBoObLptShF6Kh4NLyCbpYAU2lWpw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(6),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTzSzJL3jS6X43iqPxakemVG",
+        name: "Vintage Tech",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/Wrgx6STAaWo/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLC5XoAPdnAHz4Po-INrvg4c2Gtk1A",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(8),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTxUDsa3bIr1ppk8oBMJqn32",
+        name: "Steam Machine",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/5fXAELrljqs/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAzVlg_6Z46Lf0xZWKajSSf8jS5Yw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(8),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTwt8wqaIaIH-mCANbhDLmjv",
+        name: "Tech House",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/B06vs045nPc/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBf_b2tgVacHJ6ap83qA5a5JlsDwA",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(11),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTxRRAvbc1C3yyP1ny4zE9K8",
+        name: "Big Displays",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/JAPMSoM6U7w/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDFp_FZt55UE5JZnAtieh7HyTwK9A",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(18),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTzPZl5zdDIKjE5Scye8MnWa",
+        name: "Cool Desk Builds",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/Z1zDUDvOezo/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDJcN_ErvZBNVGhf_QMoxmmzje8xQ",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(19),
+      ),
+      PlaylistItem(
+        id: "PL8mG-RkN2uTwu-S3wLPbYmXgCjcCZD76r",
+        name: "Scrapyard Wars 2025",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/-yzLWMFeRm4/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAVpkl5Fhq02f_7y0nQDy4vgPWr9Q",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCXuqSBlHAE6Xw-yeJA0Tunw",
+          name: "Linus Tech Tips",
+          avatar: [],
+          verification: verified,
+          subscriber_count: Some(16900000),
+        )),
+        video_count: Some(8),
+      ),
+    ],
+    ctoken: Some("4qmFsgJ4EhhVQ1h1cVNCbEhBRTZYdy15ZUpBMFR1bncaKkVnbHdiR0Y1YkdsemRITVlBeUFBTUFFNEFlb0RCME5uVGtSUmFsRSUzRJoCL2Jyb3dzZS1mZWVkVUNYdXFTQmxIQUU2WHcteWVKQTBUdW53cGxheWxpc3RzMTA0"),
+    endpoint: browse,
+  ),
+)

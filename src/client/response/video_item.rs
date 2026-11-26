@@ -163,8 +163,22 @@ pub(crate) struct ReelItemRenderer {
 pub(crate) struct ShortsLockupViewModel {
     /// `shorts-shelf-item-[video_id]`
     pub entity_id: String,
+    /// Replaced by `thumbnail_view_model` in 2026
+    #[serde(default)]
     pub thumbnail: Thumbnails,
+    pub thumbnail_view_model: Option<ShortsThumbnailWrap>,
     pub overlay_metadata: ShortsOverlayMetadata,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct ShortsThumbnailWrap {
+    pub thumbnail_view_model: ShortsThumbnail,
+}
+
+#[derive(Debug, Deserialize)]
+pub(crate) struct ShortsThumbnail {
+    pub image: Thumbnails,
 }
 
 #[serde_as]
@@ -651,7 +665,10 @@ impl<T> YouTubeListMapper<T> {
                 id: video_id.to_owned(),
                 name: video.overlay_metadata.primary_text,
                 duration: None,
-                thumbnail: video.thumbnail.into(),
+                thumbnail: video
+                    .thumbnail_view_model
+                    .map_or(video.thumbnail, |t| t.thumbnail_view_model.image)
+                    .into(),
                 channel: self.channel.clone(),
                 publish_date: None,
                 publish_date_txt: None,
