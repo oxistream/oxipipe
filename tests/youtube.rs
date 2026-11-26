@@ -20,7 +20,7 @@ use oxipipe::model::{
 };
 use oxipipe::param::{
     search_filter::{self, SearchFilter},
-    ChannelOrder, ChannelVideoTab, Country, Language,
+    ChannelOrder, ChannelVideoTab, Country, Language, TrendingCategory,
 };
 use oxipipe::validate;
 
@@ -1443,11 +1443,35 @@ async fn resolve_channel_not_found(rp: RustyPipe) {
 //#TRENDS
 
 #[rstest]
+#[case::podcasts(TrendingCategory::Podcasts, 50)]
+#[case::gaming(TrendingCategory::Gaming, 30)]
+#[case::news(TrendingCategory::News, 30)]
 #[tokio::test]
-async fn trending(rp: RustyPipe) {
+async fn trending(
+    #[case] category: TrendingCategory,
+    #[case] min_items: usize,
+    #[values(Country::De, Country::Us)] country: Country,
+    rp: RustyPipe,
+) {
+    let result = rp
+        .query()
+        .country(country)
+        .trending_category(category)
+        .await
+        .unwrap();
+
+    assert_gte(result.len(), min_items, "items");
+    assert!(result
+        .iter()
+        .all(|v| !v.id.is_empty() && !v.name.is_empty()));
+}
+
+#[rstest]
+#[tokio::test]
+async fn trending_default(rp: RustyPipe) {
     let result = rp.query().trending().await.unwrap();
 
-    assert_gte(result.len(), 40, "items");
+    assert_gte(result.len(), 50, "items");
 }
 
 //#MUSIC

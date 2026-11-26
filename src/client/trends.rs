@@ -1,26 +1,35 @@
-use std::borrow::Cow;
+use std::{borrow::Cow, collections::HashSet};
 
 use crate::{
     error::{Error, ExtractionError},
     model::VideoItem,
+    param::TrendingCategory,
     serializer::MapResult,
 };
 
 use super::{response, ClientType, MapRespCtx, MapResponse, QBrowseParams, RustyPipeQuery};
 
 impl RustyPipeQuery {
-    /// Get the videos from the YouTube trending page
+    /// Get trending videos of the default category ([`TrendingCategory::Podcasts`])
+    /// for the query's country
     #[tracing::instrument(skip(self), level = "error")]
     pub async fn trending(&self) -> Result<Vec<VideoItem>, Error> {
-        let request_body = QBrowseParams {
-            browse_id: "FEtrending",
-            params: "4gIOGgxtb3N0X3BvcHVsYXI%3D",
-        };
+        self.trending_category(TrendingCategory::default()).await
+    }
+
+    /// Get trending videos of the given category for the query's country
+    #[tracing::instrument(skip(self), level = "error")]
+    pub async fn trending_category(
+        &self,
+        category: TrendingCategory,
+    ) -> Result<Vec<VideoItem>, Error> {
+        let (browse_id, params) = category.browse_params();
+        let request_body = QBrowseParams { browse_id, params };
 
         self.execute_request::<response::Trending, _, _>(
             ClientType::Desktop,
             "trends",
-            "",
+            browse_id,
             "browse",
             &request_body,
         )
@@ -48,8 +57,13 @@ impl MapResponse<Vec<VideoItem>> for response::Trending {
         let mut mapper = response::YouTubeListMapper::<VideoItem>::new(ctx.lang);
         mapper.map_response(items);
 
+        // News shelves may list the same video more than once
+        let mut seen = HashSet::new();
+        let mut videos = mapper.items;
+        videos.retain(|v| seen.insert(v.id.clone()));
+
         Ok(MapResult {
-            c: mapper.items,
+            c: videos,
             warnings: mapper.warnings,
         })
     }
@@ -57,7 +71,7 @@ impl MapResponse<Vec<VideoItem>> for response::Trending {
 
 #[cfg(test)]
 mod tests {
-    use std::{fs::File, io::BufReader};
+    use std::{collections::HashSet, fs::File, io::BufReader};
 
     use path_macro::path;
     use rstest::rstest;
@@ -70,8 +84,9 @@ mod tests {
     };
 
     #[rstest]
-    #[case::base("videos")]
-    #[case::page_header_renderer("20230501_page_header_renderer")]
+    #[case::podcasts("podcasts")]
+    #[case::gaming("gaming")]
+    #[case::news("news")]
     fn map_trending(#[case] name: &str) {
         let json_path = path!(*TESTFILES / "trends" / format!("trending_{name}.json"));
         let json_file = File::open(json_path).unwrap();
@@ -86,6 +101,9 @@ mod tests {
             "deserialization/mapping warnings: {:?}",
             map_res.warnings
         );
+        assert!(map_res.c.len() >= 15, "got {} items", map_res.c.len());
+        let ids = map_res.c.iter().map(|v| &v.id).collect::<HashSet<_>>();
+        assert_eq!(ids.len(), map_res.c.len(), "duplicate videos");
 
         insta::assert_ron_snapshot!(format!("map_trending_{name}"), map_res.c, {
             "[].publish_date" => "[date]",

@@ -499,7 +499,9 @@ impl<T> DefaultOpt<T> {
 ///   - [`search`](RustyPipeQuery::search)
 ///   - [`search_filter`](RustyPipeQuery::search_filter)
 ///   - [`search_suggestion`](RustyPipeQuery::search_suggestion)
-/// - **Trending** [`trending`](RustyPipeQuery::trending)
+/// - **Trending**
+///   - [`trending`](RustyPipeQuery::trending)
+///   - [`trending_category`](RustyPipeQuery::trending_category)
 /// - **Resolver** (convert URLs and strings to YouTube IDs)
 ///   - [`resolve_url`](RustyPipeQuery::resolve_url)
 ///   - [`resolve_string`](RustyPipeQuery::resolve_string)
