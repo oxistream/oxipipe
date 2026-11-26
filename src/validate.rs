@@ -24,7 +24,7 @@ use regex::Regex;
 ///
 /// # Examples
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::video_id("dQw4w9WgXcQ").is_ok());
 /// assert!(validate::video_id("Abcd").is_err());
 /// assert!(validate::video_id("dQw4w9WgXc@").is_err());
@@ -43,7 +43,7 @@ pub fn video_id<S: AsRef<str>>(video_id: S) -> Result<(), Error> {
 ///
 /// # Examples
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::channel_id("UC2DjFE7Xf11URZqWBigcVOQ").is_ok());
 /// assert!(validate::channel_id("Abcd").is_err());
 /// assert!(validate::channel_id("XY2DjFE7Xf11URZqWBigcVOQ").is_err());
@@ -63,7 +63,7 @@ pub fn channel_id<S: AsRef<str>>(channel_id: S) -> Result<(), Error> {
 ///
 /// # Examples
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::playlist_id("PL4lEESSgxM_5O81EvKCmBIm_JT5Q7JeaI").is_ok());
 /// assert!(validate::playlist_id("RDCLAK5uy_kFQXdnqMaQCVx2wpUM4ZfbsGCDibZtkJk").is_ok());
 /// assert!(validate::playlist_id("OLAK5uy_k0yFrZlFRgCf3rLPza-lkRmCrtLPbK9pE").is_ok());
@@ -85,7 +85,7 @@ pub fn playlist_id<S: AsRef<str>>(playlist_id: S) -> Result<(), Error> {
 ///
 /// # Examples
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::album_id("MPREb_GyH43gCvdM5").is_ok());
 /// assert!(validate::album_id("Abcd_GyH43gCvdM5").is_err());
 /// ```
@@ -122,7 +122,7 @@ pub fn album_id<S: AsRef<str>>(album_id: S) -> Result<(), Error> {
 /// # Examples
 ///
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::radio_id("RDEMSuoM_jxfse1_g8uCO7MCtg").is_ok());
 /// assert!(validate::radio_id("Abcd").is_err());
 /// assert!(validate::radio_id("XYEMSuoM_jxfse1_g8uCO7MCtg").is_err());
@@ -145,7 +145,7 @@ pub fn radio_id<S: AsRef<str>>(radio_id: S) -> Result<(), Error> {
 /// # Examples
 ///
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::genre_id("ggMPOg1uX1JOQWZFeDByc2Jm").is_ok());
 /// assert!(validate::genre_id("Abcd").is_err());
 /// assert!(validate::genre_id("ggAbcg1uX1JOQWZFeDByc2Jm").is_err());
@@ -168,7 +168,7 @@ pub fn genre_id<S: AsRef<str>>(genre_id: S) -> Result<(), Error> {
 /// # Examples
 ///
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::track_related_id("MPTRt_wrKjTn9hmry").is_ok());
 /// assert!(validate::track_related_id("Abcd").is_err());
 /// assert!(validate::track_related_id("Abcdt_wrKjTn9hmry").is_err());
@@ -191,7 +191,7 @@ pub fn track_related_id<S: AsRef<str>>(related_id: S) -> Result<(), Error> {
 /// # Examples
 ///
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::track_lyrics_id("MPLYt_wrKjTn9hmry").is_ok());
 /// assert!(validate::track_lyrics_id("Abcd").is_err());
 /// assert!(validate::track_lyrics_id("Abcdt_wrKjTn9hmry").is_err());
@@ -217,7 +217,7 @@ pub fn track_lyrics_id<S: AsRef<str>>(lyrics_id: S) -> Result<(), Error> {
 /// Reference: <https://support.google.com/youtube/answer/11585688>
 ///
 /// ```
-/// # use rustypipe::validate;
+/// # use oxipipe::validate;
 /// assert!(validate::channel_handle("@EEVBlog").is_ok());
 /// assert!(validate::channel_handle("@Āll·._-").is_ok());
 /// assert!(validate::channel_handle("@한국").is_ok());

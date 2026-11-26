@@ -558,11 +558,11 @@ impl<T> DefaultOpt<T> {
 /// You can set the language, country and visitor data ID for individual requests.
 ///
 /// ```
-/// # use rustypipe::client::RustyPipe;
+/// # use oxipipe::client::RustyPipe;
 /// let rp = RustyPipe::new();
 /// rp.query()
-///     .country(rustypipe::param::Country::De)
-///     .lang(rustypipe::param::Language::De)
+///     .country(oxipipe::param::Country::De)
+///     .lang(oxipipe::param::Language::De)
 ///     .visitor_data("CgthZVRCd1dkbTlRWSj3v_miBg%3D%3D")
 ///     .player("ZeerrnuLi5E");
 /// ```

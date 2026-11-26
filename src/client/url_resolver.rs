@@ -31,8 +31,8 @@ impl RustyPipeQuery {
     ///
     /// # Examples
     /// ```
-    /// # use rustypipe::client::RustyPipe;
-    /// # use rustypipe::model::UrlTarget;
+    /// # use oxipipe::client::RustyPipe;
+    /// # use oxipipe::model::UrlTarget;
     /// # let rp = RustyPipe::new();
     /// # tokio_test::block_on(async {
     /// // Channel
@@ -219,8 +219,8 @@ impl RustyPipeQuery {
     ///
     /// # Examples
     /// ```
-    /// # use rustypipe::client::RustyPipe;
-    /// # use rustypipe::model::UrlTarget;
+    /// # use oxipipe::client::RustyPipe;
+    /// # use oxipipe::model::UrlTarget;
     /// # let rp = RustyPipe::new();
     /// # tokio_test::block_on(async {
     /// // Channel

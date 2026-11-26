@@ -1,3 +1,16 @@
+# Oxipipe
+
+Oxipipe is a maintained fork of [RustyPipe](https://codeberg.org/ThetaDev/rustypipe) by ThetaDev, used by [Oxistream](https://github.com/oxistream).
+It keeps RustyPipe's API (the library is used as `oxipipe`, or renamed to `rustypipe` via `package = "oxipipe"`) and adds fixes for current YouTube changes:
+
+- a player-based sig/nsig solver for current player versions, shared across requests
+- VisionOS and fixed TV (non-SABR) player clients, with fallback on deobfuscation errors
+- `VideoPlayer::available_at` for streams that become available after pre-roll ads
+
+Licensed under GPL-3.0, like the original. The original README follows.
+
+---
+
 # ![RustyPipe](https://codeberg.org/ThetaDev/rustypipe/raw/branch/main/notes/logo.svg)
 
 [![Current crates.io version](https://img.shields.io/crates/v/rustypipe.svg)](https://crates.io/crates/rustypipe)
@@ -73,7 +86,7 @@ tokio = { version = "1.20.0", features = ["macros", "rt-multi-thread"] }
 ```rust ignore
 use std::process::Command;
 
-use rustypipe::{client::RustyPipe, param::StreamFilter};
+use oxipipe::{client::RustyPipe, param::StreamFilter};
 
 #[tokio::main]
 async fn main() {
@@ -96,7 +109,7 @@ async fn main() {
 ### Get a playlist
 
 ```rust ignore
-use rustypipe::client::RustyPipe
+use oxipipe::client::RustyPipe
 
 #[tokio::main]
 async fn main() {
@@ -141,7 +154,7 @@ Last update: 2023-05-04
 ### Get a channel
 
 ```rust ignore
-use rustypipe::client::RustyPipe
+use oxipipe::client::RustyPipe
 
 #[tokio::main]
 async fn main() {

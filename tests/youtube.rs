@@ -4,25 +4,25 @@ use std::collections::{HashMap, HashSet};
 use std::fmt::Display;
 use std::str::FromStr;
 
+use oxipipe::model::TrackType;
+use oxipipe::param::{AlbumOrder, LANGUAGES};
 use rstest::{fixture, rstest};
-use rustypipe::model::TrackType;
-use rustypipe::param::{AlbumOrder, LANGUAGES};
 use time::{macros::date, OffsetDateTime};
 
-use rustypipe::client::{ClientType, RustyPipe, RustyPipeQuery};
-use rustypipe::error::{Error, ExtractionError, UnavailabilityReason};
-use rustypipe::model::{
+use oxipipe::client::{ClientType, RustyPipe, RustyPipeQuery};
+use oxipipe::error::{Error, ExtractionError, UnavailabilityReason};
+use oxipipe::model::{
     paginator::{ContinuationEndpoint, Paginator},
     richtext::ToPlaintext,
     traits::{FromYtItem, YtStream},
     AlbumType, AudioCodec, AudioFormat, AudioTrackType, Channel, Frameset, MusicGenre, MusicItem,
     UrlTarget, Verification, VideoCodec, VideoFormat, VideoId, YouTubeItem,
 };
-use rustypipe::param::{
+use oxipipe::param::{
     search_filter::{self, SearchFilter},
     ChannelOrder, ChannelVideoTab, Country, Language,
 };
-use rustypipe::validate;
+use oxipipe::validate;
 
 //#PLAYER
 
@@ -2247,7 +2247,7 @@ async fn music_search_suggestion(
 
     if let Some(artist) = artist {
         assert!(suggestion.items.iter().any(|s| match s {
-            rustypipe::model::MusicItem::Artist(a) => a.id == artist,
+            oxipipe::model::MusicItem::Artist(a) => a.id == artist,
             _ => false,
         }));
     }
@@ -2714,7 +2714,7 @@ async fn isrc_search_languages(rp: RustyPipe) {
 mod user_data {
     use super::*;
 
-    use rustypipe::model::{HistoryItem, TrackItem, VideoItem};
+    use oxipipe::model::{HistoryItem, TrackItem, VideoItem};
 
     #[rstest]
     #[tokio::test]
@@ -3012,7 +3012,7 @@ async fn all_send_and_sync() {
     ));
     send_and_sync(
         rp.query()
-            .drm_license("", rustypipe::model::DrmSystem::Widevine, "", "", &[]),
+            .drm_license("", oxipipe::model::DrmSystem::Widevine, "", "", &[]),
     );
     send_and_sync(rp.query().music_album(""));
     send_and_sync(rp.query().music_artist("", false));

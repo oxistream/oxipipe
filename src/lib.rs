@@ -5,8 +5,8 @@
 
 //! ## Go to
 //!
-//! - Client ([`rustypipe::client::Rustypipe`](crate::client::RustyPipe))
-//! - Query ([`rustypipe::client::RustypipeQuery`](crate::client::RustyPipeQuery))
+//! - Client ([`oxipipe::client::Rustypipe`](crate::client::RustyPipe))
+//! - Query ([`oxipipe::client::RustypipeQuery`](crate::client::RustyPipeQuery))
 
 mod deobfuscate;
 mod serializer;
