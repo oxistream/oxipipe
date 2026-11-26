@@ -3645,5 +3645,6 @@ Playlist(
   )),
   last_update: "[date]",
   last_update_txt: Some("Updated today"),
+  is_course: false,
   visitor_data: Some("CgtqY18zaWR5VFdERSjM8P6iBg%3D%3D"),
 )

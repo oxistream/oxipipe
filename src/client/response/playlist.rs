@@ -18,7 +18,22 @@ pub(crate) struct Playlist {
     pub sidebar: Option<Sidebar>,
     #[serde_as(as = "Option<DefaultOnError>")]
     pub alerts: Option<Vec<Alert>>,
+    #[serde(default)]
+    #[serde_as(as = "VecSkipError<_>")]
+    pub panels: Vec<EngagementPanel>,
     pub response_context: ResponseContext,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct EngagementPanel {
+    pub engagement_panel_section_list_renderer: EngagementPanelRenderer,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct EngagementPanelRenderer {
+    pub target_id: String,
 }
 
 #[derive(Debug, Deserialize)]

@@ -2752,5 +2752,6 @@ Playlist(
   )),
   last_update: "[date]",
   last_update_txt: Some("Last updated on Jul 2, 2014"),
+  is_course: false,
   visitor_data: Some("CgswcW42c0VyR0d0SSjR8P6iBg%3D%3D"),
 )

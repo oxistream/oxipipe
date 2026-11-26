@@ -626,6 +626,8 @@ pub struct Playlist {
     pub last_update: Option<Date>,
     /// Textual last update date
     pub last_update_txt: Option<String>,
+    /// True if YouTube presents the playlist as a course
+    pub is_course: bool,
     /// YouTube visitor data ID
     pub visitor_data: Option<String>,
 }
@@ -1006,6 +1008,8 @@ pub struct PlaylistItem {
     pub channel: Option<ChannelTag>,
     /// Number of playlist videos
     pub video_count: Option<u64>,
+    /// True if YouTube presents the playlist as a course
+    pub is_course: bool,
 }
 
 /// YouTube video identifier

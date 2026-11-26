@@ -39,6 +39,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(225),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_mVJ3RRi_YBfUJnZnQxLAedQQcXHujbUcg",
@@ -73,6 +74,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(100),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_mfdqvCAl8wodlx2P2_Ai2gNkiRDAufkkI",
@@ -107,6 +109,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(59),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_nHSqCJjDrW9HBhCNdF6tWPdnOMngOv0wA",
@@ -141,6 +144,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(100),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_lb6CVU6S4uVugLVNTU9WhqfaomWAgnho4",
@@ -175,6 +179,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(50),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_nDL8KeBrUagwyISwNmyEiSfYgz1gVCesg",
@@ -209,6 +214,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(50),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "PLDIoUOhQQPlVr3qepMVRsDe4T8vNQsvno",
@@ -243,6 +249,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(220),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_nfs_t4FUu00E5ED6lveEBBX1VMYe1mFjk",
@@ -277,6 +284,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(100),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_m_0U5VQNyyzwwH1lRi7cPAAGXqNQnAOqY",
@@ -311,6 +319,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(67),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_mHW5bcduhjB-PkTePAe6EoRMj1xNT8gzY",
@@ -345,6 +354,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(78),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_kPqJ_FiGk-lbXtgM4IF42uokskSJZiVTI",
@@ -379,6 +389,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(80),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "PLI_7Mg2Z_-4Lf7IYeiTEOV8HBn-nMqz5N",
@@ -413,6 +424,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(70),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "PLX6L4t7t6ZanfCJ1wBxRdGZ_mk9ygmKqo",
@@ -447,6 +459,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(164),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "PLMC9KNkIncKtPzgY-5rmhvj7fax8fdxoj",
@@ -481,6 +494,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(200),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "PLgRdph0qPLy53IhYrQLPpATDDA2TpFey5",
@@ -515,6 +529,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(50),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_nCVF_zUZizzRcojIUuYmaXxMoPgg2WMDo",
@@ -549,6 +564,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(52),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_lY6JFrs7W9yIhFjUN_yxQ_ubkjcrqQaVs",
@@ -583,6 +599,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(178),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_l7K78k4EkjcFojhd1617rmUjY-aet6-t0",
@@ -617,6 +634,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(87),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "RDCLAK5uy_lj-zBExVYl7YN_NxXboDIh4A-wKGfgzNY",
@@ -651,6 +669,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(50),
+        is_course: false,
       )),
       Playlist(PlaylistItem(
         id: "PLDIoUOhQQPlXqz5QZ3dx-lh_p6RcPeKjv",
@@ -685,6 +704,7 @@ SearchResult(
           subscriber_count: None,
         )),
         video_count: Some(100),
+        is_course: false,
       )),
     ],
     ctoken: Some("EqIJEgNwb3AamglFZ0lRQTBnVWdnRXJVa1JEVEVGTE5YVjVYMjV0VXpOWmIzaFRkMVpXVVdzNWJFVlJTakJWV0RSYVEycFljMWRmY0hOVk9JSUJLMUpFUTB4QlN6VjFlVjl0VmtvelVsSnBYMWxDWmxWS2JscHVVWGhNUVdWa1VWRmpXRWgxYW1KVlkyZUNBU3RTUkVOTVFVczFkWGxmYldaa2NYWkRRV3c0ZDI5a2JIZ3lVREpmUVdreVowNXJhVkpFUVhWbWEydEpnZ0VyVWtSRFRFRkxOWFY1WDI1SVUzRkRTbXBFY2xjNVNFSm9RMDVrUmpaMFYxQmtiazlOYm1kUGRqQjNRWUlCSzFKRVEweEJTelYxZVY5c1lqWkRWbFUyVXpSMVZuVm5URlpPVkZVNVYyaHhabUZ2YlZkQloyNW9ielNDQVN0U1JFTk1RVXMxZFhsZmJrUk1PRXRsUW5KVllXZDNlVWxUZDA1dGVVVnBVMlpaWjNveFoxWkRaWE5uZ2dFaVVFeEVTVzlWVDJoUlVWQnNWbkl6Y1dWd1RWWlNjMFJsTkZRNGRrNVJjM1p1YjRJQksxSkVRMHhCU3pWMWVWOXVabk5mZERSR1ZYVXdNRVUxUlVRMmJIWmxSVUpDV0RGV1RWbGxNVzFHYW11Q0FTdFNSRU5NUVVzMWRYbGZiVjh3VlRWV1VVNTVlWHAzZDBneGJGSnBOMk5RUVVGSFdIRk9VVzVCVDNGWmdnRXJVa1JEVEVGTE5YVjVYMjFJVnpWaVkyUjFhR3BDTFZCclZHVlFRV1UyUlc5U1RXb3hlRTVVT0dkNldZSUJLMUpFUTB4QlN6VjFlVjlyVUhGS1gwWnBSMnN0YkdKWWRHZE5ORWxHTkRKMWIydHphMU5LV21sV1ZFbUNBU0pRVEVsZk4wMW5NbHBmTFRSTVpqZEpXV1ZwVkVWUFZqaElRbTR0YmsxeGVqVk9nZ0VpVUV4WU5rdzBkRGQwTmxwaGJtWkRTakYzUW5oU1pFZGFYMjFyT1hsbmJVdHhiNElCSWxCTVRVTTVTMDVyU1c1alMzUlFlbWRaTFRWeWJXaDJhamRtWVhnNFptUjRiMnFDQVNKUVRHZFNaSEJvTUhGUVRIazFNMGxvV1hKUlRGQndRVlJFUkVFeVZIQkdaWGsxZ2dFclVrUkRURUZMTlhWNVgyNURWa1pmZWxWYWFYcDZVbU52YWtsVmRWbHRZVmg0VFc5UVoyY3lWMDFFYjRJQksxSkVRMHhCU3pWMWVWOXNXVFpLUm5Kek4xYzVlVWxvUm1wVlRsOTVlRkZmZFdKcmFtTnljVkZoVm5PQ0FTdFNSRU5NUVVzMWRYbGZiRGRMTnpock5FVnJhbU5HYjJwb1pERTJNVGR5YlZWcVdTMWhaWFEyTFhRd2dnRXJVa1JEVEVGTE5YVjVYMnhxTFhwQ1JYaFdXV3czV1U1ZlRuaFlZbTlFU1dnMFFTMTNTMGRtWjNwT1dZSUJJbEJNUkVsdlZVOW9VVkZRYkZoeGVqVlJXak5rZUMxc2FGOXdObEpqVUdWTGFuYXlBUVlLQkFnVkVBSSUzRBiB4OgYIgtzZWFyY2gtZmVlZA%3D%3D"),

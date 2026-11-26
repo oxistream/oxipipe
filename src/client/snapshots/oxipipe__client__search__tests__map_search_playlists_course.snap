@@ -1,0 +1,129 @@
+---
+source: src/client/search.rs
+expression: map_res.c
+---
+SearchResult(
+  items: Paginator(
+    count: Some(67816),
+    items: [
+      Playlist(PlaylistItem(
+        id: "PLAscMa3kKhHjBYOTrT20kpYMNQX95KU6i",
+        name: "Rust for beginners (2025)",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hq720.jpg?sqp=-oaymwEXCOgCEMoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLB45eO2WDV2dwMDYhR8z3aWQ02R9g",
+            width: 360,
+            height: 202,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBHYgq_u-JXhB6o23hhDDXHy90vjA",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        video_count: Some(85),
+        is_course: true,
+      )),
+      Playlist(PlaylistItem(
+        id: "PLPoSdR46FgI412aItyJhj2bF66cudB6Qs",
+        name: "Rust Crash Course Tutorial for Beginners",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/R33h77nrMqc/hq720.jpg?sqp=-oaymwEXCOgCEMoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLA6dt3nPeYPOvjpYy9bmLt2DHW_XA",
+            width: 360,
+            height: 202,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/R33h77nrMqc/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBFoxcCQbjlLSJY9ZPrRLYC_zmpfg",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        video_count: Some(54),
+        is_course: true,
+      )),
+      Playlist(PlaylistItem(
+        id: "PLlrxD0HtieHjbTjrchBwOVks_sr8EVW1x",
+        name: "Rust for Beginners",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/PpWR6zungUk/hq720.jpg?sqp=-oaymwEXCOgCEMoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDXLNidK0O1AhtxOeZLE4YK8kxq-Q",
+            width: 360,
+            height: 202,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/PpWR6zungUk/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCeY9iXNz36gqWvrEF8536kf8Caqw",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        video_count: Some(35),
+        is_course: true,
+      )),
+      Playlist(PlaylistItem(
+        id: "PLzMcBGfZo4-nyLTlSRBvo0zjSnCnqjHYQ",
+        name: "Rust Programming Tutorial",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/T_KrYLW4jw8/hq720.jpg?sqp=-oaymwEXCOgCEMoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBY77OSPpe9PIIpASd_0MaAZzaYTQ",
+            width: 360,
+            height: 202,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/T_KrYLW4jw8/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDjK20N7xe19HjpnMJbg0Ry07lcjA",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        video_count: Some(9),
+        is_course: true,
+      )),
+      Playlist(PlaylistItem(
+        id: "PLai5B987bZ9CoVR-QEIN9foz4QCJ0H2Y8",
+        name: "The Rust Lang Book",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/OX9HJsJUDxA/hq720.jpg?sqp=-oaymwEXCOgCEMoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDb7kmYKzoigxkKP2-x-ONkk5aXiw",
+            width: 360,
+            height: 202,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/OX9HJsJUDxA/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAWZwWdy65d2agorLt2YN3gZI0Dfw",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        video_count: Some(44),
+        is_course: false,
+      )),
+      Playlist(PlaylistItem(
+        id: "PLO5VPQH6OWdXR8NlZt0jRbC39W_IyzS-v",
+        name: "Learn Rust",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/wq56EAYZqGg/hq720.jpg?sqp=-oaymwEXCOgCEMoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDlHqQb5d2UGCUXyUDWOxhMfMxbcw",
+            width: 360,
+            height: 202,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/wq56EAYZqGg/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCly69zaqPGYCBM9n3saX5BKLX5wA",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        video_count: Some(64),
+        is_course: true,
+      )),
+    ],
+    ctoken: Some("EtwHEhlydXN0IGZvciBiZWdpbm5lcnMgY291cnNlGr4HRWdJUUEwZ1VnZ0VpVUV4QmMyTk5ZVE5yUzJoSWFrSlpUMVJ5VkRJd2EzQlpUVTVSV0RrMVMxVTJhWUlCSWxCTVVHOVRaRkkwTmtablNUUXhNbUZKZEhsS2FHb3lZa1kyTm1OMVpFSTJVWE9DQVNKUVRHeHllRVF3U0hScFpVaHFZbFJxY21Ob1FuZFBWbXR6WDNOeU9FVldWekY0Z2dFaVVFeDZUV05DUjJaYWJ6UXRibmxNVkd4VFVrSjJiekI2YWxOdVEyNXhha2haVVlJQklsQk1ZV2sxUWprNE4ySmFPVU52VmxJdFVVVkpUamxtYjNvMFVVTktNRWd5V1RpQ0FTSlFURTgxVmxCUlNEWlBWMlJZVWpoT2JGcDBNR3BTWWtNek9WZGZTWGw2VXkxMmdnRWlVRXhFWWxKbldqQlBUMFZ3Vld0WFJFZHhjRGt4VDBSdU1HUnJOMHhRUWtGVlRJSUJJbEJNYldOTmIwZEJaVkl3WWtaZmJGVkdPVUY2VDAxU05ITnBZbFJEWVdkWWNVZUNBU0pRVEdsdVpXUnFNMEl6TUhOQlgwMHdiM2hEVW1kR2VsQjZSVTFZTTBOVFpsUTFnZ0VpVUV4NFVXOWhjMTlYZVhaV2RYTkRia2xLVERGVWJrRnRjVTB0UTFKYU1XeHVUNElCSWxCTVRtMXpWbVZZVVZwcU4zSTBTSFZVZVZaRFJFeExiSE5FT1VWUmVtOXVZMUNDQVNKUVRGWXpVV2hCV1V0a09UTnpNVEl0YlhkQlZYQjNjamd0VUVwMWJDMTJiR1F0Z2dFaVVFeFNkWEYyU1dNd1pVRnRiMWRuV1ZrNU9YRXdhbWxrY21kdE1EazRWRFp4YTRJQkRWQk1RbWhQWW01M05XVkJkRTJDQVNKUVRHTldXV0UyVGs1VVpUSlFZVlZXTVdWTlNEbEVhVGhYY0hGa2FFOVVWRWwzZ2dFaVVFeGtTWHBXVm1wT2RuVnpVMWxvY1VWSU1sOW1VRVowWTFaYVJVRnNWbk0wVVlJQklsQk1WblpxY25KU1EwSjVNa3BUU0dZNWRFZDRSMHRLTFdKWlFVNWZkVVJEVlV5Q0FTSlFUR3hQVmxoUGJ6WkxPV2t5U0hJM1RqTlNZMWhyV1V4UVYweHVlWEZoTnpObmdnRWlVRXhHWkU1dlVtZDZaMmRpY2pkMGExRnpUelJXY2tZeFZVZDVNR3BwT1hOYWJJSUJEVkJNUjAxSmRWVjBYelk1Y2syeUFRWUtCQWdXRUFMd0FRRSUzRBiB4OgYIgtzZWFyY2gtZmVlZA%3D%3D"),
+    endpoint: search,
+  ),
+  corrected_query: None,
+  visitor_data: Some("redacted"),
+)

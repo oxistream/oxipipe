@@ -1,0 +1,133 @@
+---
+source: src/client/channel.rs
+expression: map_res.c
+---
+Channel(
+  id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+  name: "Rustfully",
+  handle: Some("@Rustfully"),
+  subscriber_count: Some(14900),
+  video_count: Some(101),
+  avatar: [
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/vWJFx2JavfJ_XSPpBMs7Bwxsp8nFb2BIqB8PdLqbjdmxium-Zc8YhT-c0x-TJcFSdtYFXVTQ=s72-c-k-c0x00ffffff-no-rj",
+      width: 72,
+      height: 72,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/vWJFx2JavfJ_XSPpBMs7Bwxsp8nFb2BIqB8PdLqbjdmxium-Zc8YhT-c0x-TJcFSdtYFXVTQ=s120-c-k-c0x00ffffff-no-rj",
+      width: 120,
+      height: 120,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/vWJFx2JavfJ_XSPpBMs7Bwxsp8nFb2BIqB8PdLqbjdmxium-Zc8YhT-c0x-TJcFSdtYFXVTQ=s160-c-k-c0x00ffffff-no-rj",
+      width: 160,
+      height: 160,
+    ),
+  ],
+  verification: none,
+  description: "Let\'s learn Rust.",
+  tags: [],
+  banner: [
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/_k0qQ2eV7AHN27rWjfxRBZDPluyiv_1y2j4jMM9FZ4zFRxe1epDmy-TjAL4UJoN5dTuTIK5NBw=w1060-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 1060,
+      height: 175,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/_k0qQ2eV7AHN27rWjfxRBZDPluyiv_1y2j4jMM9FZ4zFRxe1epDmy-TjAL4UJoN5dTuTIK5NBw=w1138-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 1138,
+      height: 188,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/_k0qQ2eV7AHN27rWjfxRBZDPluyiv_1y2j4jMM9FZ4zFRxe1epDmy-TjAL4UJoN5dTuTIK5NBw=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 1707,
+      height: 283,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/_k0qQ2eV7AHN27rWjfxRBZDPluyiv_1y2j4jMM9FZ4zFRxe1epDmy-TjAL4UJoN5dTuTIK5NBw=w2120-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 2120,
+      height: 351,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/_k0qQ2eV7AHN27rWjfxRBZDPluyiv_1y2j4jMM9FZ4zFRxe1epDmy-TjAL4UJoN5dTuTIK5NBw=w2276-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 2276,
+      height: 377,
+    ),
+    Thumbnail(
+      url: "https://yt3.googleusercontent.com/_k0qQ2eV7AHN27rWjfxRBZDPluyiv_1y2j4jMM9FZ4zFRxe1epDmy-TjAL4UJoN5dTuTIK5NBw=w2560-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj",
+      width: 2560,
+      height: 424,
+    ),
+  ],
+  has_shorts: true,
+  has_live: false,
+  visitor_data: Some("redacted"),
+  content: Paginator(
+    count: Some(3),
+    items: [
+      PlaylistItem(
+        id: "PLAscMa3kKhHjIdTzQzpfUHPQ8vyVHz760",
+        name: "Rust shorts",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/YtR1TxSl9Lw/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4AbYIgAKAD4oCDAgAEAEYTiBlKF8wDw==&rs=AOn4CLC9-yzokXCzXbLIOZNGDjQCpTWvDA",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+          name: "Rustfully",
+          avatar: [],
+          verification: none,
+          subscriber_count: Some(14900),
+        )),
+        video_count: Some(14),
+        is_course: false,
+      ),
+      PlaylistItem(
+        id: "PLAscMa3kKhHitNDLZKhD7087swDGhwfF4",
+        name: "Rust videos (2025)",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/Tq3LkdocUOM/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLD7o8j1w_CYGJRMluBzVXZhnh0-_g",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+          name: "Rustfully",
+          avatar: [],
+          verification: none,
+          subscriber_count: Some(14900),
+        )),
+        video_count: Some(1),
+        is_course: false,
+      ),
+      PlaylistItem(
+        id: "PLAscMa3kKhHjBYOTrT20kpYMNQX95KU6i",
+        name: "Rust for beginners (2025)",
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAR8pAyZIuq_pRu9UZ5AxLuJZywkw",
+            width: 480,
+            height: 270,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+          name: "Rustfully",
+          avatar: [],
+          verification: none,
+          subscriber_count: Some(14900),
+        )),
+        video_count: Some(85),
+        is_course: true,
+      ),
+    ],
+    ctoken: None,
+    endpoint: browse,
+  ),
+)

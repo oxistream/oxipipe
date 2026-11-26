@@ -1,0 +1,286 @@
+---
+source: src/client/playlist.rs
+expression: map_res.c
+---
+Playlist(
+  id: "PLAscMa3kKhHjBYOTrT20kpYMNQX95KU6i",
+  name: "Rust for beginners (2025)",
+  videos: Paginator(
+    count: Some(5),
+    items: [
+      VideoItem(
+        id: "jpjo1HW5Fnk",
+        name: "0: Your first program in Rust (How to install Rust)",
+        duration: Some(408),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCiKX9GXLbEEgUyQhRdTRxxbvq56g",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCisyHlFKDaycVP_nWht5YnSiCZsA",
+            width: 196,
+            height: 110,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2Arj8gsiwimDV5eFaJENBldeQ8g",
+            width: 246,
+            height: 138,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDHVqWb4q6ZpC5XzsEcWSgXTpU6iQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+          name: "51K views",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/vWJFx2JavfJ_XSPpBMs7Bwxsp8nFb2BIqB8PdLqbjdmxium-Zc8YhT-c0x-TJcFSdtYFXVTQ=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: None,
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "vo-XbN7fq7Y",
+        name: "1: Getting started with Rust",
+        duration: Some(167),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/vo-XbN7fq7Y/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBIN7Y_lZFQTMFhekNhoB65VUkkKw",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/vo-XbN7fq7Y/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBnjaFvzcmC8OsC4oCQ0xfvIbcuFA",
+            width: 196,
+            height: 110,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/vo-XbN7fq7Y/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPnu8vJ3ni_ZDhvMp5jbiamk78Sg",
+            width: 246,
+            height: 138,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/vo-XbN7fq7Y/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-EVFDqHnYX_rpKMAxUniXktFLDw",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+          name: "14K views",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/vWJFx2JavfJ_XSPpBMs7Bwxsp8nFb2BIqB8PdLqbjdmxium-Zc8YhT-c0x-TJcFSdtYFXVTQ=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: None,
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "8tduMGPZsSk",
+        name: "2: Coding your first project in Rust",
+        duration: Some(541),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/8tduMGPZsSk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA1XeepwXoRDil1dvdzQvKqtIOJbw",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/8tduMGPZsSk/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCT_QgacipMZ4vjwKMJD-VcXquY6Q",
+            width: 196,
+            height: 110,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/8tduMGPZsSk/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCW3KWu9ea4nJ1LlFE7FW-l0PxoFA",
+            width: 246,
+            height: 138,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/8tduMGPZsSk/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBLk6mf-ka0GpW8iuk6ZIu-Dkr0ag",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+          name: "15K views",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/vWJFx2JavfJ_XSPpBMs7Bwxsp8nFb2BIqB8PdLqbjdmxium-Zc8YhT-c0x-TJcFSdtYFXVTQ=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: None,
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "j7npg1YOwkM",
+        name: "3: Creating variables in Rust",
+        duration: Some(384),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/j7npg1YOwkM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDC2-DnZuIGKu2ktEz9-cvLgkp2PQ",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/j7npg1YOwkM/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDPxBAw9txEhx-Y20XIfo_TtdtG8w",
+            width: 196,
+            height: 110,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/j7npg1YOwkM/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAxxhg8miZnRiQ0Qw8KfHJqdnmo5w",
+            width: 246,
+            height: 138,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/j7npg1YOwkM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAePrVLsS6LxtumtVxGOwmOg4UUdw",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+          name: "10K views",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/vWJFx2JavfJ_XSPpBMs7Bwxsp8nFb2BIqB8PdLqbjdmxium-Zc8YhT-c0x-TJcFSdtYFXVTQ=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: None,
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "JpbI7ULFwiw",
+        name: "4: Variable Shadowing in Rust",
+        duration: Some(221),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/JpbI7ULFwiw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCuZpGMS6UPjMTvKLL8dzCFYNiDTQ",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/JpbI7ULFwiw/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLA0yetCzCmZr25OTGGQ7H7GBeufQg",
+            width: 196,
+            height: 110,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/JpbI7ULFwiw/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDyP7JBkaJqncxQ5k_mrvBa9eZZgw",
+            width: 246,
+            height: 138,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/JpbI7ULFwiw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGl8wm6q2c6GPhMTIE7E5J9XZ8Ag",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: Some(ChannelTag(
+          id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+          name: "9.3K views",
+          avatar: [
+            Thumbnail(
+              url: "https://yt3.ggpht.com/vWJFx2JavfJ_XSPpBMs7Bwxsp8nFb2BIqB8PdLqbjdmxium-Zc8YhT-c0x-TJcFSdtYFXVTQ=s68-c-k-c0x00ffffff-no-rj",
+              width: 68,
+              height: 68,
+            ),
+          ],
+          verification: none,
+          subscriber_count: None,
+        )),
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: None,
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+    ],
+    ctoken: None,
+    endpoint: browse,
+  ),
+  video_count: 5,
+  thumbnail: [
+    Thumbnail(
+      url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLAQWWmPwJ1UC_WSV2EV75j9OsiUvw",
+      width: 168,
+      height: 94,
+    ),
+    Thumbnail(
+      url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEWCMQBEG5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLAU9h6FN4KQnXC87Y1XSVIC1XggTQ",
+      width: 196,
+      height: 110,
+    ),
+    Thumbnail(
+      url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEXCPYBEIoBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBdmcvfG3l0Fw_oyggMylvPd2VTxw",
+      width: 246,
+      height: 138,
+    ),
+    Thumbnail(
+      url: "https://i.ytimg.com/vi/jpjo1HW5Fnk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBJYFvfch3L_Et7qyM1zJe05Fzsnw",
+      width: 336,
+      height: 188,
+    ),
+  ],
+  description: Some(RichText([
+    Text(
+      text: "The tutorial playlist for learning Rust.",
+    ),
+  ])),
+  channel: Some(ChannelId(
+    id: "UCD8pB6QrFEAF1xAZ1dwl7qw",
+    name: "Rustfully",
+  )),
+  last_update: "[date]",
+  last_update_txt: Some("Last updated on Jul 22, 2026"),
+  is_course: true,
+  visitor_data: Some("redacted"),
+)
