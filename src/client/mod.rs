@@ -133,6 +133,8 @@ struct ClientInfo<'a> {
     #[serde(skip_serializing_if = "str::is_empty")]
     client_screen: &'a str,
     #[serde(skip_serializing_if = "str::is_empty")]
+    device_make: &'a str,
+    #[serde(skip_serializing_if = "str::is_empty")]
     device_model: &'a str,
     #[serde(skip_serializing_if = "str::is_empty")]
     os_name: &'a str,
@@ -156,6 +158,7 @@ impl Default for ClientInfo<'_> {
             client_name: "",
             client_version: Cow::default(),
             client_screen: "",
+            device_make: "",
             device_model: "",
             os_name: "",
             os_version: "",
@@ -332,6 +335,8 @@ pub(crate) const DEFAULT_UA: &str =
     "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0";
 pub(crate) const MOBILE_UA: &str = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.135 Mobile Safari/537.36";
 pub(crate) const TV_UA: &str = "Mozilla/5.0 (SMART-TV; Linux; Tizen 5.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/5.0 NativeTVAds Safari/538.1";
+/// User agent of the TV player client. YouTube only returns non-SABR streams for older TV devices.
+const TV_PLAYER_UA: &str = "Mozilla/5.0 (SMART-TV; Linux; Tizen 2.4.0) AppleWebKit/538.1 (KHTML, like Gecko) Version/2.4.0 TV Safari/538.1";
 
 pub(crate) const CONSENT_COOKIE: &str = "SOCS=CAISAiAD";
 
@@ -350,7 +355,7 @@ const DISABLE_PRETTY_PRINT_PARAMETER: &str = "prettyPrint=false";
 const DESKTOP_CLIENT_VERSION: &str = "2.20241216.05.00";
 const DESKTOP_MUSIC_CLIENT_VERSION: &str = "1.20241216.01.00";
 const MOBILE_CLIENT_VERSION: &str = "2.20241217.07.00";
-const TV_CLIENT_VERSION: &str = "7.20241211.14.00";
+const TV_CLIENT_VERSION: &str = "5.20261123";
 
 // Mobile app client
 const IOS_CLIENT_VERSION: &str = "20.03.02";
@@ -366,6 +371,18 @@ const OAUTH_CLIENT_SECRET: &str = "SboVhoG9s0rNafixCSGGKXAT";
 const OAUTH_SCOPES: &str = "http://gdata.youtube.com https://www.googleapis.com/auth/youtube";
 
 const BOTGUARD_API_VERSION: &str = "1";
+
+/// Convert a TV client version (`7.YYYYMMDD.xx.xx`) into the `5.YYYYMMDD` format.
+///
+/// YouTube only serves SABR streams to version 7 TV clients.
+fn downgrade_tv_client_version(version: &str) -> Option<String> {
+    let date = version.strip_prefix("7.")?.split('.').next()?;
+    if date.len() == 8 && date.bytes().all(|b| b.is_ascii_digit()) {
+        Some(format!("5.{date}"))
+    } else {
+        None
+    }
+}
 
 static CLIENT_VERSION_REGEX: Lazy<Regex> =
     Lazy::new(|| Regex::new(r#""INNERTUBE_CONTEXT_CLIENT_VERSION":"([\w\d\._-]+?)""#).unwrap());
@@ -1228,6 +1245,16 @@ impl RustyPipe {
     }
 
     async fn get_client_version(&self, client_type: ClientType) -> Cow<'static, str> {
+        let version = self.get_cached_client_version(client_type).await;
+        if client_type == ClientType::Tv {
+            if let Some(v) = downgrade_tv_client_version(&version) {
+                return v.into();
+            }
+        }
+        version
+    }
+
+    async fn get_cached_client_version(&self, client_type: ClientType) -> Cow<'static, str> {
         // Write lock here to prevent concurrent tasks from fetching the same data
         let mut client = self.inner.cache.clients[&client_type].write().await;
 
@@ -1833,7 +1860,7 @@ impl RustyPipeQuery {
                 Cow::Borrowed(&self.client.inner.user_agent)
             }
             ClientType::Mobile => MOBILE_UA.into(),
-            ClientType::Tv => TV_UA.into(),
+            ClientType::Tv => TV_PLAYER_UA.into(),
             ClientType::Android => format!(
                 "com.google.android.youtube/{} (Linux; U; Android {}) gzip",
                 ANDROID_CLIENT_VERSION, ANDROID_VERSION
@@ -1976,7 +2003,10 @@ impl RustyPipeQuery {
                     client_version: self.client.get_client_version(ctype).await,
                     client_screen: "WATCH",
                     platform: "TV",
-                    device_model: "SmartTV",
+                    device_make: "Samsung",
+                    device_model: "UKS9800",
+                    os_name: "Tizen",
+                    os_version: "2.4.0",
                     visitor_data,
                     hl,
                     gl,
@@ -2123,6 +2153,7 @@ impl RustyPipeQuery {
                 ))
                 .header("X-YouTube-Client-Name", "5")
                 .header("X-Goog-Api-Format-Version", "2"),
+
         };
         r = r
             .header(header::CONTENT_TYPE, "application/json")
@@ -2795,6 +2826,14 @@ mod tests {
             visitor_data.starts_with("Cg") && visitor_data.len() > 23,
             "invalid visitor data: {visitor_data}"
         );
+    }
+
+    #[rstest]
+    #[case("7.20261123.19.00", Some("5.20261123"))]
+    #[case("5.20261123", None)]
+    #[case("7.2026.1.0", None)]
+    fn t_downgrade_tv_client_version(#[case] version: &str, #[case] expect: Option<&str>) {
+        assert_eq!(downgrade_tv_client_version(version).as_deref(), expect);
     }
 
     #[tokio::test]
