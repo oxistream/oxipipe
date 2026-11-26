@@ -37,7 +37,7 @@ enum ChannelTab {
     Shorts,
     #[serde(rename = "EgdzdHJlYW1z8gYECgJ6AA%3D%3D")]
     Live,
-    #[serde(rename = "EglwbGF5bGlzdHMgAQ%3D%3D")]
+    #[serde(rename = "EglwbGF5bGlzdHPyBgoKCEIGCgIQaCIA")]
     Playlists,
     #[serde(rename = "EgZzZWFyY2jyBgQKAloA")]
     Search,
@@ -123,7 +123,7 @@ impl RustyPipeQuery {
         order: ChannelOrder,
     ) -> Result<Paginator<VideoItem>, Error> {
         self.continuation(
-            order_ctoken(channel_id.as_ref(), tab, order, &random_target()),
+            order_ctoken(channel_id.as_ref(), tab, order, &util::random_uuid()),
             ContinuationEndpoint::Browse,
             None,
         )
@@ -631,41 +631,36 @@ fn combine_channel_data<T>(channel_data: Channel<()>, content: T) -> Channel<T> 
 }
 
 /// Get the continuation token to fetch channel videos in the given order
+///
+/// Mirrors the tokens of the sort chips on the channel tabs (as of 11/2026).
 fn order_ctoken(
     channel_id: &str,
     tab: ChannelVideoTab,
     order: ChannelOrder,
     target_id: &str,
 ) -> String {
-    let mut pb_tab = ProtoBuilder::new();
-    pb_tab.string(2, target_id);
-
-    match tab {
-        ChannelVideoTab::Videos => match order {
-            ChannelOrder::Latest => {
-                pb_tab.varint(3, 1);
-                pb_tab.varint(4, 4);
-            }
-            ChannelOrder::Popular => {
-                pb_tab.varint(3, 2);
-                pb_tab.varint(4, 2);
-            }
-            ChannelOrder::Oldest => {
-                pb_tab.varint(3, 4);
-                pb_tab.varint(4, 5);
-            }
-        },
-        ChannelVideoTab::Shorts => match order {
-            ChannelOrder::Latest => pb_tab.varint(4, 4),
-            ChannelOrder::Popular => pb_tab.varint(4, 2),
-            ChannelOrder::Oldest => pb_tab.varint(4, 5),
+    let order_id = match tab {
+        ChannelVideoTab::Videos | ChannelVideoTab::Shorts => match order {
+            ChannelOrder::Latest => 4,
+            ChannelOrder::Popular => 2,
+            ChannelOrder::Oldest => 5,
         },
         ChannelVideoTab::Live => match order {
-            ChannelOrder::Latest => pb_tab.varint(5, 12),
-            ChannelOrder::Popular => pb_tab.varint(5, 14),
-            ChannelOrder::Oldest => pb_tab.varint(5, 13),
+            ChannelOrder::Latest => 12,
+            ChannelOrder::Popular => 14,
+            ChannelOrder::Oldest => 13,
         },
-    }
+    };
+    let mut pb_order = ProtoBuilder::new();
+    pb_order.string(1, target_id);
+    pb_order.varint(3, order_id);
+
+    let mut pb_tab = ProtoBuilder::new();
+    let order_field = match tab {
+        ChannelVideoTab::Shorts => 7,
+        ChannelVideoTab::Videos | ChannelVideoTab::Live => 8,
+    };
+    pb_tab.embedded(order_field, pb_order);
 
     let mut pb_3 = ProtoBuilder::new();
     pb_3.embedded(tab.order_ctoken_id(), pb_tab);
@@ -746,6 +741,8 @@ mod tests {
     #[case::pageheader2("videos_20240324_pageheader2", "UC2DjFE7Xf11URZqWBigcVOQ")]
     #[case::lockup("shorts_20240910_lockup", "UCh8gHdtzO2tXd593_bjErWg")]
     #[case::videos_lockup("videos_20261126_lockup", "UCXuqSBlHAE6Xw-yeJA0Tunw")]
+    #[case::shorts_lockup("shorts_20261126_lockup", "UCXuqSBlHAE6Xw-yeJA0Tunw")]
+    #[case::livestreams_lockup("livestreams_20261126_lockup", "UCXuqSBlHAE6Xw-yeJA0Tunw")]
     fn map_channel_videos(#[case] name: &str, #[case] id: &str) {
         let json_path = path!(*TESTFILES / "channel" / format!("channel_{name}.json"));
         let json_file = File::open(json_path).unwrap();
@@ -819,15 +816,20 @@ mod tests {
     #[rstest]
     #[case::base("base")]
     #[case::lockup("20241109_lockup")]
+    #[case::grid_lockup("20261126")]
     fn map_channel_playlists(#[case] name: &str) {
         let json_path = path!(*TESTFILES / "channel" / format!("channel_playlists_{name}.json"));
         let json_file = File::open(json_path).unwrap();
 
         let channel: response::Channel =
             serde_json::from_reader(BufReader::new(json_file)).unwrap();
-        let map_res: MapResult<Channel<Paginator<PlaylistItem>>> = channel
-            .map_response(&MapRespCtx::test("UC2DjFE7Xf11URZqWBigcVOQ"))
-            .unwrap();
+        let id = if name == "20261126" {
+            "UCXuqSBlHAE6Xw-yeJA0Tunw"
+        } else {
+            "UC2DjFE7Xf11URZqWBigcVOQ"
+        };
+        let map_res: MapResult<Channel<Paginator<PlaylistItem>>> =
+            channel.map_response(&MapRespCtx::test(id)).unwrap();
 
         assert!(
             map_res.warnings.is_empty(),
@@ -860,29 +862,29 @@ mod tests {
     fn t_order_ctoken() {
         let channel_id = "UCXuqSBlHAE6Xw-yeJA0Tunw";
 
-        let videos_popular_token = order_ctoken(
+        let videos_latest_token = order_ctoken(
             channel_id,
             ChannelVideoTab::Videos,
-            ChannelOrder::Popular,
-            "\n$6461d7c8-0000-2040-87aa-089e0827e420",
+            ChannelOrder::Latest,
+            "6c901aa9-0000-2b08-8dcf-582429d0f968",
         );
-        assert_eq!(videos_popular_token, "4qmFsgJgEhhVQ1h1cVNCbEhBRTZYdy15ZUpBMFR1bncaRDhnWXdHaTU2TEJJbUNpUTJORFl4WkRkak9DMHdNREF3TFRJd05EQXRPRGRoWVMwd09EbGxNRGd5TjJVME1qQVlBaUFD");
+        assert_eq!(videos_latest_token, "4qmFsgJkEhhVQ1h1cVNCbEhBRTZYdy15ZUpBMFR1bncaSDhnWXVHaXg2S2tJb0NpUTJZemt3TVdGaE9TMHdNREF3TFRKaU1EZ3RPR1JqWmkwMU9ESTBNamxrTUdZNU5qZ1lCQSUzRCUzRA%3D%3D");
 
         let shorts_popular_token = order_ctoken(
             channel_id,
             ChannelVideoTab::Shorts,
             ChannelOrder::Popular,
-            "\n$64679ffb-0000-26b3-a1bd-582429d2c794",
+            "6b121e81-0000-2594-90ff-c82add6dd524",
         );
-        assert_eq!(shorts_popular_token, "4qmFsgJkEhhVQ1h1cVNCbEhBRTZYdy15ZUpBMFR1bncaSDhnWXVHaXhTS2hJbUNpUTJORFkzT1dabVlpMHdNREF3TFRJMllqTXRZVEZpWkMwMU9ESTBNamxrTW1NM09UUWdBZyUzRCUzRA%3D%3D");
+        assert_eq!(shorts_popular_token, "4qmFsgJkEhhVQ1h1cVNCbEhBRTZYdy15ZUpBMFR1bncaSDhnWXVHaXhTS2pvb0NpUTJZakV5TVdVNE1TMHdNREF3TFRJMU9UUXRPVEJtWmkxak9ESmhaR1EyWkdRMU1qUVlBZyUzRCUzRA%3D%3D");
 
         let live_popular_token = order_ctoken(
             channel_id,
             ChannelVideoTab::Live,
             ChannelOrder::Popular,
-            "\n$64693069-0000-2a1e-8c7d-582429bd5ba8",
+            "6c788ad7-0000-2450-ab11-3c286d3ad2be",
         );
-        assert_eq!(live_popular_token, "4qmFsgJkEhhVQ1h1cVNCbEhBRTZYdy15ZUpBMFR1bncaSDhnWXVHaXh5S2hJbUNpUTJORFk1TXpBMk9TMHdNREF3TFRKaE1XVXRPR00zWkMwMU9ESTBNamxpWkRWaVlUZ29EZyUzRCUzRA%3D%3D");
+        assert_eq!(live_popular_token, "4qmFsgJkEhhVQ1h1cVNCbEhBRTZYdy15ZUpBMFR1bncaSDhnWXVHaXh5S2tJb0NpUTJZemM0T0dGa055MHdNREF3TFRJME5UQXRZV0l4TVMwell6STRObVF6WVdReVltVVlEZyUzRCUzRA%3D%3D");
     }
 
     #[test]
