@@ -89,6 +89,11 @@ pub enum ClientType {
     ///
     /// - no obfuscated stream URLs
     Ios,
+    /// Client used by the visionOS app
+    ///
+    /// - no obfuscated stream URLs
+    /// - "made for kids" videos are not available
+    VisionOs,
 }
 
 impl ClientType {
@@ -100,7 +105,7 @@ impl ClientType {
     }
 
     fn needs_deobf(self) -> bool {
-        !matches!(self, ClientType::Ios)
+        !matches!(self, ClientType::Ios | ClientType::VisionOs)
     }
 
     fn needs_po_token(self) -> bool {
@@ -142,6 +147,7 @@ struct ClientInfo<'a> {
     os_version: &'a str,
     #[serde(skip_serializing_if = "Option::is_none")]
     android_sdk_version: Option<u8>,
+    #[serde(skip_serializing_if = "str::is_empty")]
     platform: &'a str,
     #[serde(skip_serializing_if = "str::is_empty")]
     original_url: &'a str,
@@ -363,6 +369,8 @@ const IOS_VERSION: &str = "18_2_1";
 const IOS_VERSION_BUILD: &str = "18.2.1.22C161";
 const IOS_DEVICE_MODEL: &str = "iPhone16,2";
 const ANDROID_CLIENT_VERSION: &str = "19.44.38";
+const VISIONOS_CLIENT_VERSION: &str = "1.02";
+const VISIONOS_UA: &str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 15_7_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15";
 const ANDROID_VERSION: &str = "11";
 
 const OAUTH_CLIENT_ID: &str =
@@ -1871,6 +1879,7 @@ impl RustyPipeQuery {
                 IOS_CLIENT_VERSION, IOS_DEVICE_MODEL, IOS_VERSION
             )
             .into(),
+            ClientType::VisionOs => VISIONOS_UA.into(),
         }
     }
 
@@ -2058,6 +2067,25 @@ impl RustyPipeQuery {
                 user: User::default(),
                 third_party: None,
             },
+            ClientType::VisionOs => YTContext {
+                client: ClientInfo {
+                    client_name: "VISIONOS",
+                    client_version: VISIONOS_CLIENT_VERSION.into(),
+                    device_make: "Apple",
+                    device_model: "RealityDevice17,1",
+                    os_name: "visionOS",
+                    os_version: "26.5.23O471",
+                    visitor_data,
+                    hl,
+                    gl,
+                    time_zone,
+                    utc_offset_minutes,
+                    ..Default::default()
+                },
+                request: None,
+                user: User::default(),
+                third_party: None,
+            },
         }
     }
 
@@ -2153,7 +2181,17 @@ impl RustyPipeQuery {
                 ))
                 .header("X-YouTube-Client-Name", "5")
                 .header("X-Goog-Api-Format-Version", "2"),
-
+            ClientType::VisionOs => self
+                .client
+                .inner
+                .http
+                .post(format!(
+                    "{YOUTUBEI_V1_URL}{endpoint}?{DISABLE_PRETTY_PRINT_PARAMETER}"
+                ))
+                .header(header::ORIGIN, YOUTUBE_HOME_URL)
+                .header(header::REFERER, YOUTUBE_HOME_URL)
+                .header("X-YouTube-Client-Name", "101")
+                .header("X-YouTube-Client-Version", VISIONOS_CLIENT_VERSION),
         };
         r = r
             .header(header::CONTENT_TYPE, "application/json")
