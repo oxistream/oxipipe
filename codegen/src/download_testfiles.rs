@@ -42,6 +42,8 @@ pub async fn download_testfiles() {
     search_course().await;
     search_empty().await;
     trending().await;
+    reel_sequence().await;
+    short_details().await;
 
     music_playlist().await;
     music_playlist_cont().await;
@@ -515,6 +517,37 @@ async fn trending() {
 
         let rp = rp_testfile(&json_path);
         rp.query().trending_category(category).await.unwrap();
+    }
+}
+
+async fn reel_sequence() {
+    let json_path = path!(*TESTFILES_DIR / "reel" / "sequence_start.json");
+    if !json_path.exists() {
+        let rp = rp_testfile(&json_path);
+        rp.query().reel_sequence("6kSCVqZdhZ0").await.unwrap();
+    }
+
+    let json_path = path!(*TESTFILES_DIR / "reel" / "sequence_continuation.json");
+    if !json_path.exists() {
+        let start = RustyPipe::new()
+            .query()
+            .reel_sequence("6kSCVqZdhZ0")
+            .await
+            .unwrap();
+        let rp = rp_testfile(&json_path);
+        start.next(rp.query()).await.unwrap();
+    }
+}
+
+async fn short_details() {
+    for (name, id) in [("linked", "sHpEqeSByPI"), ("plain", "kQO5P-qsyiA")] {
+        let json_path = path!(*TESTFILES_DIR / "reel" / format!("item_{name}.json"));
+        if json_path.exists() {
+            continue;
+        }
+
+        let rp = rp_testfile(&json_path);
+        rp.query().short_details(id).await.unwrap();
     }
 }
 

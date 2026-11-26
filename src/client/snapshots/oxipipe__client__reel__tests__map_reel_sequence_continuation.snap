@@ -1,0 +1,99 @@
+---
+source: src/client/reel.rs
+expression: map_res.c
+---
+Paginator(
+  count: None,
+  items: [
+    ShortItem(
+      id: "ogBGbTg4beY",
+      channel_id: Some("UC0xXsTglspiMP6lwN18jU8w"),
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/ogBGbTg4beY/frame0.jpg",
+          width: 1080,
+          height: 1920,
+        ),
+      ],
+    ),
+    ShortItem(
+      id: "DwzFdvxwySI",
+      channel_id: Some("UCdzJJmpLTQ90QDiBPAiEgVQ"),
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/DwzFdvxwySI/frame0.jpg",
+          width: 1080,
+          height: 1920,
+        ),
+      ],
+    ),
+    ShortItem(
+      id: "dPxgEl14kH8",
+      channel_id: Some("UCMSIDB9jvhqBKby2qk6E4VA"),
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/dPxgEl14kH8/frame0.jpg",
+          width: 1080,
+          height: 1920,
+        ),
+      ],
+    ),
+    ShortItem(
+      id: "rQfjb1PvdBI",
+      channel_id: Some("UCHUbS_UKnPBjJndXpTff4Sg"),
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/rQfjb1PvdBI/frame0.jpg",
+          width: 1080,
+          height: 1920,
+        ),
+      ],
+    ),
+    ShortItem(
+      id: "_9VqRCWMXmM",
+      channel_id: Some("UCSO9gir6NjbOGMHVW_nbGkA"),
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/_9VqRCWMXmM/frame0.jpg",
+          width: 1080,
+          height: 1920,
+        ),
+      ],
+    ),
+    ShortItem(
+      id: "nJn0SM2OjLY",
+      channel_id: Some("UC1Q1Z9Q0ZjZ7aoTFZg70Mig"),
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/nJn0SM2OjLY/frame0.jpg",
+          width: 1080,
+          height: 1920,
+        ),
+      ],
+    ),
+    ShortItem(
+      id: "v-K--ioiXms",
+      channel_id: Some("UCP8wHrwU79SSJUxu1PBmiNQ"),
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/v-K--ioiXms/frame0.jpg",
+          width: 1080,
+          height: 1920,
+        ),
+      ],
+    ),
+    ShortItem(
+      id: "zG_n3MoZ7c8",
+      channel_id: Some("UC9Zfzcwatei4rxSFJN8bmmw"),
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/zG_n3MoZ7c8/frame0.jpg",
+          width: 1080,
+          height: 1920,
+        ),
+      ],
+    ),
+  ],
+  ctoken: Some("Cgs2a1NDVnFaZGhaMBqEAQoLekdfbjNNb1o3YzgYDyACQnEICBAgGkjyBkUKQwoQmgENCgs2a1NDVnFaZGhaMBgZIgIgAdKmoasIAhAB6sTvvAsVEhMIlKW619WmmAMVO0L2CB149APx6rrK8w0CCAUiEgoQMzI6U0g2a1NDVnFaZGhaMCoNCgt6R19uM01vWjdjOCoCGAVQGWgAeoIKCBIYCDKCBgoLekdfbjNNb1o3YzgSATAaDAjYmbDSBhCQxN3nAiIGCJDMiNgGKgQIDRACMoYBEgYIZBABGAISBwiYARABGAISBwjcARABGAISBwjmARABGAESBwiQAxABGAISBwiRAxABGAESBwiGBxABGAISBwiPBxABGAESBwjABxABGAISBwjFBxABGAISBwjGBxABGAISBwjHBxABGAISBwjIBxABGAISBwjJBxABGAISBwjKBxABGAI6VAoDCIcOCgMInAIKAwi2BQoDCK4NEgIICBICCB0SAggpEgIIQRIDCJwCEgMIlQQSAwi2BRIDCNQHEgMIuAgSAwiuDRIDCIcOGgIICBoCCCkaAwiHDkIHCgMIywEQAkoHCgMIzQEQAlIHCgMIywEQAloSEhAIARABIgQKAggEKgQIARABapEDCo4DEgIIARoCCAEiAggBKgIIAXICCAJ6AggCggECCAGaASsIARoORm9sZGFibGUgSG91c2UiCC9tLzAzam01Mg0vZy8xMXpmMGRfOW5qogFQCAEaBkFtYXpvbiIIL20vMG1na2cyDS9nLzExY20xMmhobG06KwoLVW5zcGVha2FibGUSDS9nLzExc3g2dnZubW4aDS9nLzExejExcXQ0OHeqAQIIArIBAggCugECCALCAQIIAcoBAggB0gECCAHaAQIIAeIBAggB6gECCALyAQIIAfoBAggBggICCAGKAgIIApICAggCmgICCAGiAgIIAaoCAggBsgICCAG6AgIIAcICAggBygICCAHSAgIIAdoCAggB4gICCAHqAgIIAfICAggB-gICCAGCAwIIAYoDAggBkgMCCAGaAwIIAaIDAggBqgMCCAGyAwIIAboDAggBwgMCCAHKAwIIAtIDAggC2gMCCAHiAwIIAeoDAggC8gMCCAH6AwIIAYIEAggCigQCCAKSBAIIAZoEAggBogQCCAF6MgoICKRsFcuhxT4KCAiTThWsHFo-CggIvFIVw_UoPgoICPVrFXNoET4KCAj-aRVXW7E9Qgt6R19uM01vWjdjOEoYVUM5WmZ6Y3dhdGVpNHJ4U0ZKTjhibW13WJmazM-hNGo3CgtvZ0JHYlRnNGJlWRIYVUMweFhzVGdsc3BpTVA2bHdOMThqVTh3HRfwDEIg-P__________AWo3CgtEd3pGZHZ4d3lTSRIYVUNkekpKbXBMVFE5MFFEaUJQQWlFZ1ZRHdMz1UEg-f__________AWo3CgtkUHhnRWwxNGtIOBIYVUNNU0lEQjlqdmhxQktieTJxazZFNFZBHR6K3EEg-v__________AWo3CgtyUWZqYjFQdmRCSRIYVUNIVWJTX1VLblBCakpuZFhwVGZmNFNnHcwb5kEg-___________AWo3CgtfOVZxUkNXTVhtTRIYVUNTTzlnaXI2TmpiT0dNSFZXX25iR2tBHVNEB0Ig_P__________AWo3CgtuSm4wU00yT2pMWRIYVUMxUTFaOVEwWmpaN2FvVEZaZzcwTWlnHTL89EEg_f__________AWo3Cgt2LUstLWlvaVhtcxIYVUNQOHdIcndVNzlTU0pVeHUxUEJtaU5RHQHA7EEg_v__________AWo3Cgt6R19uM01vWjdjOBIYVUM5WmZ6Y3dhdGVpNHJ4U0ZKTjhibW13HcgiykEg____________AaABAQ%3D%3D"),
+  endpoint: reel_sequence,
+)
