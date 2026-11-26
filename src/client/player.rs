@@ -249,11 +249,10 @@ impl RustyPipeQuery {
     /// The order may change in the future in case YouTube applies changes to their
     /// platform that disable a client or make it less reliable.
     pub fn player_client_order(&self) -> &'static [ClientType] {
-        if self.client.inner.botguard.is_some() {
-            &[ClientType::Desktop, ClientType::Ios, ClientType::Tv]
-        } else {
-            &[ClientType::Ios, ClientType::Tv]
-        }
+        // Desktop only gets SABR streams and iOS streams fail after the first MB without a
+        // GVS PO token. VisionOS needs neither deobfuscation nor PO tokens, the TV client
+        // is the fallback for videos that are not available with VisionOS (e.g. made for kids).
+        &[ClientType::VisionOs, ClientType::Tv]
     }
 
     /// Get a license to play back DRM protected videos
