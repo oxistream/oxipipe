@@ -78,6 +78,8 @@ pub enum ItemType {
     Video = 1,
     Channel = 2,
     Playlist = 3,
+    /// YouTube Shorts
+    Short = 9,
 }
 
 /// Video length range to filter by
@@ -264,6 +266,7 @@ mod tests {
     #[case(SearchFilter::new().item_type(ItemType::Video), "EgIQAfABAQ%253D%253D")]
     #[case(SearchFilter::new().item_type(ItemType::Channel), "EgIQAvABAQ%253D%253D")]
     #[case(SearchFilter::new().item_type(ItemType::Playlist), "EgIQA_ABAQ%253D%253D")]
+    #[case(SearchFilter::new().item_type(ItemType::Short), "EgIQCfABAQ%253D%253D")]
     #[case(SearchFilter::new().date(UploadDate::Hour), "EgIIAfABAQ%253D%253D")]
     #[case(SearchFilter::new().date(UploadDate::Day), "EgIIAvABAQ%253D%253D")]
     #[case(SearchFilter::new().date(UploadDate::Week), "EgIIA_ABAQ%253D%253D")]

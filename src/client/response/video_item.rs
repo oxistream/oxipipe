@@ -40,6 +40,12 @@ pub(crate) enum YouTubeListItem {
 
     LockupViewModel(LockupViewModel),
 
+    /// Grid of shorts, either a shelf between regular results or,
+    /// with the Shorts search filter, the results themselves
+    GridShelfViewModel {
+        contents: MapResult<Vec<YouTubeListItem>>,
+    },
+
     /// Continuation items are located at the end of a list
     /// and contain the continuation token for progressive loading
     ContinuationItemRenderer(ContinuationItemRenderer),
@@ -927,6 +933,22 @@ impl<T> YouTubeListMapper<T> {
     }
 }
 
+/// Sections made up only of shorts grids are shorts results (Shorts search filter).
+/// Grids next to regular items are suggestion shelves and stay skipped.
+fn only_grid_shelves(items: &[YouTubeListItem]) -> bool {
+    let mut found = false;
+    for item in items {
+        match item {
+            YouTubeListItem::GridShelfViewModel { .. } => found = true,
+            YouTubeListItem::None
+            | YouTubeListItem::ContinuationItemRenderer(_)
+            | YouTubeListItem::ContinuationItemViewModel(_) => {}
+            _ => return false,
+        }
+    }
+    found
+}
+
 /// The accessibility label holds the unabbreviated date (`16 years ago` instead of `16y ago`)
 fn lockup_date_txt(part: &MetadataPart) -> String {
     match part {
@@ -989,9 +1011,18 @@ impl YouTubeListMapper<YouTubeItem> {
             }
             YouTubeListItem::ItemSectionRenderer { mut contents, .. } => {
                 self.warnings.append(&mut contents.warnings);
-                contents.c.into_iter().for_each(|it| self.map_item(it));
+                let shelves = only_grid_shelves(&contents.c);
+                contents.c.into_iter().for_each(|it| match it {
+                    YouTubeListItem::GridShelfViewModel { mut contents } if shelves => {
+                        self.warnings.append(&mut contents.warnings);
+                        contents.c.into_iter().for_each(|it| self.map_item(it));
+                    }
+                    it => self.map_item(it),
+                });
             }
-            YouTubeListItem::None | YouTubeListItem::ChannelAgeGateRenderer { .. } => {}
+            YouTubeListItem::None
+            | YouTubeListItem::GridShelfViewModel { .. }
+            | YouTubeListItem::ChannelAgeGateRenderer { .. } => {}
         }
     }
 
@@ -1044,7 +1075,14 @@ impl YouTubeListMapper<VideoItem> {
             }
             YouTubeListItem::ItemSectionRenderer { mut contents, .. } => {
                 self.warnings.append(&mut contents.warnings);
-                contents.c.into_iter().for_each(|it| self.map_item(it));
+                let shelves = only_grid_shelves(&contents.c);
+                contents.c.into_iter().for_each(|it| match it {
+                    YouTubeListItem::GridShelfViewModel { mut contents } if shelves => {
+                        self.warnings.append(&mut contents.warnings);
+                        contents.c.into_iter().for_each(|it| self.map_item(it));
+                    }
+                    it => self.map_item(it),
+                });
             }
             _ => {}
         }
