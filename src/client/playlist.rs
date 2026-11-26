@@ -59,13 +59,6 @@ impl MapResponse<Playlist> for response::Playlist {
                 "sectionListRenderer empty",
             )))?
             .item_section_renderer
-            .contents
-            .into_iter()
-            .next()
-            .ok_or(ExtractionError::InvalidData(Cow::Borrowed(
-                "itemSectionRenderer empty",
-            )))?
-            .playlist_video_list_renderer
             .contents;
 
         let mut mapper = response::YouTubeListMapper::<VideoItem>::new(ctx.lang);
@@ -258,6 +251,7 @@ mod tests {
     #[case::live("live", "UULVvqRdlKsE5Q8mf8YXbdIJLw")]
     #[case::pageheader("20241011_pageheader", "PLT2w2oBf1TZKyvY_M6JsASs73m-wjLzH5")]
     #[case::cmdexecutor("20250316_cmdexecutor", "PLbZIPy20-1pN7mqjckepWF78ndb6ci_qi")]
+    #[case::lockup("20261126_lockup", "PL5dDx681T4bR7ZF1IuWzOv1omlRbE7PiJ")]
     fn map_playlist_data(#[case] name: &str, #[case] id: &str) {
         let json_path = path!(*TESTFILES / "playlist" / format!("playlist_{name}.json"));
         let json_file = File::open(json_path).unwrap();

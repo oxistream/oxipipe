@@ -5,8 +5,8 @@ use serde_with::{
 use time::OffsetDateTime;
 
 use super::{
-    AvatarViewModel, ChannelBadge, ContentImage, ContinuationItemRenderer, MetadataPart,
-    PhMetadataView, ThumbnailBadgeStyle, Thumbnails,
+    AvatarViewModel, ChannelBadge, ContentImage, ContinuationItemRenderer,
+    ContinuationItemViewModel, MetadataPart, PhMetadataView, ThumbnailBadgeStyle, Thumbnails,
 };
 use crate::{
     model::{Channel, ChannelItem, ChannelTag, PlaylistItem, Verification, VideoItem, YouTubeItem},
@@ -43,6 +43,7 @@ pub(crate) enum YouTubeListItem {
     /// Continuation items are located at the end of a list
     /// and contain the continuation token for progressive loading
     ContinuationItemRenderer(ContinuationItemRenderer),
+    ContinuationItemViewModel(ContinuationItemViewModel),
 
     /// Corrected search query
     #[serde(rename_all = "camelCase")]
@@ -66,10 +67,13 @@ pub(crate) enum YouTubeListItem {
     /// as of 11.10.2022
     ///
     /// GridRenderer: contains videos on channel page
+    ///
+    /// PlaylistVideoListRenderer: contains videos on playlist page
     #[serde(
         alias = "expandedShelfContentsRenderer",
         alias = "gridRenderer",
-        alias = "richShelfRenderer"
+        alias = "richShelfRenderer",
+        alias = "playlistVideoListRenderer"
     )]
     ItemSectionRenderer {
         #[cfg(feature = "userdata")]
@@ -955,6 +959,11 @@ impl YouTubeListMapper<YouTubeItem> {
                     self.ctoken = r.continuation_endpoint.into_token();
                 }
             }
+            YouTubeListItem::ContinuationItemViewModel(r) => {
+                if self.ctoken.is_none() {
+                    self.ctoken = r.continuation_command.innertube_command.into_token();
+                }
+            }
             YouTubeListItem::ShowingResultsForRenderer { corrected_query } => {
                 self.corrected_query = Some(corrected_query);
             }
@@ -1003,6 +1012,11 @@ impl YouTubeListMapper<VideoItem> {
             YouTubeListItem::ContinuationItemRenderer(r) => {
                 if self.ctoken.is_none() {
                     self.ctoken = r.continuation_endpoint.into_token();
+                }
+            }
+            YouTubeListItem::ContinuationItemViewModel(r) => {
+                if self.ctoken.is_none() {
+                    self.ctoken = r.continuation_command.innertube_command.into_token();
                 }
             }
             YouTubeListItem::ShowingResultsForRenderer { corrected_query } => {
@@ -1057,6 +1071,11 @@ impl YouTubeListMapper<PlaylistItem> {
             YouTubeListItem::ContinuationItemRenderer(r) => {
                 if self.ctoken.is_none() {
                     self.ctoken = r.continuation_endpoint.into_token();
+                }
+            }
+            YouTubeListItem::ContinuationItemViewModel(r) => {
+                if self.ctoken.is_none() {
+                    self.ctoken = r.continuation_command.innertube_command.into_token();
                 }
             }
             YouTubeListItem::ShowingResultsForRenderer { corrected_query } => {

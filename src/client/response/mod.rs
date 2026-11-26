@@ -153,6 +153,18 @@ pub(crate) struct ContinuationItemRenderer {
 }
 
 #[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct ContinuationItemViewModel {
+    pub continuation_command: ContinuationInnertubeCommand,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct ContinuationInnertubeCommand {
+    pub innertube_command: ContinuationEndpoint,
+}
+
+#[derive(Debug, Deserialize)]
 #[serde(untagged)]
 pub(crate) enum ContinuationEndpoint {
     ContinuationCommand(ContinuationCommandWrap),
