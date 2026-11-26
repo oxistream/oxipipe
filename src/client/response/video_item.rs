@@ -4,9 +4,12 @@ use serde_with::{
 };
 use time::OffsetDateTime;
 
-use super::{ChannelBadge, ContentImage, ContinuationItemRenderer, PhMetadataView, Thumbnails};
+use super::{
+    AvatarViewModel, ChannelBadge, ContentImage, ContinuationItemRenderer, MetadataPart,
+    PhMetadataView, ThumbnailBadgeStyle, Thumbnails,
+};
 use crate::{
-    model::{Channel, ChannelItem, ChannelTag, PlaylistItem, VideoItem, YouTubeItem},
+    model::{Channel, ChannelItem, ChannelTag, PlaylistItem, Verification, VideoItem, YouTubeItem},
     param::Language,
     serializer::{
         text::{AttributedText, Text, TextComponent},
@@ -204,6 +207,53 @@ pub(crate) struct LockupViewModelMetadataInner {
     #[serde_as(as = "AttributedText")]
     pub title: String,
     pub metadata: PhMetadataView,
+    /// Channel avatar, only present if the lockup has a channel row
+    #[serde(default)]
+    #[serde_as(as = "DefaultOnError")]
+    pub image: Option<LockupImage>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupImage {
+    pub decorated_avatar_view_model: LockupAvatar,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupAvatar {
+    pub avatar: AvatarViewModel,
+    pub renderer_context: LockupAvatarContext,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupAvatarContext {
+    pub command_context: LockupAvatarCommandContext,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupAvatarCommandContext {
+    pub on_tap: LockupAvatarOnTap,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupAvatarOnTap {
+    pub innertube_command: LockupAvatarCommand,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupAvatarCommand {
+    pub browse_endpoint: LockupAvatarBrowseEndpoint,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct LockupAvatarBrowseEndpoint {
+    pub browse_id: String,
 }
 
 /// Video displayed in a playlist
@@ -718,72 +768,122 @@ impl<T> YouTubeListMapper<T> {
         }
     }
 
+    /// Lockup channel rows often have no link, so the channel ID is taken from the avatar
+    fn map_lockup_channel(
+        &self,
+        part: MetadataPart,
+        image: Option<LockupImage>,
+    ) -> Option<ChannelTag> {
+        let (component, verification) = match part {
+            MetadataPart::Text { text, .. } => (text.component, text.verification),
+            part => (part.into_text_component(), Verification::None),
+        };
+        let name = component.as_str().trim().to_owned();
+        let channel = ChannelTag::try_from(component).ok();
+        let Some(avatar) = image.map(|i| i.decorated_avatar_view_model) else {
+            return channel;
+        };
+        let avatar_img = avatar.avatar.avatar_view_model.image.into();
+        if let Some(mut channel) = channel {
+            channel.avatar = avatar_img;
+            return Some(channel);
+        }
+        let id = avatar
+            .renderer_context
+            .command_context
+            .on_tap
+            .innertube_command
+            .browse_endpoint
+            .browse_id;
+        if !id.starts_with("UC") || name.is_empty() {
+            return None;
+        }
+        Some(ChannelTag {
+            id,
+            name,
+            avatar: avatar_img,
+            verification,
+            subscriber_count: None,
+        })
+    }
+
     fn map_lockup(&mut self, lockup: LockupViewModel) -> Option<YouTubeItem> {
         let md = lockup.metadata.lockup_metadata_view_model;
         let tn = lockup.content_image.into_image();
         match lockup.content_type {
             LockupContentType::LockupContentTypePlaylist => {
+                let video_count = tn
+                    .badges()
+                    .next()
+                    .and_then(|badge| util::parse_numeric(&badge.text).ok());
                 Some(YouTubeItem::Playlist(PlaylistItem {
                     id: lockup.content_id,
                     name: md.title,
                     thumbnail: tn.image.into(),
                     channel: self.channel.clone(),
-                    video_count: tn
-                        .overlays
-                        .first()
-                        .and_then(|ol| {
-                            ol.thumbnail_overlay_badge_view_model
-                                .thumbnail_badges
-                                .first()
-                        })
-                        .and_then(|badge| {
-                            util::parse_numeric(&badge.thumbnail_badge_view_model.text).ok()
-                        }),
+                    video_count,
                 }))
             }
             LockupContentType::LockupContentTypeVideo => {
-                let mut mdr = md
+                let is_live = tn
+                    .badges()
+                    .any(|b| b.badge_style == ThumbnailBadgeStyle::ThumbnailOverlayBadgeStyleLive);
+                let duration = if is_live {
+                    None
+                } else {
+                    tn.badges().find_map(|b| util::parse_video_length(&b.text))
+                };
+
+                let mut rows = md
                     .metadata
                     .content_metadata_view_model
                     .metadata_rows
-                    .into_iter();
-                let channel = mdr
-                    .next()
-                    .and_then(|r| r.metadata_parts.into_iter().next())
-                    .and_then(|p| ChannelTag::try_from(p.into_text_component()).ok());
-                let (view_count, publish_date_txt) = mdr
-                    .next()
-                    .map(|metadata_row| {
-                        let mut parts = metadata_row.metadata_parts.into_iter();
-                        let p1 = parts.next();
-                        let p2 = parts.next();
-                        (
-                            p1.and_then(|p| {
-                                util::parse_large_numstr_or_warn(
-                                    p.as_str(),
-                                    self.lang,
-                                    &mut self.warnings,
-                                )
-                            }),
-                            p2.map(|p2| p2.into_text_component().into_string()),
-                        )
-                    })
-                    .unwrap_or_default();
+                    .into_iter()
+                    .map(|r| r.metadata_parts)
+                    .filter(|parts| !parts.is_empty())
+                    .collect::<Vec<_>>();
+                // Related videos start with a channel row, channel tabs omit it
+                let has_channel_row = md.image.is_some() || rows.len() > 1;
+                let stats = if rows.len() > usize::from(has_channel_row) {
+                    rows.remove(usize::from(has_channel_row))
+                } else {
+                    Vec::new()
+                };
+                let channel = if has_channel_row {
+                    rows.into_iter()
+                        .next()
+                        .and_then(|parts| parts.into_iter().next())
+                        .and_then(|part| self.map_lockup_channel(part, md.image))
+                } else {
+                    self.channel.clone()
+                };
+
+                let mut view_count = None;
+                let mut publish_date_txt = None;
+                let mut parts = stats.into_iter();
+                if let Some(first) = parts.next() {
+                    let second = parts.next();
+                    let first_txt = first.as_str();
+                    // A lone part may be the publish date (e.g. members-only videos)
+                    if second.is_none()
+                        && !is_live
+                        && timeago::parse_timeago(self.lang, &lockup_date_txt(&first)).is_some()
+                    {
+                        publish_date_txt = Some(lockup_date_txt(&first));
+                    } else {
+                        view_count = util::parse_large_numstr_or_warn(
+                            first_txt,
+                            self.lang,
+                            &mut self.warnings,
+                        );
+                        publish_date_txt = second.map(|p| lockup_date_txt(&p));
+                    }
+                }
 
                 Some(YouTubeItem::Video(VideoItem {
                     id: lockup.content_id,
                     name: md.title,
-                    duration: tn
-                        .overlays
-                        .first()
-                        .and_then(|ol| {
-                            ol.thumbnail_overlay_badge_view_model
-                                .thumbnail_badges
-                                .first()
-                        })
-                        .and_then(|badge| {
-                            util::parse_video_length(&badge.thumbnail_badge_view_model.text)
-                        }),
+                    duration,
                     thumbnail: tn.image.into(),
                     channel,
                     publish_date: publish_date_txt.as_deref().and_then(|t| {
@@ -791,7 +891,7 @@ impl<T> YouTubeListMapper<T> {
                     }),
                     publish_date_txt,
                     view_count,
-                    is_live: false,
+                    is_live,
                     is_short: false,
                     is_upcoming: false,
                     short_description: None,
@@ -799,6 +899,17 @@ impl<T> YouTubeListMapper<T> {
             }
             LockupContentType::Unknown => None,
         }
+    }
+}
+
+/// The accessibility label holds the unabbreviated date (`16 years ago` instead of `16y ago`)
+fn lockup_date_txt(part: &MetadataPart) -> String {
+    match part {
+        MetadataPart::Text {
+            accessibility_label: Some(label),
+            ..
+        } => label.clone(),
+        part => part.as_str().to_owned(),
     }
 }
 

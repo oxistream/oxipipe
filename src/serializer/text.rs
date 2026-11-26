@@ -356,8 +356,43 @@ impl<'de> DeserializeAs<'de, TextComponents> for AttributedText {
     where
         D: Deserializer<'de>,
     {
-        let text = AttributedText::deserialize(deserializer)?;
+        Ok(AttributedText::deserialize(deserializer)?.into())
+    }
+}
 
+/// First component of an attributed text along with its verification badge, which plain
+/// text components (e.g. channel names without a link) would lose.
+#[derive(Debug)]
+pub(crate) struct VerifiedText {
+    pub component: TextComponent,
+    pub verification: Verification,
+}
+
+impl<'de> Deserialize<'de> for VerifiedText {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let text = AttributedText::deserialize(deserializer)?;
+        let verification = text
+            .attachment_runs
+            .first()
+            .map(Verification::from)
+            .unwrap_or_default();
+        let component = TextComponents::from(text)
+            .0
+            .into_iter()
+            .next()
+            .ok_or(serde::de::Error::invalid_length(0, &"at least 1"))?;
+        Ok(Self {
+            component,
+            verification,
+        })
+    }
+}
+
+impl From<AttributedText> for TextComponents {
+    fn from(text: AttributedText) -> Self {
         let mut i_utf16 = 0;
         let mut chars = text.content.chars();
 
@@ -400,8 +435,7 @@ impl<'de> DeserializeAs<'de, TextComponents> for AttributedText {
 
         let verification = text
             .attachment_runs
-            .into_iter()
-            .next()
+            .first()
             .map(Verification::from)
             .unwrap_or_default();
         let mut components: Vec<TextComponent> = Vec::with_capacity(runs.len() + 1);
@@ -499,7 +533,7 @@ impl<'de> DeserializeAs<'de, TextComponents> for AttributedText {
             components.push(TextComponent::new(end));
         }
 
-        Ok(TextComponents(components))
+        TextComponents(components)
     }
 }
 
@@ -669,15 +703,6 @@ impl TextComponent {
     }
 
     pub fn as_str(&self) -> &str {
-        match self {
-            TextComponent::Video { text, .. }
-            | TextComponent::Browse { text, .. }
-            | TextComponent::Web { text, .. }
-            | TextComponent::Text { text, .. } => text,
-        }
-    }
-
-    pub fn into_string(self) -> String {
         match self {
             TextComponent::Video { text, .. }
             | TextComponent::Browse { text, .. }

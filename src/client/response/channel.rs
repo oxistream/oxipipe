@@ -275,8 +275,7 @@ impl From<PhTitleView> for crate::model::Verification {
             .dynamic_text_view_model
             .text
             .attachment_runs
-            .into_iter()
-            .next()
+            .first()
             .map(Verification::from)
             .unwrap_or_default()
     }

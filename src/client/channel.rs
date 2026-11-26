@@ -454,23 +454,9 @@ fn map_channel(
             }
             response::channel::Header::PageHeaderRenderer(header) => {
                 let hdata = header.content.page_header_view_model;
-                // channel handle - subscriber count - video count
                 let md_rows = hdata.metadata.content_metadata_view_model.metadata_rows;
-                let (sub_part, vc_part) = if md_rows.len() > 1 {
-                    let mp = &md_rows[1].metadata_parts;
-                    (mp.first(), mp.get(1))
-                } else {
-                    (
-                        md_rows.first().and_then(|md| md.metadata_parts.get(1)),
-                        None,
-                    )
-                };
-                let subscriber_count = sub_part.and_then(|t| {
-                    util::parse_large_numstr_or_warn::<u64>(t.as_str(), ctx.lang, &mut warnings)
-                });
-                let video_count = vc_part.and_then(|t| {
-                    util::parse_large_numstr_or_warn(t.as_str(), ctx.lang, &mut warnings)
-                });
+                let (subscriber_count, video_count) =
+                    header_counts(&md_rows, ctx.lang, &mut warnings);
 
                 Channel {
                     id: metadata.external_id,
@@ -510,6 +496,31 @@ struct MappedChannelContent {
     content: MapResult<Vec<response::YouTubeListItem>>,
     has_shorts: bool,
     has_live: bool,
+}
+
+/// Subscriber and video count from the header rows: channel handle - subscriber count - video
+/// count, split over one or two rows
+fn header_counts(
+    rows: &[response::PhMetadataRow],
+    lang: Language,
+    warnings: &mut Vec<String>,
+) -> (Option<u64>, Option<u64>) {
+    let parts = rows
+        .iter()
+        .flat_map(|row| &row.metadata_parts)
+        .filter(|p| !p.as_str().starts_with('@'))
+        .collect::<Vec<_>>();
+    let (subs, videos) = match parts.as_slice() {
+        [subs, videos, ..] => (Some(*subs), Some(*videos)),
+        // Only the subscriber count has an accessibility label
+        [part] if part.accessibility_label().is_some() => (Some(*part), None),
+        [part] => (None, Some(*part)),
+        [] => (None, None),
+    };
+    let mut count = |part: Option<&response::MetadataPart>| {
+        part.and_then(|p| util::parse_large_numstr_or_warn(p.as_str(), lang, warnings))
+    };
+    (count(subs), count(videos))
 }
 
 fn map_channel_content(
@@ -712,7 +723,7 @@ mod tests {
         client::{response, MapRespCtx, MapResponse},
         error::{ExtractionError, UnavailabilityReason},
         model::{paginator::Paginator, Channel, ChannelInfo, PlaylistItem, VideoItem},
-        param::{ChannelOrder, ChannelVideoTab},
+        param::{ChannelOrder, ChannelVideoTab, Language},
         serializer::MapResult,
         util::tests::TESTFILES,
     };
@@ -734,6 +745,7 @@ mod tests {
     #[case::pageheader("shorts_20240129_pageheader", "UCh8gHdtzO2tXd593_bjErWg")]
     #[case::pageheader2("videos_20240324_pageheader2", "UC2DjFE7Xf11URZqWBigcVOQ")]
     #[case::lockup("shorts_20240910_lockup", "UCh8gHdtzO2tXd593_bjErWg")]
+    #[case::videos_lockup("videos_20261126_lockup", "UCXuqSBlHAE6Xw-yeJA0Tunw")]
     fn map_channel_videos(#[case] name: &str, #[case] id: &str) {
         let json_path = path!(*TESTFILES / "channel" / format!("channel_{name}.json"));
         let json_file = File::open(json_path).unwrap();
@@ -758,6 +770,33 @@ mod tests {
                 ".content.items[].publish_date" => "[date]",
             });
         }
+    }
+
+    #[rstest]
+    #[case::two_rows(
+        r#"[{"metadataParts":[{"text":{"content":"@mkbhd"}}]},{"metadataParts":[{"text":{"content":"21.5M subscribers"},"accessibilityLabel":"21.5 million subscribers"},{"text":{"content":"1.8K videos"}}]}]"#,
+        (Some(21_500_000), Some(1_800))
+    )]
+    #[case::one_row(
+        r#"[{"metadataParts":[{"text":{"content":"@mkbhd"}},{"text":{"content":"21.5M subscribers"},"accessibilityLabel":"21.5 million subscribers"},{"text":{"content":"1.8K videos"}}]}]"#,
+        (Some(21_500_000), Some(1_800))
+    )]
+    #[case::hidden_subscribers(
+        r#"[{"metadataParts":[{"text":{"content":"@hidden"}}]},{"metadataParts":[{"text":{"content":"1.8K videos"}}]}]"#,
+        (None, Some(1_800))
+    )]
+    #[case::no_videos(
+        r#"[{"metadataParts":[{"text":{"content":"@new"}}]},{"metadataParts":[{"text":{"content":"12 subscribers"},"accessibilityLabel":"12 subscribers"}]}]"#,
+        (Some(12), None)
+    )]
+    fn header_counts(#[case] rows: &str, #[case] expect: (Option<u64>, Option<u64>)) {
+        let rows: Vec<response::PhMetadataRow> = serde_json::from_str(rows).unwrap();
+        let mut warnings = Vec::new();
+        assert_eq!(
+            super::header_counts(&rows, Language::En, &mut warnings),
+            expect
+        );
+        assert!(warnings.is_empty(), "{warnings:?}");
     }
 
     #[test]

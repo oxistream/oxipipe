@@ -7,7 +7,7 @@ Channel(
   name: "Doobydobap",
   handle: Some("@Doobydobap"),
   subscriber_count: Some(3740000),
-  video_count: None,
+  video_count: Some(345),
   avatar: [
     Thumbnail(
       url: "https://yt3.googleusercontent.com/dm5Aq93xvVJz0NoVO88ieBkDXmuShCujGPlZ7qETMEPTrXvPUCFI3-BB6Xs_P-r6Uk3mnBy9zA=s72-c-k-c0x00ffffff-no-rj",
