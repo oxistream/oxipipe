@@ -259,6 +259,7 @@ impl ExtractionError {
                 ..
             } | ExtractionError::WrongResult(_)
                 | ExtractionError::Botguard(_)
+                | ExtractionError::Deobfuscation(_)
         )
     }
 

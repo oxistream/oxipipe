@@ -131,6 +131,9 @@ impl RustyPipeQuery {
                     } else if !e.switch_client() {
                         return Err(Error::Extraction(e));
                     }
+                    if matches!(e, ExtractionError::Deobfuscation(_)) {
+                        tracing::warn!("deobfuscation failed for {client:?} client: {e}");
+                    }
                     if let Some(next_client) = clients_iter.peek() {
                         tracing::warn!("error fetching player with {client:?} client: {e}; retrying with {next_client:?} client");
                     }
