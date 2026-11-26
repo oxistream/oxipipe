@@ -13,6 +13,8 @@ use crate::{
     util,
 };
 
+mod solver;
+
 pub struct Deobfuscator {
     ctx: Context,
 }
@@ -61,9 +63,28 @@ impl DeobfData {
     }
 
     pub fn extract_fns(js_url: &str, player_js: &str) -> Result<Self, Error> {
-        let sig_fn = get_sig_fn(player_js)?;
-        let nsig_fn = get_nsig_fn(player_js)?;
         let sts = get_sts(player_js)?;
+
+        let (sig_fn, nsig_fn) = match solver::build_solver(player_js) {
+            Ok(solver) => {
+                tracing::debug!("built player-based deobf solver");
+                let sig_fn = format!(
+                    "{solver}\nvar {DEOBF_SIG_FUNC_NAME}=function(s){{return {0}(s,null).sig}};",
+                    solver::SOLVE_FUNC_NAME
+                );
+                let nsig_fn = format!(
+                    "var {DEOBF_NSIG_FUNC_NAME}=function(n){{return {0}(null,n).n}};",
+                    solver::SOLVE_FUNC_NAME
+                );
+                (sig_fn, nsig_fn)
+            }
+            Err(e) => {
+                tracing::warn!(
+                    "player-based deobf solver failed ({e}), falling back to function extraction"
+                );
+                (get_sig_fn(player_js)?, get_nsig_fn(player_js)?)
+            }
+        };
 
         Ok(Self {
             js_url: js_url.to_owned(),
