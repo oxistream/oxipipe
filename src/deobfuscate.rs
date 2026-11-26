@@ -482,11 +482,9 @@ fn extract_js_var(js: &str) -> Option<&str> {
                 Punct::CloseBrace => close_brace(&mut braces, b'{')?,
                 Punct::CloseBracket => close_brace(&mut braces, b'[')?,
                 Punct::CloseParen => close_brace(&mut braces, b'(')?,
-                Punct::Comma | Punct::SemiColon => {
-                    if braces.is_empty() {
-                        end = it.span.start;
-                        break;
-                    }
+                Punct::Comma | Punct::SemiColon if braces.is_empty() => {
+                    end = it.span.start;
+                    break;
                 }
                 _ => {}
             }

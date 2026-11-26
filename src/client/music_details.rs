@@ -445,7 +445,7 @@ mod tests {
             "deserialization/mapping warnings: {:?}",
             map_res.warnings
         );
-        insta::assert_ron_snapshot!(format!("map_music_lyrics"), map_res.c);
+        insta::assert_ron_snapshot!("map_music_lyrics".to_string(), map_res.c);
     }
 
     #[test]
@@ -462,6 +462,6 @@ mod tests {
             "deserialization/mapping warnings: {:?}",
             map_res.warnings
         );
-        insta::assert_ron_snapshot!(format!("map_music_related"), map_res.c);
+        insta::assert_ron_snapshot!("map_music_related".to_string(), map_res.c);
     }
 }

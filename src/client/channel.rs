@@ -762,7 +762,7 @@ mod tests {
 
     #[test]
     fn channel_agegate() {
-        let json_path = path!(*TESTFILES / "channel" / format!("channel_agegate.json"));
+        let json_path = path!(*TESTFILES / "channel" / "channel_agegate.json");
         let json_file = File::open(json_path).unwrap();
 
         let channel: response::Channel =

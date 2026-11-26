@@ -737,7 +737,7 @@ impl<'a> StreamsMapper<'a> {
             return Err(ExtractionError::InvalidData(
                 format!(
                     "Invalid mime type `{}` in video format {:?}",
-                    &f.mime_type, &f
+                    f.mime_type, f
                 )
                 .into(),
             ));
@@ -779,7 +779,7 @@ impl<'a> StreamsMapper<'a> {
             return Err(ExtractionError::InvalidData(
                 format!(
                     "Invalid mime type `{}` in video format {:?}",
-                    &f.mime_type, &f
+                    f.mime_type, f
                 )
                 .into(),
             ));
