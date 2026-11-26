@@ -55,7 +55,7 @@ pub(crate) enum YouTubeListItem {
     ///
     /// Seems to be currently A/B tested on the channel page,
     /// as of 11.10.2022
-    #[serde(alias = "shelfRenderer")]
+    #[serde(alias = "shelfRenderer", alias = "richSectionRenderer")]
     RichItemRenderer {
         content: Box<YouTubeListItem>,
     },
@@ -66,7 +66,11 @@ pub(crate) enum YouTubeListItem {
     /// as of 11.10.2022
     ///
     /// GridRenderer: contains videos on channel page
-    #[serde(alias = "expandedShelfContentsRenderer", alias = "gridRenderer")]
+    #[serde(
+        alias = "expandedShelfContentsRenderer",
+        alias = "gridRenderer",
+        alias = "richShelfRenderer"
+    )]
     ItemSectionRenderer {
         #[cfg(feature = "userdata")]
         header: Option<ItemSectionHeader>,

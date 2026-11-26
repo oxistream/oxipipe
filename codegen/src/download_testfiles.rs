@@ -11,7 +11,7 @@ use rustypipe::{
     model::YouTubeItem,
     param::{
         search_filter::{self, ItemType, SearchFilter},
-        ChannelVideoTab, Country,
+        ChannelVideoTab, Country, TrendingCategory,
     },
     report::{Report, Reporter},
 };
@@ -457,13 +457,19 @@ async fn search_empty() {
 }
 
 async fn trending() {
-    let json_path = path!(*TESTFILES_DIR / "trends" / "trending_videos.json");
-    if json_path.exists() {
-        return;
-    }
+    for (name, category) in [
+        ("podcasts", TrendingCategory::Podcasts),
+        ("gaming", TrendingCategory::Gaming),
+        ("news", TrendingCategory::News),
+    ] {
+        let json_path = path!(*TESTFILES_DIR / "trends" / format!("trending_{name}.json"));
+        if json_path.exists() {
+            continue;
+        }
 
-    let rp = rp_testfile(&json_path);
-    rp.query().trending().await.unwrap();
+        let rp = rp_testfile(&json_path);
+        rp.query().trending_category(category).await.unwrap();
+    }
 }
 
 async fn history() {

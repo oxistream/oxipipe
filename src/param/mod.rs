@@ -12,6 +12,33 @@ pub use locale::{Country, Language, COUNTRIES, LANGUAGES};
 pub(crate) use stream_filter::cmp_bitrate;
 pub use stream_filter::StreamFilter;
 
+/// Category of trending videos
+///
+/// YouTube removed its general trending page in 2025. These are the
+/// country-specific destination pages that replaced it.
+#[derive(Default, Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[non_exhaustive]
+pub enum TrendingCategory {
+    /// Trending podcast episodes (default, the broadest mix of topics)
+    #[default]
+    Podcasts,
+    /// Trending gaming videos
+    Gaming,
+    /// Top news stories
+    News,
+}
+
+impl TrendingCategory {
+    /// Browse ID and params of the destination page
+    pub(crate) const fn browse_params(self) -> (&'static str, &'static str) {
+        match self {
+            TrendingCategory::Podcasts => ("FEpodcasts_destination", "qgcCCAM%3D"),
+            TrendingCategory::Gaming => ("UCOpNcN46UbXVtpKMrmU4Abg", "Egh0cmVuZGluZw%3D%3D"),
+            TrendingCategory::News => ("UCYfdidRxbB8Qhf0Nx7ioOYw", "EgDSBwIIAQ%3D%3D"),
+        }
+    }
+}
+
 /// Channel video tab
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ChannelVideoTab {
