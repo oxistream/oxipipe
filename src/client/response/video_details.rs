@@ -1,6 +1,6 @@
 #![allow(clippy::enum_variant_names)]
 
-use serde::Deserialize;
+use serde::{Deserialize, Deserializer};
 use serde_with::{rust::deserialize_ignore_any, serde_as, DefaultOnError, VecSkipError};
 
 use crate::serializer::{
@@ -351,7 +351,20 @@ pub(crate) struct RecommendationResults {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub(crate) struct EngagementPanel {
+    #[serde(deserialize_with = "deserialize_panel")]
     pub engagement_panel_section_list_renderer: EngagementPanelRenderer,
+}
+
+/// Some panels (e.g. `engagement-panel-timeline-view-consolidated`) have no `targetId`
+fn deserialize_panel<'de, D>(deserializer: D) -> Result<EngagementPanelRenderer, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    let value = serde_json::Value::deserialize(deserializer)?;
+    if value.get("targetId").is_none() {
+        return Ok(EngagementPanelRenderer::None);
+    }
+    EngagementPanelRenderer::deserialize(value).map_err(serde::de::Error::custom)
 }
 
 /// The engagement panels are displayed below the video and contain chapter markers
