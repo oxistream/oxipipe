@@ -684,6 +684,8 @@ pub struct VideoDetails {
     pub is_ccommons: bool,
     /// Chapters of the video
     pub chapters: Vec<Chapter>,
+    /// "How this was made" disclosures, e.g. altered or synthetic content
+    pub content_disclosures: Vec<ContentDisclosure>,
     /// Recommended videos
     ///
     /// Note: Recommendations are not available for age-restricted videos
@@ -698,6 +700,35 @@ pub struct VideoDetails {
     pub latest_comments: Paginator<Comment>,
     /// YouTube visitor data ID
     pub visitor_data: Option<String>,
+}
+
+/// "How this was made" disclosure YouTube shows in the video description
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[non_exhaustive]
+pub struct ContentDisclosure {
+    /// Disclosure type
+    pub kind: ContentDisclosureKind,
+    /// Short label (e.g. "Made with AI", depends on language)
+    pub title: Option<String>,
+    /// Explanation (e.g. "Sounds or visuals were altered or fully generated.")
+    pub text: String,
+    /// Help page explaining the disclosure
+    pub url: Option<String>,
+    /// Source of the disclosure (e.g. "Info from Google LLC")
+    pub attribution: Option<String>,
+}
+
+/// Content disclosure type
+#[derive(Copy, Clone, Debug, Serialize, Deserialize, PartialEq, Eq, Hash)]
+#[serde(rename_all = "snake_case")]
+#[non_exhaustive]
+pub enum ContentDisclosureKind {
+    /// Sounds or visuals were altered or generated, e.g. with AI
+    AlteredOrSynthetic,
+    /// Audio tracks for some languages were dubbed with YouTube's AI AutoDub feature
+    AutoDubbed,
+    /// Unknown disclosure type
+    Other,
 }
 
 /// Chapter of a video
@@ -1044,6 +1075,8 @@ pub struct ShortDetails {
     pub name: Option<String>,
     /// Full-length video the uploader linked to the short
     pub linked_video: Option<VideoId>,
+    /// "How this was made" disclosures, e.g. altered or synthetic content
+    pub content_disclosures: Vec<ContentDisclosure>,
 }
 
 /*

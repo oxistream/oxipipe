@@ -165,6 +165,12 @@ impl MapResponse<ShortDetails> for response::ReelItem {
         self,
         ctx: &MapRespCtx<'_>,
     ) -> Result<MapResult<ShortDetails>, ExtractionError> {
+        let content_disclosures = self
+            .engagement_panels
+            .into_iter()
+            .filter_map(|p| p.engagement_panel_section_list_renderer.content)
+            .flat_map(super::video_details::map_content_disclosures)
+            .collect();
         let metapanel = self
             .overlay
             .and_then(|o| o.reel_player_overlay_renderer.player_overlay)
@@ -202,6 +208,7 @@ impl MapResponse<ShortDetails> for response::ReelItem {
                 id: ctx.id.to_owned(),
                 name,
                 linked_video,
+                content_disclosures,
             },
             warnings: Vec::new(),
         })
@@ -268,6 +275,7 @@ mod tests {
     #[rstest]
     #[case::linked("linked", "sHpEqeSByPI")]
     #[case::plain("plain", "kQO5P-qsyiA")]
+    #[case::ai("ai", "tTjXWrpXdW4")]
     fn map_short_details(#[case] name: &str, #[case] id: &str) {
         let json_path = path!(*TESTFILES / "reel" / format!("item_{name}.json"));
         let json_file = File::open(json_path).unwrap();

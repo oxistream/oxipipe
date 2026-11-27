@@ -1,7 +1,7 @@
 use serde::Deserialize;
 use serde_with::{serde_as, DefaultOnError, VecSkipError};
 
-use super::{ContinuationEndpoint, Thumbnails};
+use super::{video_details::StructuredDescriptionContent, ContinuationEndpoint, Thumbnails};
 use crate::serializer::{text::AttributedText, MapResult};
 
 /// Response of `reel/reel_watch_sequence`
@@ -36,10 +36,30 @@ pub(crate) struct ReelWatchEndpoint {
 }
 
 /// Response of `reel/reel_item_watch`
+#[serde_as]
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub(crate) struct ReelItem {
     pub overlay: Option<ReelItemOverlay>,
+    #[serde(default)]
+    #[serde_as(as = "VecSkipError<_>")]
+    pub engagement_panels: Vec<ReelEngagementPanel>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct ReelEngagementPanel {
+    pub engagement_panel_section_list_renderer: ReelEngagementPanelRenderer,
+}
+
+/// Only the structured description is used, other panels have no parseable content
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct ReelEngagementPanelRenderer {
+    #[serde(default)]
+    #[serde_as(as = "DefaultOnError")]
+    pub content: Option<StructuredDescriptionContent>,
 }
 
 #[derive(Debug, Deserialize)]

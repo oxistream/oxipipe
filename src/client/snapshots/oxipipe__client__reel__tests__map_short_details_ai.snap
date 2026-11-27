@@ -1,0 +1,18 @@
+---
+source: src/client/reel.rs
+expression: map_res.c
+---
+ShortDetails(
+  id: "tTjXWrpXdW4",
+  name: Some("Sora 2 AI Made This Cat a Superstar!"),
+  linked_video: None,
+  content_disclosures: [
+    ContentDisclosure(
+      kind: altered_or_synthetic,
+      title: Some("Made with AI"),
+      text: "Sounds or visuals were altered or fully generated.",
+      url: Some("https://support.google.com/youtube/answer/15447836?hl=en"),
+      attribution: None,
+    ),
+  ],
+)

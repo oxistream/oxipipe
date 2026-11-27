@@ -1,0 +1,722 @@
+---
+source: src/client/video_details.rs
+expression: map_res.c
+---
+VideoDetails(
+  id: "i8_Pz7sBp_M",
+  name: "Sora AI Tutorial — How to Create Stunning AI Videos",
+  description: RichText([
+    Text(
+      text: "Want to create stunning AI-generated videos? This Sora AI tutorial walks you through everything you need to know to start making incredible videos with OpenAI\'s powerful video generation tool.\n\nFirst, you\'ll learn how to create your first video in Sora AI, from logging in to selecting the best plan for your needs.\n\nNext, you\'ll explore how to fine-tune your prompts to get the best results, using proven techniques and the CAST framework.\n\nThen, we\'ll break down Sora’s strengths and weaknesses across six different types of videos, so you know exactly what it excels at.\n\nFinally, don’t miss our bonus content, where we dive into advanced camera, style, and lighting adjustments to take your AI videos to the next level.\n\nIf you’re ready to unlock the full potential of AI video creation, click the link below to start using Sora today!\n\nHost: David DeWinter\n \n📚 RESOURCES\nSora AI ➜ ",
+    ),
+    Web(
+      text: "https://sora.com",
+      url: "https://sora.com/",
+    ),
+    Text(
+      text: "\nSora AI Bonus Prompts ➜ ",
+    ),
+    YouTube(
+      text: "50 Game-Changing Sora AI Prompts (You’re P...",
+      target: Video(
+        id: "KUKbdZtyA0s",
+        start_time: 0,
+      ),
+    ),
+    Text(
+      text: "\n\nPrompt for ChatGPT to create a good prompt for Sora: \"What\'s an imaginative character, action, setting, and time that I can create a video around? Combine all information into one sentence.\"\n \n⌚ TIMESTAMPS\n",
+    ),
+    YouTube(
+      text: "00:00",
+      target: Video(
+        id: "i8_Pz7sBp_M",
+        start_time: 0,
+      ),
+    ),
+    Text(
+      text: " - Sora AI: Next Gen Video Creator?\n",
+    ),
+    YouTube(
+      text: "00:37",
+      target: Video(
+        id: "i8_Pz7sBp_M",
+        start_time: 37,
+      ),
+    ),
+    Text(
+      text: " - Setting Up Sora\n",
+    ),
+    YouTube(
+      text: "01:59",
+      target: Video(
+        id: "i8_Pz7sBp_M",
+        start_time: 119,
+      ),
+    ),
+    Text(
+      text: " - Making Your First Videos\n",
+    ),
+    YouTube(
+      text: "05:40",
+      target: Video(
+        id: "i8_Pz7sBp_M",
+        start_time: 340,
+      ),
+    ),
+    Text(
+      text: " - How to Tune Your Prompts\n",
+    ),
+    YouTube(
+      text: "07:28",
+      target: Video(
+        id: "i8_Pz7sBp_M",
+        start_time: 448,
+      ),
+    ),
+    Text(
+      text: " - Use CAST for Best Results\n",
+    ),
+    YouTube(
+      text: "08:29",
+      target: Video(
+        id: "i8_Pz7sBp_M",
+        start_time: 509,
+      ),
+    ),
+    Text(
+      text: " - Video Style Presets\n",
+    ),
+    YouTube(
+      text: "09:39",
+      target: Video(
+        id: "i8_Pz7sBp_M",
+        start_time: 579,
+      ),
+    ),
+    Text(
+      text: " - Best Videos to Generate\n",
+    ),
+    YouTube(
+      text: "17:00",
+      target: Video(
+        id: "i8_Pz7sBp_M",
+        start_time: 1020,
+      ),
+    ),
+    Text(
+      text: " - Bonus Content\n \n📩 NEWSLETTER\nGet the latest high-quality tutorial and tips and tricks videos emailed to your inbox each week: ",
+    ),
+    Web(
+      text: "https://kevinstratvert.com/newsletter/",
+      url: "https://kevinstratvert.com/newsletter/",
+    ),
+    Text(
+      text: "\n \n🔽 CONNECT WITH ME\nOfficial website: ",
+    ),
+    Web(
+      text: "http://www.kevinstratvert.com",
+      url: "http://www.kevinstratvert.com/",
+    ),
+    Text(
+      text: "\nLinkedIn: ",
+    ),
+    Web(
+      text: "LinkedIn: kevinstratvert",
+      url: "https://www.linkedin.com/in/kevinstratvert/",
+    ),
+    Text(
+      text: "\nDiscord: ",
+    ),
+    Web(
+      text: "https://bit.ly/KevinStratvertDiscord",
+      url: "https://bit.ly/KevinStratvertDiscord",
+    ),
+    Text(
+      text: "\nTwitter: ",
+    ),
+    Web(
+      text: "Twitter: kevstrat",
+      url: "https://twitter.com/kevstrat",
+    ),
+    Text(
+      text: "\nFacebook: ",
+    ),
+    Web(
+      text: "Facebook: kevin-stratvert-101912218227818",
+      url: "https://www.facebook.com/Kevin-Stratvert-101912218227818",
+    ),
+    Text(
+      text: "\nTikTok: ",
+    ),
+    Web(
+      text: "TikTok: kevinstratvert",
+      url: "https://www.tiktok.com/@kevinstratvert",
+    ),
+    Text(
+      text: "\nInstagram: ",
+    ),
+    Web(
+      text: "Instagram: kevinstratvert",
+      url: "https://www.instagram.com/kevinstratvert/",
+    ),
+    Text(
+      text: "\n \n🎁 TOOLS AND DISCOUNTS\n✅ 🎙\u{fe0f} Voicemod AI Voice Changer | 5% off | ",
+    ),
+    Web(
+      text: "https://link.xsolla.com/KZBi89AY",
+      url: "https://link.xsolla.com/KZBi89AY",
+    ),
+    Text(
+      text: "\n✅ 🌐 Squarespace Websites | ",
+    ),
+    Web(
+      text: "https://squarespace.syuh.net/XYaqYM",
+      url: "https://squarespace.syuh.net/XYaqYM",
+    ),
+    Text(
+      text: "\n✅ 🔍 Grammarly | ",
+    ),
+    Web(
+      text: "https://grammarly.go2cloud.org/SH3nL",
+      url: "https://grammarly.go2cloud.org/SH3nL",
+    ),
+    Text(
+      text: "\n✅ 📹 CapCut | ",
+    ),
+    Web(
+      text: "https://bit.ly/installcapcut",
+      url: "https://bit.ly/installcapcut",
+    ),
+    Text(
+      text: "\n✅ 🛍\u{fe0f} Shopify | ",
+    ),
+    Web(
+      text: "https://shopify.pxf.io/XY9rPa",
+      url: "https://shopify.pxf.io/XY9rPa",
+    ),
+    Text(
+      text: "\n✅ 📋 Notion | ",
+    ),
+    Web(
+      text: "https://affiliate.notion.so/rffva4tr71ax",
+      url: "https://affiliate.notion.so/rffva4tr71ax",
+    ),
+    Text(
+      text: "\n✅ 🖼\u{fe0f} Figma | ",
+    ),
+    Web(
+      text: "https://psxid.figma.com/lqjg97licpry",
+      url: "https://psxid.figma.com/lqjg97licpry",
+    ),
+    Text(
+      text: "\n✅ 🤖 ElevenLabs Text-to-Speech | ",
+    ),
+    Web(
+      text: "https://try.elevenlabs.io/taqepq60mptr",
+      url: "https://try.elevenlabs.io/taqepq60mptr",
+    ),
+    Text(
+      text: "\n✅ 💵 Quickbooks Online | ",
+    ),
+    Web(
+      text: "https://bit.ly/intuitquickbooksonline",
+      url: "https://bit.ly/intuitquickbooksonline",
+    ),
+    Text(
+      text: "\n✅ 👥 Hubspot | ",
+    ),
+    Web(
+      text: "https://hubspot.sjv.io/DKo6jb",
+      url: "https://hubspot.sjv.io/DKo6jb",
+    ),
+    Text(
+      text: "\n✅ 📈 Semrush PRO | ",
+    ),
+    Web(
+      text: "https://bit.ly/semrush14dayfreetrial",
+      url: "https://bit.ly/semrush14dayfreetrial",
+    ),
+    Text(
+      text: "\n✅ 📈 Semrush GURU | ",
+    ),
+    Web(
+      text: "https://bit.ly/semrushguru14daytrial",
+      url: "https://bit.ly/semrushguru14daytrial",
+    ),
+    Text(
+      text: "\n✅ 📈 Semrush ContentShake AI | ",
+    ),
+    Web(
+      text: "https://bit.ly/contentshakeaisemrush",
+      url: "https://bit.ly/contentshakeaisemrush",
+    ),
+    Text(
+      text: "\n✅ 🎥 Descript | ",
+    ),
+    Web(
+      text: "https://get.descript.com/sf22jb63w2tx",
+      url: "https://get.descript.com/sf22jb63w2tx",
+    ),
+    Text(
+      text: "\n✅ 🏓 Smartsheet | ",
+    ),
+    Web(
+      text: "https://bit.ly/trysmartsheet",
+      url: "https://bit.ly/trysmartsheet",
+    ),
+    Text(
+      text: "\n \n🎒 MY COURSES\nGo from Excel novice to data analysis ninja in just 2 hours: ",
+    ),
+    Web(
+      text: "https://kevinstratvert.thinkific.com/",
+      url: "https://kevinstratvert.thinkific.com/",
+    ),
+    Text(
+      text: "\n \n🙏 REQUEST VIDEOS\n",
+    ),
+    Web(
+      text: "https://forms.gle/BDrTNUoxheEoMLGt5",
+      url: "https://forms.gle/BDrTNUoxheEoMLGt5",
+    ),
+    Text(
+      text: "\n \n🔔 SUBSCRIBE ON YOUTUBE\n",
+    ),
+    Web(
+      text: "https://www.youtube.com/user/kevlers?...",
+      url: "https://www.youtube.com/user/kevlers?sub_confirmation=1",
+    ),
+    Text(
+      text: "\n \n🙌 SUPPORT THE CHANNEL\nHit the THANKS button in any video!\nAmazon affiliate link: ",
+    ),
+    Web(
+      text: "https://amzn.to/3kCP2yz",
+      url: "https://amzn.to/3kCP2yz",
+    ),
+    Text(
+      text: "\n \n⚖ DISCLOSURE\nSome links are affiliate links. Purchasing through these links gives me a small commission to support videos on this channel. The price to you is the same.\n \n",
+    ),
+    Text(
+      text: "#stratvert",
+    ),
+    Text(
+      text: " ",
+    ),
+    Text(
+      text: "#sora",
+    ),
+    Text(
+      text: " ",
+    ),
+  ]),
+  channel: ChannelTag(
+    id: "UCfJT_eYDTmDE-ovKaxVE1ig",
+    name: "Kevin Stratvert",
+    avatar: [
+      Thumbnail(
+        url: "https://yt3.ggpht.com/FHaircC3fnPqOhk3M4POJQlPF2_yVnCj5W60SNbFL_zK5jzmJ5mNyFVaoLKZufC4uPo4WP8gQw=s48-c-k-c0x00ffffff-no-rj",
+        width: 48,
+        height: 48,
+      ),
+      Thumbnail(
+        url: "https://yt3.ggpht.com/FHaircC3fnPqOhk3M4POJQlPF2_yVnCj5W60SNbFL_zK5jzmJ5mNyFVaoLKZufC4uPo4WP8gQw=s88-c-k-c0x00ffffff-no-rj",
+        width: 88,
+        height: 88,
+      ),
+      Thumbnail(
+        url: "https://yt3.ggpht.com/FHaircC3fnPqOhk3M4POJQlPF2_yVnCj5W60SNbFL_zK5jzmJ5mNyFVaoLKZufC4uPo4WP8gQw=s176-c-k-c0x00ffffff-no-rj",
+        width: 176,
+        height: 176,
+      ),
+    ],
+    verification: verified,
+    subscriber_count: Some(4510000),
+  ),
+  view_count: 259134,
+  like_count: Some(2368),
+  publish_date: "[date]",
+  publish_date_txt: Some("Feb 17, 2025"),
+  is_live: false,
+  is_ccommons: false,
+  chapters: [
+    Chapter(
+      name: "Sora AI: Next Gen Video Creator?",
+      position: 0,
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_2166.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLBc2lIe-8R1UE8IdDTGWIruzisQ5g",
+          width: 168,
+          height: 94,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_2166.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBblH1GeqoTkOltU308VX0vUsmY4A",
+          width: 336,
+          height: 188,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_2166.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAfZOlwK6-cLs-aYflt5txqqPG8_g",
+          width: 498,
+          height: 280,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_2166.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAQMLtCOPdMa8nrIusb7mS-y3OoQg",
+          width: 720,
+          height: 404,
+        ),
+      ],
+    ),
+    Chapter(
+      name: "Setting Up Sora",
+      position: 37,
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_39966.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLAgBxXx5lO1ACMGNGuabhllUy86KQ",
+          width: 168,
+          height: 94,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_39966.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDjGG68VReHAhqps7hVKFqA297WDQ",
+          width: 336,
+          height: 188,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_39966.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCixL2yblqemcis5Z4-Tjoc8DS8-w",
+          width: 498,
+          height: 280,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_39966.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDY7rnvbn1wYva1sZbubX1RxFTPwg",
+          width: 720,
+          height: 404,
+        ),
+      ],
+    ),
+    Chapter(
+      name: "Making Your First Videos",
+      position: 119,
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_119900.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLDCkH3JYCaQpQiuRliE6IZLMYF-KA",
+          width: 168,
+          height: 94,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_119900.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCDy0qFcoDuG3dB0uySqDWZHZ3ymA",
+          width: 336,
+          height: 188,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_119900.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDCEQOq3r1tAV2kVR2DL4Yf0dFTjg",
+          width: 498,
+          height: 280,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_119900.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDPLgozDsSu21coifwD-ASTQk7Mgw",
+          width: 720,
+          height: 404,
+        ),
+      ],
+    ),
+    Chapter(
+      name: "How to Tune Your Prompts",
+      position: 340,
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_361900.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLBM06sosXdC4UEHHa34k85DTpCPGw",
+          width: 168,
+          height: 94,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_361900.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLA4xWt4JeGdm0gz6czT2E_FfGCT2Q",
+          width: 336,
+          height: 188,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_361900.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDO0b4RjQdv6Dyym71KepUwIDjt7Q",
+          width: 498,
+          height: 280,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_361900.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLApYjSD6iQtB97uXCsAPq906_JUZA",
+          width: 720,
+          height: 404,
+        ),
+      ],
+    ),
+    Chapter(
+      name: "Use CAST for Best Results",
+      position: 448,
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_466866.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLAG_upsQcBh08L_4OQK3ii02HYT8g",
+          width: 168,
+          height: 94,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_466866.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCs9RS3262zrQ5UOmETMSi0wfs4ew",
+          width: 336,
+          height: 188,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_466866.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLADBavjVGm1OJh3sfy8onN0MgvpKg",
+          width: 498,
+          height: 280,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_466866.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCetQmoenJFbu9eqXEubjJahLY_cw",
+          width: 720,
+          height: 404,
+        ),
+      ],
+    ),
+    Chapter(
+      name: "Video Style Presets",
+      position: 509,
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_537733.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLCNsvEVd9lyx3IryNzB6JTXZB9JiQ",
+          width: 168,
+          height: 94,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_537733.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDjqtsTPS5m4K1Y4JYavQLN2h7ESg",
+          width: 336,
+          height: 188,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_537733.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAntcUd4slBfB2xZlb6ml3OSPel-A",
+          width: 498,
+          height: 280,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_537733.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAFPLC-8k9fsYfX0kQ5MfODCOq9PA",
+          width: 720,
+          height: 404,
+        ),
+      ],
+    ),
+    Chapter(
+      name: "Best Videos to Generate",
+      position: 579,
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_605233.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLDArpt2Su8yh7TyMNgHDHrvqqG4BQ",
+          width: 168,
+          height: 94,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_605233.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAObDsmtEzFAW9yq-nJ0fW0jqrNDA",
+          width: 336,
+          height: 188,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_605233.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDy7y5A85M40-t5EUdL4s2KHxC_Hg",
+          width: 498,
+          height: 280,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_605233.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBsVpeBqh4GveLxc5IkAFCd7jjSbw",
+          width: 720,
+          height: 404,
+        ),
+      ],
+    ),
+    Chapter(
+      name: "Bonus Content",
+      position: 1020,
+      thumbnail: [
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_1022266.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLA-YOSUbd95__JRKswFDsbdgg_DlQ",
+          width: 168,
+          height: 94,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_1022266.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBb2JeW7RXoL604a_-QPYaxCh8LGQ",
+          width: 336,
+          height: 188,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_1022266.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLB4SQUOdnOpM3-_B5QKIjWFMsmsnQ",
+          width: 498,
+          height: 280,
+        ),
+        Thumbnail(
+          url: "https://i.ytimg.com/vi/i8_Pz7sBp_M/hqdefault_1022266.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAtBCy6SDSQ-qxci7ksdrmMQt-pDw",
+          width: 720,
+          height: 404,
+        ),
+      ],
+    ),
+  ],
+  content_disclosures: [
+    ContentDisclosure(
+      kind: auto_dubbed,
+      title: Some("Auto-dubbed"),
+      text: "Audio tracks for some languages were automatically generated.",
+      url: Some("https://support.google.com/youtube/answer/15569972?hl=en"),
+      attribution: None,
+    ),
+  ],
+  recommended: Paginator(
+    count: None,
+    items: [
+      VideoItem(
+        id: "rRrBbyv3ChM",
+        name: "FULL Claude Tutorial for Beginners in 2026! (Become a PRO!)",
+        duration: Some(2957),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/rRrBbyv3ChM/hqdefault.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLBM0ym3rccsptkocoyiBsrauwzaKQ&usqp=CCc",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/rRrBbyv3ChM/hqdefault.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLC-6EP97qWELvOvsY4mrXUO3if4OQ&usqp=CCc",
+            width: 336,
+            height: 188,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/rRrBbyv3ChM/hq720.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLACDNR3kTinShPfZ_FVm9aTvGwNvQ&usqp=CCc",
+            width: 498,
+            height: 280,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/rRrBbyv3ChM/hq720.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLDtIdVxqX6eXIfVT616uzdoiKVt4Q&usqp=CCc",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        publish_date: "[date]",
+        publish_date_txt: Some("8 months ago"),
+        view_count: Some(1500000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "LlhTEttKcwQ",
+        name: "I Tried The LAZIEST Way to Make Money With AI",
+        duration: Some(1999),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/LlhTEttKcwQ/hqdefault.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLBDbdTcWFJvevM1Tmh18UNtXR0-yw&usqp=CCc",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/LlhTEttKcwQ/hqdefault.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLC3vbHgvMHdUyTH7U5hAE-bfym8qA&usqp=CCc",
+            width: 336,
+            height: 188,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/LlhTEttKcwQ/hq720.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBqUdUkeg9yMpZIoohY4VEFUqmeSg&usqp=CCc",
+            width: 498,
+            height: 280,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/LlhTEttKcwQ/hq720.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLA2aJpgSTL3pp4bOmNrHEzURihoAQ&usqp=CCc",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        publish_date: "[date]",
+        publish_date_txt: Some("2 months ago"),
+        view_count: Some(10000000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "CqWulzM-EMw",
+        name: "I Tested SORA vs 6 AI Video Generators… Here’s The BEST!",
+        duration: Some(1342),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/CqWulzM-EMw/hqdefault.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLDqXTi5HvbEbun1z9oWEqO7BpRjag&usqp=CCc",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/CqWulzM-EMw/hqdefault.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLAjB5ZXjrFoy_9VRpRdz5DBnM2nKw&usqp=CCc",
+            width: 336,
+            height: 188,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/CqWulzM-EMw/hq720.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBQMHiZH-y2pCsmGzwg8_HrWySX6g&usqp=CCc",
+            width: 498,
+            height: 280,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/CqWulzM-EMw/hq720.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLCuk-asPoaxxbJuv0FY0RHE3rxsgQ&usqp=CCc",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        publish_date: "[date]",
+        publish_date_txt: Some("1 year ago"),
+        view_count: Some(90000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "g_RUQtLHFOs",
+        name: "GPT-6.2 Astra vs Gemini 4 Neon, an AI That Rewrites Its Own Weights, Gemini Uses Your Mac: AI NEWS",
+        duration: Some(1421),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/g_RUQtLHFOs/hqdefault.jpg?sqp=-oaymwEfCKgBEF5IVfKriqkDEggBFQAAiEIYAXABwAEGuAL3GA==&rs=AOn4CLDakRxBR4dBvKzv4BohDXnSDQMojg&usqp=CCc",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/g_RUQtLHFOs/hqdefault.jpg?sqp=-oaymwEgCNACELwBSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBPwAeGciPUXViDpEs95lxLD7YI7Q&usqp=CCc",
+            width: 336,
+            height: 188,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/g_RUQtLHFOs/hq720.jpg?sqp=-oaymwEgCPIDEJgCSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLC8rFFeJqdaV6W-EoR7x2JOCjNahg&usqp=CCc",
+            width: 498,
+            height: 280,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/g_RUQtLHFOs/hq720.jpg?sqp=-oaymwEgCNAFEJQDSFXyq4qpAxIIARUAAIhCGAFwAcABBrgC9xg=&rs=AOn4CLBWswQ9sWFlM1rfcnfjpDXHIl2q-A&usqp=CCc",
+            width: 720,
+            height: 404,
+          ),
+        ],
+        channel: None,
+        publish_date: "[date]",
+        publish_date_txt: Some("4 days ago"),
+        view_count: Some(52),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+    ],
+    ctoken: Some("CBQSExILaThfUHo3c0JwX03AAQHIAQEYACqfBk1nc0lvSXJsdHE3Sm5NSDJBZHJPaS1zTXd3UUt3QVFLQV9JLUFBb093ajRMQ0pPVTNOX3lyYkNOclFFS0FfSS1BQW9Od2o0S0NJVG1xZHF0NHBTc0xnb0Q4ajRBQ2czQ1Bnb0l6S0g0bWZQUzY5SUtDZ1B5UGdBS0RzSS1Dd2pycVp5V3JZaVYtb01CQ2dQeVBnQUtEc0ktQ3dqaS00ZXN6Yjd4OFlJQkNnUHlQZ0FLRHNJLUN3amh0TGpwOTZlUmhNTUJDZ1B5UGdBS0RjSS1DZ2ppNDVUSnZKbTAtMElLQV9JLUFBb093ajRMQ05QS29yNmVrZFAzaUFFS0FfSS1BQW9Od2o0S0NLM1UzcE9zX3JhTmV3b0Q4ajRBQ2c3Q1Bnc0k3OEdKcDlQYnk3U1FBUW9EOGo0QUNnN0NQZ3NJbzZxeGtObUIwZFBOQVFvRDhqNEFDZzNDUGdvSWpfaUo4dUdieDdBYkNnUHlQZ0FLRHNJLUN3aXM5Y0d6MDgteDR0c0JDZ1B5UGdBS0RzSS1Dd2lyck9yYzdfZTBvYVlCQ2dQeVBnQUtEY0ktQ2dpMTA3M1UtZmlZdnhBS0FfSS1BQW9Od2o0S0NMcVhyY19MdS1XNWV3b0Q4ajRBQ2czQ1Bnb0locHpmNDdHcHRKaG5DZ1B5UGdBS0RzSS1Dd2pHdXRUQ3U4cVVpOThCQ2dQeVBnQUtEc0ktQ3dqamljX3VtWlRyNmVjQkNnUHlQZ0FLRHNJLUN3aWdpdVcycnNtY3dmWUJFaFFBQWdRR0NBb01EaEFTRkJZWUdod2VJQ0lrSmhvRUNBQVFBUm9FQ0FJUUF4b0VDQVFRQlJvRUNBWVFCeG9FQ0FnUUNSb0VDQW9RQ3hvRUNBd1FEUm9FQ0E0UUR4b0VDQkFRRVJvRUNCSVFFeG9FQ0JRUUZSb0VDQllRRnhvRUNCZ1FHUm9FQ0JvUUd4b0VDQndRSFJvRUNCNFFIeG9FQ0NBUUlSb0VDQ0lRSXhvRUNDUVFKUm9FQ0NZUUp5b1VBQUlFQmdnS0RBNFFFaFFXR0JvY0hpQWlKQ1lqD3dhdGNoLW5leHQtZmVlZA%3D%3D"),
+    visitor_data: Some("redacted"),
+    endpoint: next,
+  ),
+  top_comments: Paginator(
+    count: None,
+    items: [],
+    ctoken: Some("Eg0SC2k4X1B6N3NCcF9NGAYyJSIRIgtpOF9QejdzQnBfTTAAeAJCEGNvbW1lbnRzLXNlY3Rpb24%3D"),
+    visitor_data: Some("redacted"),
+    endpoint: next,
+  ),
+  latest_comments: Paginator(
+    count: None,
+    items: [],
+    ctoken: Some("Eg0SC2k4X1B6N3NCcF9NGAYyOyIUIgtpOF9QejdzQnBfTTABeALwAwEwAUIhZW5nYWdlbWVudC1wYW5lbC1jb21tZW50cy1zZWN0aW9u"),
+    visitor_data: Some("redacted"),
+    endpoint: next,
+  ),
+  visitor_data: Some("redacted"),
+)

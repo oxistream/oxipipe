@@ -15,8 +15,8 @@ use oxipipe::model::{
     paginator::{ContinuationEndpoint, Paginator},
     richtext::ToPlaintext,
     traits::{FromYtItem, YtStream},
-    AlbumType, AudioCodec, AudioFormat, AudioTrackType, Channel, Frameset, MusicGenre, MusicItem,
-    UrlTarget, Verification, VideoCodec, VideoFormat, VideoId, YouTubeItem,
+    AlbumType, AudioCodec, AudioFormat, AudioTrackType, Channel, ContentDisclosureKind, Frameset,
+    MusicGenre, MusicItem, UrlTarget, Verification, VideoCodec, VideoFormat, VideoId, YouTubeItem,
 };
 use oxipipe::param::{
     search_filter::{self, SearchFilter},
@@ -1368,6 +1368,60 @@ async fn short_details(rp: RustyPipe) {
 
     let plain = rp.query().short_details("kQO5P-qsyiA").await.unwrap();
     assert_eq!(plain.linked_video, None);
+}
+
+#[rstest]
+#[tokio::test]
+async fn get_player_auto_dubbed(rp: RustyPipe) {
+    let player = rp.query().player("i8_Pz7sBp_M").await.unwrap();
+    let tracks = player
+        .audio_streams
+        .iter()
+        .filter_map(|s| s.track.as_ref())
+        .collect::<Vec<_>>();
+    let original = tracks
+        .iter()
+        .find(|t| t.track_type == Some(AudioTrackType::Original))
+        .expect("original track");
+    assert!(original.is_default);
+    assert!(tracks
+        .iter()
+        .any(|t| t.track_type == Some(AudioTrackType::DubbedAuto) && !t.is_default));
+}
+
+#[rstest]
+#[case::ai("-YrdcUHpNV4", ContentDisclosureKind::AlteredOrSynthetic)]
+#[case::autodub("i8_Pz7sBp_M", ContentDisclosureKind::AutoDubbed)]
+#[tokio::test]
+async fn get_video_details_disclosure(
+    #[case] id: &str,
+    #[case] kind: ContentDisclosureKind,
+    rp: RustyPipe,
+) {
+    let details = rp.query().video_details(id).await.unwrap();
+    let disclosure = details
+        .content_disclosures
+        .iter()
+        .find(|d| d.kind == kind)
+        .expect("disclosure");
+    assert!(!disclosure.text.is_empty());
+    assert!(disclosure.title.is_some());
+}
+
+#[rstest]
+#[tokio::test]
+async fn short_details_disclosure(rp: RustyPipe) {
+    let short = rp.query().short_details("tTjXWrpXdW4").await.unwrap();
+    assert!(short
+        .content_disclosures
+        .iter()
+        .any(|d| d.kind == ContentDisclosureKind::AlteredOrSynthetic));
+
+    let plain = rp.query().short_details("kQO5P-qsyiA").await.unwrap();
+    assert!(!plain
+        .content_disclosures
+        .iter()
+        .any(|d| d.kind == ContentDisclosureKind::AlteredOrSynthetic));
 }
 
 #[rstest]
