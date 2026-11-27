@@ -16,6 +16,10 @@ pub use stream_filter::StreamFilter;
 ///
 /// YouTube removed its general trending page in 2025. These are the
 /// country-specific destination pages that replaced it.
+///
+/// Not included because they are unavailable without signing in or hold no
+/// videos: Shopping and Courses (redirect to the start page), Movies & TV
+/// (paid titles only) and Playables (games).
 #[derive(Default, Debug, Clone, Copy, PartialEq, Eq, Hash)]
 #[non_exhaustive]
 pub enum TrendingCategory {
@@ -26,15 +30,30 @@ pub enum TrendingCategory {
     Gaming,
     /// Top news stories
     News,
+    /// Music videos and live performances
+    Music,
+    /// Sports highlights and live games
+    Sports,
+    /// Educational videos
+    Learning,
+    /// Fashion and beauty videos
+    Fashion,
+    /// Current and recent livestreams
+    Live,
 }
 
 impl TrendingCategory {
     /// Browse ID and params of the destination page
-    pub(crate) const fn browse_params(self) -> (&'static str, &'static str) {
+    pub(crate) const fn browse_params(self) -> (&'static str, Option<&'static str>) {
         match self {
-            TrendingCategory::Podcasts => ("FEpodcasts_destination", "qgcCCAM%3D"),
-            TrendingCategory::Gaming => ("UCOpNcN46UbXVtpKMrmU4Abg", "Egh0cmVuZGluZw%3D%3D"),
-            TrendingCategory::News => ("UCYfdidRxbB8Qhf0Nx7ioOYw", "EgDSBwIIAQ%3D%3D"),
+            TrendingCategory::Podcasts => ("FEpodcasts_destination", Some("qgcCCAM%3D")),
+            TrendingCategory::Gaming => ("UCOpNcN46UbXVtpKMrmU4Abg", Some("Egh0cmVuZGluZw%3D%3D")),
+            TrendingCategory::News => ("UCYfdidRxbB8Qhf0Nx7ioOYw", Some("EgDSBwIIAQ%3D%3D")),
+            TrendingCategory::Music => ("UC-9-kyTW8ZkZNDHQJ6FgpwQ", None),
+            TrendingCategory::Sports => ("UCEgdi0XIXXZ-qJOFPf4JSKw", None),
+            TrendingCategory::Learning => ("UCtFRv9O2AHqOZjjynzrv-xg", None),
+            TrendingCategory::Fashion => ("UCrpQ4p1Ql_hG8rKXIKM1MOQ", None),
+            TrendingCategory::Live => ("UC4R8DWoMoI7CAwX8_LjQHig", None),
         }
     }
 }

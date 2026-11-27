@@ -1553,6 +1553,11 @@ async fn resolve_channel_not_found(rp: RustyPipe) {
 #[case::podcasts(TrendingCategory::Podcasts, 50)]
 #[case::gaming(TrendingCategory::Gaming, 30)]
 #[case::news(TrendingCategory::News, 30)]
+#[case::music(TrendingCategory::Music, 10)]
+#[case::sports(TrendingCategory::Sports, 15)]
+#[case::learning(TrendingCategory::Learning, 15)]
+#[case::fashion(TrendingCategory::Fashion, 15)]
+#[case::live(TrendingCategory::Live, 15)]
 #[tokio::test]
 async fn trending(
     #[case] category: TrendingCategory,
