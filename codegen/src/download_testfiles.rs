@@ -511,6 +511,11 @@ async fn trending() {
         ("podcasts", TrendingCategory::Podcasts),
         ("gaming", TrendingCategory::Gaming),
         ("news", TrendingCategory::News),
+        ("music", TrendingCategory::Music),
+        ("sports", TrendingCategory::Sports),
+        ("learning", TrendingCategory::Learning),
+        ("fashion", TrendingCategory::Fashion),
+        ("live", TrendingCategory::Live),
     ] {
         let json_path = path!(*TESTFILES_DIR / "trends" / format!("trending_{name}.json"));
         if json_path.exists() {

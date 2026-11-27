@@ -7,7 +7,9 @@ use crate::{
     serializer::MapResult,
 };
 
-use super::{response, ClientType, MapRespCtx, MapResponse, QBrowseParams, RustyPipeQuery};
+use super::{
+    response, ClientType, MapRespCtx, MapResponse, QBrowse, QBrowseParams, RustyPipeQuery,
+};
 
 impl RustyPipeQuery {
     /// Get trending videos of the default category ([`TrendingCategory::Podcasts`])
@@ -23,17 +25,28 @@ impl RustyPipeQuery {
         &self,
         category: TrendingCategory,
     ) -> Result<Vec<VideoItem>, Error> {
-        let (browse_id, params) = category.browse_params();
-        let request_body = QBrowseParams { browse_id, params };
-
-        self.execute_request::<response::Trending, _, _>(
-            ClientType::Desktop,
-            "trends",
-            browse_id,
-            "browse",
-            &request_body,
-        )
-        .await
+        match category.browse_params() {
+            (browse_id, Some(params)) => {
+                self.execute_request::<response::Trending, _, _>(
+                    ClientType::Desktop,
+                    "trends",
+                    browse_id,
+                    "browse",
+                    &QBrowseParams { browse_id, params },
+                )
+                .await
+            }
+            (browse_id, None) => {
+                self.execute_request::<response::Trending, _, _>(
+                    ClientType::Desktop,
+                    "trends",
+                    browse_id,
+                    "browse",
+                    &QBrowse { browse_id },
+                )
+                .await
+            }
+        }
     }
 }
 
@@ -42,7 +55,7 @@ impl MapResponse<Vec<VideoItem>> for response::Trending {
         self,
         ctx: &MapRespCtx<'_>,
     ) -> Result<MapResult<Vec<VideoItem>>, ExtractionError> {
-        let items = self
+        let content = self
             .contents
             .two_column_browse_results_renderer
             .contents
@@ -50,8 +63,11 @@ impl MapResponse<Vec<VideoItem>> for response::Trending {
             .next()
             .ok_or(ExtractionError::InvalidData(Cow::Borrowed("no contents")))?
             .tab_renderer
-            .content
-            .section_list_renderer
+            .content;
+        let items = content
+            .rich_grid_renderer
+            .or(content.section_list_renderer)
+            .ok_or(ExtractionError::InvalidData(Cow::Borrowed("no contents")))?
             .contents;
 
         let mut mapper = response::YouTubeListMapper::<VideoItem>::new(ctx.lang);
@@ -87,6 +103,11 @@ mod tests {
     #[case::podcasts("podcasts")]
     #[case::gaming("gaming")]
     #[case::news("news")]
+    #[case::music("music")]
+    #[case::sports("sports")]
+    #[case::learning("learning")]
+    #[case::fashion("fashion")]
+    #[case::live("live")]
     fn map_trending(#[case] name: &str) {
         let json_path = path!(*TESTFILES / "trends" / format!("trending_{name}.json"));
         let json_file = File::open(json_path).unwrap();
