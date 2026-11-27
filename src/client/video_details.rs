@@ -6,10 +6,11 @@ use crate::{
     error::{Error, ExtractionError},
     model::{
         paginator::{ContinuationEndpoint, Paginator},
-        ChannelTag, Chapter, Comment, Verification, VideoDetails, VideoItem,
+        ChannelTag, Chapter, Comment, ContentDisclosure, ContentDisclosureKind, Verification,
+        VideoDetails, VideoItem,
     },
     param::Language,
-    serializer::MapResult,
+    serializer::{text::TextComponent, MapResult},
     util::{self, timeago, TryRemove},
 };
 
@@ -294,12 +295,18 @@ impl MapResponse<VideoDetails> for response::VideoDetails {
 
         let mut chapter_panel = None;
         let mut comment_panel = None;
+        let mut content_disclosures = Vec::new();
         engagement_panels.c.into_iter().for_each(|panel| match panel.engagement_panel_section_list_renderer {
             response::video_details::EngagementPanelRenderer::EngagementPanelMacroMarkersDescriptionChapters { content } => {
                 chapter_panel = Some(content);
             },
             response::video_details::EngagementPanelRenderer::EngagementPanelCommentsSection { header } => {
                 comment_panel = Some(header);
+            },
+            response::video_details::EngagementPanelRenderer::EngagementPanelStructuredDescription { content } => {
+                if let Some(content) = content {
+                    content_disclosures = map_content_disclosures(content);
+                }
             },
             response::video_details::EngagementPanelRenderer::None => {},
         });
@@ -356,6 +363,7 @@ impl MapResponse<VideoDetails> for response::VideoDetails {
                 is_live,
                 is_ccommons,
                 chapters,
+                content_disclosures,
                 recommended,
                 top_comments: Paginator::new_ext(
                     comment_count,
@@ -657,6 +665,58 @@ fn map_comment_vm(
     })
 }
 
+/// Help pages the disclosures link to identify their type independent of the language
+fn disclosure_kind(url: Option<&str>) -> ContentDisclosureKind {
+    let answer = url
+        .and_then(|u| u.split("/answer/").nth(1))
+        .and_then(|a| a.split(['?', '#', '/']).next());
+    match answer {
+        Some("15447836" | "14328491") => ContentDisclosureKind::AlteredOrSynthetic,
+        Some("15569972") => ContentDisclosureKind::AutoDubbed,
+        _ => ContentDisclosureKind::Other,
+    }
+}
+
+pub(super) fn map_content_disclosures(
+    content: response::video_details::StructuredDescriptionContent,
+) -> Vec<ContentDisclosure> {
+    content
+        .structured_description_content_renderer
+        .items
+        .into_iter()
+        .filter_map(|item| {
+            let response::video_details::StructuredDescriptionItem::HowThisWasMadeSectionViewModel(
+                section,
+            ) = item;
+            let mut text = String::new();
+            let mut url = None;
+            for component in section.body_text.0 {
+                match component {
+                    // The link text is "Learn more"
+                    TextComponent::Web { url: u, .. } => {
+                        url.get_or_insert(match u.strip_prefix("//") {
+                            Some(rest) => format!("https://{rest}"),
+                            None => u,
+                        });
+                    }
+                    c => text.push_str(c.as_str()),
+                }
+            }
+            let text = text.trim().to_owned();
+            if text.is_empty() {
+                return None;
+            }
+            Some(ContentDisclosure {
+                kind: disclosure_kind(url.as_deref()),
+                title: section.body_header.filter(|t| !t.is_empty()),
+                text,
+                url,
+                attribution: section.attribution_text.filter(|t| !t.is_empty()),
+            })
+        })
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use std::{fs::File, io::BufReader};
@@ -682,6 +742,8 @@ mod tests {
     #[case::ab_new_likes("20231103_likes", "ZeerrnuLi5E")]
     #[case::mix("20241109_mix", "XuM2onMGvTI")]
     #[case::lockup("20261126_lockup", "jfKfPfyJRdk")]
+    #[case::ai("20261127_ai", "-YrdcUHpNV4")]
+    #[case::autodub("20261127_autodub", "i8_Pz7sBp_M")]
     fn map_video_details(#[case] name: &str, #[case] id: &str) {
         let json_path = path!(*TESTFILES / "video_details" / format!("video_details_{name}.json"));
         let json_file = File::open(json_path).unwrap();

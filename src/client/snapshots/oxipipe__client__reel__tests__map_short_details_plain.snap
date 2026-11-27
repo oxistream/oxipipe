@@ -6,4 +6,5 @@ ShortDetails(
   id: "kQO5P-qsyiA",
   name: Some("MrBeast, Logan Paul & KSI Are Carrying WHAT?!"),
   linked_video: None,
+  content_disclosures: [],
 )

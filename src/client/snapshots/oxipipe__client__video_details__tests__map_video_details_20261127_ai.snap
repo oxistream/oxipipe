@@ -1,0 +1,192 @@
+---
+source: src/client/video_details.rs
+expression: map_res.c
+---
+VideoDetails(
+  id: "-YrdcUHpNV4",
+  name: "Small Town Dreams 🤠🎸 | Original AI Country Song | AI Music Video #aimusicvideo",
+  description: RichText([
+    Text(
+      text: "Step into the heart of country music with “Small Town Dreams” — an original AI-generated country song and cinematic music video filled with guitar, warm lights, and small-town dreams. 🤠🎸\nIf you love emotional country music, acoustic guitar, live-performance vibes, and cinematic AI music videos, this one is for you.\n🎵 Song: Small Town Dreams\n🎬 Format: AI Music Video\n🎸 Genre: Country / Acoustic\n🤖 Created with AI\n👍 Like the video if you enjoyed it\n💬 Tell us what you think in the comments\n🔔 Subscribe for more original AI music videos\n",
+    ),
+    Text(
+      text: "#AIMusic",
+    ),
+    Text(
+      text: " ",
+    ),
+    Text(
+      text: "#AIMusicVideo",
+    ),
+    Text(
+      text: " ",
+    ),
+    Text(
+      text: "#CountryMusic",
+    ),
+    Text(
+      text: " ",
+    ),
+    Text(
+      text: "#CountrySong",
+    ),
+    Text(
+      text: " ",
+    ),
+    Text(
+      text: "#OriginalSong",
+    ),
+    Text(
+      text: " ",
+    ),
+    Text(
+      text: "#SmallTownDreams",
+    ),
+    Text(
+      text: " ",
+    ),
+    Text(
+      text: "#AIGeneratedMusic",
+    ),
+    Text(
+      text: " ",
+    ),
+  ]),
+  channel: ChannelTag(
+    id: "UCpM0eMvVAVoBvzt2tG938Vw",
+    name: "12-Bit Concrete",
+    avatar: [
+      Thumbnail(
+        url: "https://yt3.ggpht.com/XTeQtKAomI_f4rNH-X_0CJuCEGiOGUfoshF1osBI6IcDLjiX_Ym198X6IiFcVODo9v012PYqxA=s48-c-k-c0x00ffffff-no-rj",
+        width: 48,
+        height: 48,
+      ),
+      Thumbnail(
+        url: "https://yt3.ggpht.com/XTeQtKAomI_f4rNH-X_0CJuCEGiOGUfoshF1osBI6IcDLjiX_Ym198X6IiFcVODo9v012PYqxA=s88-c-k-c0x00ffffff-no-rj",
+        width: 88,
+        height: 88,
+      ),
+      Thumbnail(
+        url: "https://yt3.ggpht.com/XTeQtKAomI_f4rNH-X_0CJuCEGiOGUfoshF1osBI6IcDLjiX_Ym198X6IiFcVODo9v012PYqxA=s176-c-k-c0x00ffffff-no-rj",
+        width: 176,
+        height: 176,
+      ),
+    ],
+    verification: none,
+    subscriber_count: Some(20),
+  ),
+  view_count: 1916,
+  like_count: Some(6),
+  publish_date: "[date]",
+  publish_date_txt: Some("Aug 17, 2026"),
+  is_live: false,
+  is_ccommons: false,
+  chapters: [],
+  content_disclosures: [
+    ContentDisclosure(
+      kind: altered_or_synthetic,
+      title: Some("Made with AI"),
+      text: "Sounds or visuals were altered or fully generated.",
+      url: Some("https://support.google.com/youtube/answer/15447836?hl=en"),
+      attribution: Some("Info from Google LLC"),
+    ),
+  ],
+  recommended: Paginator(
+    count: None,
+    items: [
+      VideoItem(
+        id: "BOcN3IONhCA",
+        name: "Top Country Songs Everyone Loves 🤠 Timeless 60s 70s 80s Classics Forever",
+        duration: None,
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/BOcN3IONhCA/hqdefault.jpg?v=6a365ba5&sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAKr4eQHtHcxy0Wk-VHch2coFI2Lg",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/BOcN3IONhCA/hqdefault.jpg?v=6a365ba5&sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCXqU5DHrB2Fh6JgNBF0jJ33q_biw",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: None,
+        publish_date: "[date]",
+        publish_date_txt: None,
+        view_count: Some(84),
+        is_live: true,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "2SOcrzi7Phw",
+        name: "New Outlaw Country Rap Road Mix 2026 | Rebel Blood, Lonely Roads & Hard-Hitting Southern Anthems",
+        duration: Some(2314),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/2SOcrzi7Phw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD4Um3S5oEmUiYtl8R3VrQXU589Tw",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/2SOcrzi7Phw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA7ou_dLbiWLiji6ZSoNVCM4Vg3LQ",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: None,
+        publish_date: "[date]",
+        publish_date_txt: Some("8 hours ago"),
+        view_count: Some(1),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+      VideoItem(
+        id: "TTlvuAiI7Dg",
+        name: "8 Hours of Classic Country Music 🤠 | Best Country Songs Playlist 2026 | Relaxing Country Mix",
+        duration: Some(28952),
+        thumbnail: [
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/TTlvuAiI7Dg/hqdefault.jpg?sqp=-oaymwE1CKgBEF5IVfKriqkDKAgBFQAAiEIYAXABwAEG8AEB-AH-CYAC0AWKAgwIABABGH8gSiglMA8=&rs=AOn4CLBALBwLB1wAkXyIel5uq31qzlhKdw",
+            width: 168,
+            height: 94,
+          ),
+          Thumbnail(
+            url: "https://i.ytimg.com/vi/TTlvuAiI7Dg/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IEooJTAP&rs=AOn4CLDHWRhY6U0muy6E2-LMcAQTnz8vww",
+            width: 336,
+            height: 188,
+          ),
+        ],
+        channel: None,
+        publish_date: "[date]",
+        publish_date_txt: Some("4 months ago"),
+        view_count: Some(33000),
+        is_live: false,
+        is_short: false,
+        is_upcoming: false,
+        short_description: None,
+      ),
+    ],
+    ctoken: Some("CBQSExILLVlyZGNVSHBOVjTAAQHIAQEYACrjBk1nc0lwSzJseXN2ZzU2VGZBZHJPaS1zTTlnUUs4d1FLQV9JLUFBb053ajRLQ0tDSXRwekl1OFB6QkFvRDhqNEFDaWZTUGlRS0lsQk1ORzVRWVc1alVtcG9ORGRRUVVaSFRWQTRhbTExUm1aaU5URnhRbE10UmtnS0FfSS1BQW9Pd2o0TENKejg3TVh6bGVlUjJRRUtBX0ktQUFvTndqNEtDTGpZbzhTQTk5dWNUUW9EOGo0QUNnM0NQZ29JdThxVGs5bUYxY3NPQ2dQeVBnQUtKOUktSkFvaVVFeFplRVpCYW1kR1MyZHpTVlpsZW1ka01VcFVkVzgwUTFSSmIzVk5lRVJmY0FvRDhqNEFDZzNDUGdvSTg3aUkwZEN2bmVjaENnUHlQZ0FLRGNJLUNnalE2ZGVDLTUtODFXZ0tBX0ktQUFvT3dqNExDSnpiOU15MmplM2c3UUVLQV9JLUFBb093ajRMQ0t1cHdQdTNydUdNdFFFS0FfSS1BQW9Pd2o0TENQZkJqZWZKdHRMRGl3RUtBX0ktQUFvT3dqNExDUERkaTVUamtkVEJyQUVLQV9JLUFBb093ajRMQ056YWw2R0Y5TF9ld3dFS0FfSS1BQW9Od2o0S0NLN1p5TEtKcDRlUUJBb0Q4ajRBQ2czQ1Bnb0lfWnFRMExidi1kSktDZ1B5UGdBS0RzSS1Dd2luOF9MRHFMWFA4OG9CQ2dQeVBnQUtEc0ktQ3dqcWl0UHdtTHlBcXQwQkNnUHlQZ0FLRHNJLUN3alJ3Wi1wemRmdGhZa0JDZ1B5UGdBS0RzSS1Dd2ozNGRTd3FOTzN0YXdCQ2dQeVBnQUtEc0ktQ3dpa3JhWEt5LURucE44QkVoUUFBZ1FHQ0FvTURoQVNGQllZR2h3ZUlDSWtKaG9FQ0FBUUFSb0VDQUlRQXhvRUNBUVFCUm9FQ0FZUUJ4b0VDQWdRQ1JvRUNBb1FDeG9FQ0F3UURSb0VDQTRRRHhvRUNCQVFFUm9FQ0JJUUV4b0VDQlFRRlJvRUNCWVFGeG9FQ0JnUUdSb0VDQm9RR3hvRUNCd1FIUm9FQ0I0UUh4b0VDQ0FRSVJvRUNDSVFJeG9FQ0NRUUpSb0VDQ1lRSnlvVUFBSUVCZ2dLREE0UUVoUVdHQm9jSGlBaUpDWWoPd2F0Y2gtbmV4dC1mZWVk"),
+    visitor_data: Some("redacted"),
+    endpoint: next,
+  ),
+  top_comments: Paginator(
+    count: None,
+    items: [],
+    ctoken: Some("Eg0SCy1ZcmRjVUhwTlY0GAYyJSIRIgstWXJkY1VIcE5WNDAAeAJCEGNvbW1lbnRzLXNlY3Rpb24%3D"),
+    visitor_data: Some("redacted"),
+    endpoint: next,
+  ),
+  latest_comments: Paginator(
+    count: None,
+    items: [],
+    ctoken: Some("Eg0SCy1ZcmRjVUhwTlY0GAYyOCIRIgstWXJkY1VIcE5WNDABeAIwAUIhZW5nYWdlbWVudC1wYW5lbC1jb21tZW50cy1zZWN0aW9u"),
+    visitor_data: Some("redacted"),
+    endpoint: next,
+  ),
+  visitor_data: Some("redacted"),
+)

@@ -98,6 +98,7 @@ VideoDetails(
   is_live: true,
   is_ccommons: false,
   chapters: [],
+  content_disclosures: [],
   recommended: Paginator(
     count: None,
     items: [

@@ -369,6 +369,7 @@ where
 
 /// The engagement panels are displayed below the video and contain chapter markers
 /// and the comment section.
+#[serde_as]
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "kebab-case", tag = "targetId")]
 pub(crate) enum EngagementPanelRenderer {
@@ -377,14 +378,57 @@ pub(crate) enum EngagementPanelRenderer {
     /// Comment section (contains no comments, but the
     /// continuation tokens for fetching top/latest comments)
     EngagementPanelCommentsSection { header: CommentItemSectionHeader },
+    /// Structured description (the description itself is already included in
+    /// `VideoSecondaryInfoRenderer`, only the content disclosures are used)
+    EngagementPanelStructuredDescription {
+        #[serde(default)]
+        #[serde_as(as = "DefaultOnError")]
+        content: Option<StructuredDescriptionContent>,
+    },
     /// Ignored items:
     /// - `engagement-panel-ads`
-    /// - `engagement-panel-structured-description`
-    ///   (Description already included in `VideoSecondaryInfoRenderer`)
     /// - `engagement-panel-searchable-transcript`
     ///   (basically video subtitles in a different format)
     #[serde(other, deserialize_with = "deserialize_ignore_any")]
     None,
+}
+
+/// Structured description, also part of the shorts player response
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct StructuredDescriptionContent {
+    pub structured_description_content_renderer: StructuredDescription,
+}
+
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct StructuredDescription {
+    #[serde(default)]
+    #[serde_as(as = "VecSkipError<_>")]
+    pub items: Vec<StructuredDescriptionItem>,
+}
+
+/// Other items (header, description body, transcript, infocards) fail to parse and are skipped
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) enum StructuredDescriptionItem {
+    HowThisWasMadeSectionViewModel(HowThisWasMadeSection),
+}
+
+/// "How this was made" section (e.g. altered or synthetic content, auto-dubbed)
+#[serde_as]
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub(crate) struct HowThisWasMadeSection {
+    #[serde(default)]
+    #[serde_as(as = "DefaultOnError<Option<AttributedText>>")]
+    pub body_header: Option<String>,
+    #[serde_as(as = "AttributedText")]
+    pub body_text: TextComponents,
+    #[serde(default)]
+    #[serde_as(as = "DefaultOnError<Option<AttributedText>>")]
+    pub attribution_text: Option<String>,
 }
 
 /// Chapter markers

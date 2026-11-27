@@ -600,6 +600,7 @@ VideoDetails(
       ],
     ),
   ],
+  content_disclosures: [],
   recommended: Paginator(
     count: None,
     items: [

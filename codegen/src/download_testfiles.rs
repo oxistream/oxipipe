@@ -235,6 +235,8 @@ async fn video_details() {
         ("chapters", "nFDBxBUfE74"),
         ("live", "86YLFOog4GM"),
         ("agegate", "HRKu0cvrr_o"),
+        ("20261127_ai", "-YrdcUHpNV4"),
+        ("20261127_autodub", "i8_Pz7sBp_M"),
     ] {
         let json_path =
             path!(*TESTFILES_DIR / "video_details" / format!("video_details_{name}.json"));
@@ -540,7 +542,11 @@ async fn reel_sequence() {
 }
 
 async fn short_details() {
-    for (name, id) in [("linked", "sHpEqeSByPI"), ("plain", "kQO5P-qsyiA")] {
+    for (name, id) in [
+        ("linked", "sHpEqeSByPI"),
+        ("plain", "kQO5P-qsyiA"),
+        ("ai", "tTjXWrpXdW4"),
+    ] {
         let json_path = path!(*TESTFILES_DIR / "reel" / format!("item_{name}.json"));
         if json_path.exists() {
             continue;
